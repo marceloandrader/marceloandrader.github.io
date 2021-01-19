@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>desarrollo on Tip Diario de Desarrollo Web</title>
+    <link>https://marceloandrader.github.io/tags/desarrollo/</link>
+    <description>Recent content in desarrollo on Tip Diario de Desarrollo Web</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ec</language>
+    <lastBuildDate>Tue, 19 Feb 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/desarrollo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aplicaciones Web del lado del Cliente con MVVM</title>
+      <link>https://marceloandrader.github.io/posts/2013-02-19-aplicaciones-web-del-lado-del-cliente-con-mvvm/</link>
+      <pubDate>Tue, 19 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/posts/2013-02-19-aplicaciones-web-del-lado-del-cliente-con-mvvm/</guid>
+      <description>Aplicaciones web con alta carga de lógica del lado cliente han comenzado a popularizarse, la idea es que mucho de lo que antes se hacía en el servidor, ahora se lo puede hacer en el cliente (browser) y dejar al servidor solo como un API de acceso a la persistencia de los datos.</description>
+    </item>
+    
+    <item>
+      <title>Caso práctico de uso de vagrant</title>
+      <link>https://marceloandrader.github.io/posts/2012-05-28-caso-practico-de-uso-de-vagrant/</link>
+      <pubDate>Mon, 28 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/posts/2012-05-28-caso-practico-de-uso-de-vagrant/</guid>
+      <description>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.</description>
+    </item>
+    
+    <item>
+      <title>Aislar ambientes de desarrollo con Vagrant</title>
+      <link>https://marceloandrader.github.io/posts/2012-02-06-aislar-ambientes-de-desarrollo-con-vagrant/</link>
+      <pubDate>Mon, 06 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/posts/2012-02-06-aislar-ambientes-de-desarrollo-con-vagrant/</guid>
+      <description>Si desarrollas en un solo tipo de &amp;lsquo;stack&amp;rsquo; de desarrollo lo más común es instalar este stack en tu máquina principal y desarrollar directamente en el sistema operativo de tu preferencia.</description>
+    </item>
+    
+  </channel>
+</rss>

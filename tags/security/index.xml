@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>security on Tip Diario de Desarrollo Web</title>
+    <link>https://marceloandrader.github.io/tags/security/</link>
+    <description>Recent content in security on Tip Diario de Desarrollo Web</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ec</language>
+    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My migration from keepassxc to pass (password store)</title>
+      <link>https://marceloandrader.github.io/posts/2019-04-11-migration-keepassxc-to-pass/</link>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/posts/2019-04-11-migration-keepassxc-to-pass/</guid>
+      <description>Background My initial way to keep my long list of passwords/secrets safe in my computer was using the password manager keepassxc it served well, the way to share this with my mobile was putting the kdbx file in Dropbox and use KeePassDroid app to be able to use my passwords on the go.</description>
+    </item>
+    
+  </channel>
+</rss>

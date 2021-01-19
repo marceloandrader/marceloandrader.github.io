@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="es-ec">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>My migration from keepassxc to pass (password store) | Tip Diario de Desarrollo Web</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF3DB4">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    
+    
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+
+    
+    
+    
+
+    
+    
+ 
+    </head>
+
+    <body>
+        
+<nav>
+  <header>
+    <div class="site-title">
+        <a href="/">Tip Diario de Desarrollo Web</a>
+    </div>  
+</header>
+
+  <div class="nav-menu">
+  
+    <a class="color-link nav-link" href="/about/">About</a>
+  
+    <a class="color-link nav-link" href="/tags/">Tags</a>
+  
+  <a class="color-link nav-link" href="https://marceloandrader.github.io/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+</div>
+<footer class="footer">
+	<div class="social-icons">
+        
+
+    
+
+    
+    <a class="social-icon" href="https://twitter.com/MarceloAndrade" target="_blank" rel="noopener" title="Twitter">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M8.991284,24.971612 C19.180436,24.971612 24.752372,16.530224 24.752372,9.210524 C24.752372,8.970656 24.747512,8.731868 24.736496,8.494376 C25.818008,7.712564 26.758256,6.737 27.5,5.62622 C26.507372,6.067076 25.439252,6.364292 24.318752,6.498212 C25.462472,5.812628 26.340512,4.727444 26.754584,3.434036 C25.684088,4.068536 24.499004,4.53002 23.23724,4.778528 C22.226468,3.701876 20.786828,3.028388 19.193828,3.028388 C16.134404,3.028388 13.653536,5.509256 13.653536,8.567492 C13.653536,9.0023 13.702244,9.424904 13.797176,9.830552 C9.19346,9.599108 5.11106,7.39472 2.3792,4.04294 C1.903028,4.861364 1.629032,5.812628 1.629032,6.827072 C1.629032,8.74904 2.606972,10.445612 4.094024,11.438132 C3.185528,11.41016 2.331788,11.160464 1.585184,10.745096 C1.583888,10.768208 1.583888,10.791428 1.583888,10.815728 C1.583888,13.49888 3.493652,15.738584 6.028088,16.246508 C5.562932,16.373084 5.07326,16.44134 4.56782,16.44134 C4.210988,16.44134 3.863876,16.406024 3.526484,16.34144 C4.231724,18.542264 6.276596,20.143796 8.701412,20.18894 C6.805148,21.674696 4.416836,22.56008 1.821488,22.56008 C1.374476,22.56008 0.93362,22.534592 0.5,22.4834 C2.951708,24.054476 5.862524,24.971612 8.991284,24.971612"></path>
+        </svg>
+    </a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a class="social-icon" href="https://www.linkedin.com/in/marceloandrader" target="_blank" rel="noopener" title="LinkedIn">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M2,3.654102 C2,2.69908141 2.79442509,1.92397846 3.77383592,1.92397846 L24.2261641,1.92397846 C25.2058917,1.92397846 26,2.69908141 26,3.654102 L26,24.3462148 C26,25.3015521 25.2058917,26.0760215 24.2261641,26.0760215 L3.77383592,26.0760215 C2.79442509,26.0760215 2,25.3015521 2,24.3465315 L2,3.65378524 L2,3.654102 Z M9.27526132,22.1415901 L9.27526132,11.2356668 L5.65030092,11.2356668 L5.65030092,22.1415901 L9.27557808,22.1415901 L9.27526132,22.1415901 Z M7.46341463,9.74691162 C8.72727273,9.74691162 9.51409566,8.90940767 9.51409566,7.86284447 C9.49033893,6.79252455 8.72727273,5.97846056 7.48748812,5.97846056 C6.24675325,5.97846056 5.43649034,6.79252455 5.43649034,7.86284447 C5.43649034,8.90940767 6.22299652,9.74691162 7.4396579,9.74691162 L7.46309788,9.74691162 L7.46341463,9.74691162 Z M11.2815965,22.1415901 L14.9062401,22.1415901 L14.9062401,16.0519481 C14.9062401,15.7263225 14.9299968,15.4000634 15.0256573,15.1675641 C15.2876148,14.5159962 15.8840672,13.8416218 16.8856509,13.8416218 C18.1970225,13.8416218 18.7218879,14.8416218 18.7218879,16.3078872 L18.7218879,22.1415901 L22.3465315,22.1415901 L22.3465315,15.8885017 C22.3465315,12.5388027 20.5584416,10.9800443 18.1735825,10.9800443 C16.2182452,10.9800443 15.3595185,12.072854 14.8824834,12.8172315 L14.9065569,12.8172315 L14.9065569,11.2359835 L11.2819132,11.2359835 C11.3291099,12.2591067 11.2815965,22.1419069 11.2815965,22.1419069 L11.2815965,22.1415901 Z"></path>
+        </svg>
+    </a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <a class="social-icon" href="https://github.com/marceloandrader" target="_blank" rel="noopener" title="GitHub">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M13.9988029,1.32087331 C6.82105037,1.32087331 1,7.14112562 1,14.3212723 C1,20.0649109 4.72454649,24.9370678 9.89038951,26.6560892 C10.5408085,26.7757983 10.7778323,26.374374 10.7778323,26.0296121 C10.7778323,25.7215609 10.7666595,24.9035493 10.760275,23.8189856 C7.14426471,24.6042767 6.38131925,22.0760223 6.38131925,22.0760223 C5.78995672,20.5740732 4.93762853,20.1742451 4.93762853,20.1742451 C3.75729765,19.3682044 5.02701126,19.3841656 5.02701126,19.3841656 C6.33183953,19.4759425 7.01817121,20.7241085 7.01817121,20.7241085 C8.17775254,22.7104801 10.0611744,22.1366749 10.8017741,21.8038838 C10.919887,20.9643246 11.2558703,20.3913175 11.6269683,20.066507 C8.74038491,19.7385043 5.70536235,18.6228163 5.70536235,13.6413251 C5.70536235,12.2223743 6.21213051,11.0611968 7.04370914,10.1530044 C6.90963504,9.82420367 6.46351945,8.50181809 7.17139875,6.71256734 C7.17139875,6.71256734 8.26234691,6.36301702 10.7459099,8.04532771 C11.78259,7.75642995 12.8950858,7.61277914 14.000399,7.60719272 C15.1049142,7.61277914 16.2166119,7.75642995 17.2548881,8.04532771 C19.736855,6.36301702 20.8262071,6.71256734 20.8262071,6.71256734 C21.5356825,8.50181809 21.0895669,9.82420367 20.9562909,10.1530044 C21.7894656,11.0611968 22.2922435,12.2223743 22.2922435,13.6413251 C22.2922435,18.6355852 19.2524325,19.734514 16.3570705,20.0561322 C16.8231376,20.4575564 17.2389269,21.2508282 17.2389269,22.4638795 C17.2389269,24.2012564 17.2229657,25.603448 17.2229657,26.0296121 C17.2229657,26.3775663 17.4575954,26.7821827 18.116793,26.6552912 C23.2786458,24.9322794 27,20.0633148 27,14.3212723 C27,7.14112562 21.1789496,1.32087331 13.9988029,1.32087331"></path>
+        </svg>
+    </a>
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+
+	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+</footer>
+</nav>
+
+        <div id="content" class="content-container">
+        
+
+<h1 class="post-title">My migration from keepassxc to pass (password store)</h1>
+    
+    <time>April 11, 2019</time>
+    
+    <div>
+        <p>
+        <h1 id="background">Background</h1>
+<p>My initial way to keep my long list of passwords/secrets safe in my computer was using the password manager <a href="https://keepassxc.org/">keepassxc</a> it served well, the way to share this with my mobile was putting the kdbx file in Dropbox and use KeePassDroid app to be able to use my passwords on the go.</p>
+<h1 id="why-the-migration">Why the migration?</h1>
+<p>Well I&rsquo;ve started to have a couple of issues with my current setup, the main issue I was having was I have to keep a window open for the password manager, where I have to go search and copy/paste the data or ask to perform an auto type for me, I started to dislike this because as a developer I normally work only in 2 windows: the browser and a terminal, so that is why I started to look for an alternative. The second issue was that when I tried to configure gmail with mutt I had to put my password in plain text in a file.</p>
+<!-- raw HTML omitted -->
+<h1 id="the-chosen-one">The chosen one</h1>
+<p>When I was setting up my mutt/mbsync/msmtp to use gmail from the terminal (topic for another post), I&rsquo;ve found that you have to enter your credentials in a plain text config file, I didn&rsquo;t want to do that, and some other people also didn&rsquo;t do that and they have a solution: <a href="https://www.passwordstore.org/">pass</a> with this simple cli utility I no longer have to write passwords in config files, it can be automated to consume the password from my store without intervention.</p>
+<h2 id="advantages-of-pass">Advantages of pass</h2>
+<ul>
+<li>It follows the Unix philosophy, it does one thing well and can be composable.</li>
+<li>Each password lives inside a gpg encrypted file that can be organized using standard unix commands cp, mv, rm</li>
+<li>It has the feature to copy to clipboard built-in</li>
+<li>It tracks password changes using <code>git</code> this is supe awesome because this way I can distribute my passwords to other devices without much hassle.</li>
+<li>Before the migration I checked that it support the import from other password managers and indeed has an extension with support for 25 different managers <a href="https://github.com/roddhjav/pass-import#description">pass-import</a></li>
+<li>Also has nice list of compatible clients, I&rsquo;ll use Android-Password-Store for my mobile.</li>
+<li>And it has a couple of browser extensions to fill/submit on sites really easy without having another window open</li>
+</ul>
+<h1 id="initial-setup">Initial setup</h1>
+<p>All the setup was done in a linux machine with Pop!OS 18.10.</p>
+<h2 id="configure-gpg">Configure GPG</h2>
+<p>First we need to create a gpg key that pass will use to encrypt/decrypt the password files.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % gpg --gen-key</code></pre></div>
+<p>It will ask for a real name of the key and an email, and also a passphrase that should be at least 8 characters and have a digit.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    ⏚ <span style="color:#f92672">[</span>marcelo:~<span style="color:#f92672">]</span> % gpg --gen-key
+
+    gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.2.8; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2018</span> Free Software Foundation, Inc.
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    Note: Use <span style="color:#e6db74">&#34;gpg --full-generate-key&#34;</span> <span style="color:#66d9ef">for</span> a full featured key generation dialog.
+
+    GnuPG needs to construct a user ID to identify your key.
+
+    Real name: Pass Migration
+    Email address: pass.migration@gmail.com
+    You selected this USER-ID:
+        <span style="color:#e6db74">&#34;Pass Migration &lt;pass.migration@gmail.com&gt;&#34;</span>
+
+    Change <span style="color:#f92672">(</span>N<span style="color:#f92672">)</span>ame, <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span>mail, or <span style="color:#f92672">(</span>O<span style="color:#f92672">)</span>kay/<span style="color:#f92672">(</span>Q<span style="color:#f92672">)</span>uit? O
+    We need to generate a lot of random bytes. It is a good idea to perform
+    some other action <span style="color:#f92672">(</span>type on the keyboard, move the mouse, utilize the
+    disks<span style="color:#f92672">)</span> during the prime generation; this gives the random number
+    generator a better chance to gain enough entropy.
+    We need to generate a lot of random bytes. It is a good idea to perform
+    some other action <span style="color:#f92672">(</span>type on the keyboard, move the mouse, utilize the
+    disks<span style="color:#f92672">)</span> during the prime generation; this gives the random number
+    generator a better chance to gain enough entropy.
+    gpg: key B9E32CDD4190FC22 marked as ultimately trusted
+    gpg: revocation certificate stored as <span style="color:#e6db74">&#39;/home/marcelo/.gnupg/openpgp-revocs.d/23434EEF535B0E7C702E36A9B9E32CDD4190FC22.rev&#39;</span>
+    public and secret key created and signed.
+
+    pub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span>
+          23434EEF535B0E7C702E36A9B9E32CDD4190FC22
+    uid                      Pass Migration &lt;pass.migration@gmail.com&gt;
+    sub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span></code></pre></div>
+<p>Check that the gpg key exists:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % gpg -k
+
+    /home/marcelo/.gnupg/pubring.kbx
+    --------------------------------
+    pub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span>
+          23434EEF535B0E7C702E36A9B9E32CDD4190FC22
+    uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> Pass Migration &lt;pass.migration@gmail.com&gt;
+    sub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span></code></pre></div>
+<h2 id="init-the-store">Init the store</h2>
+<p>The command to init the store in pass is the following, you need the key id created in the previous step as the parameter:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass init <span style="color:#e6db74">&#34;Pass Migration&#34;</span></code></pre></div>
+<p>This will create a directory in your ~/.password-store/ and will write a .gpg-id so pass know what key to use to encrypt/decrypt from now on.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    mkdir: created directory <span style="color:#e6db74">&#39;/home/marcelo/.password-store&#39;</span>
+    Password store initialized <span style="color:#66d9ef">for</span> Pass Migration <span style="color:#f92672">(</span>migration<span style="color:#f92672">)</span></code></pre></div>
+<h2 id="init-git-in-the-store">Init git in the store</h2>
+<p>To track all your password changes with git, you just need to init the repo on the directory:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass git init
+
+    Initialized empty Git repository in /home/marcelo/.password-store/.git/</code></pre></div>
+<p>This allows you to keep the history of your passwords, and it helps with the distribution of the store to other devices and to keep them in sync.</p>
+<h2 id="add-a-git-remote">Add a git remote</h2>
+<p>In order to backup/distribute your passwords you can set a remote for the .password-store repository, you need to change the data between &lt;&gt;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass git remote add origin git@github.com:&lt;your-user&gt;/&lt;your-repo&gt;.git
+    % pass git push -u master</code></pre></div>
+<p>After that when anything happens in pass, it will create a commit for each change automatically, you just need to do a push/pull to sync it</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass git push
+    % pass git pull</code></pre></div>
+<h1 id="day-to-day-use-of-the-password-store">Day to day use of the password store</h1>
+<h2 id="add-new-passwords">Add new passwords</h2>
+<p>The insert command allows you to manually enter the password to be saved.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass insert Personal/testing
+    Enter password <span style="color:#66d9ef">for</span> Personal/testing:******
+    Retype password <span style="color:#66d9ef">for</span> Personal/testing:******
+    <span style="color:#f92672">[</span>master bf1bc88<span style="color:#f92672">]</span> Add given password <span style="color:#66d9ef">for</span> Personal/testing to store.
+     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
+     create mode <span style="color:#ae81ff">100644</span> Personal/testing.gpg</code></pre></div>
+<p>As you can see pass created the testing.gpg file and committed to the repo.</p>
+<p>If you want that pass generate a password for you, use the generate command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass generate Personal/testing2
+    <span style="color:#f92672">[</span>master 8b0da79<span style="color:#f92672">]</span> Add generated password <span style="color:#66d9ef">for</span> Personal/testing2.
+     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
+     create mode <span style="color:#ae81ff">100644</span> Personal/testing2.gpg
+    The generated password <span style="color:#66d9ef">for</span> Personal/testing2 is:
+    kqc9b7v<span style="color:#f92672">=</span>c7~e<span style="color:#f92672">)</span>D/vIBScEz;%u</code></pre></div>
+<p>Given that pass encrypt all the file, you can add some other metadata to the file like usernames, urls, secret question answers, etc. For that you should use insert in multiple lines, the only thing you need to remember is that the first line is always the password.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass insert -m Personal/testing-multiline
+    Enter contents of Personal/testing-multiline and press Ctrl+D when finished:
+
+    thisismypassword
+    url: http://example.com
+    login: marceloandrade
+
+    question1: xhdjahdfasdjfkasjdfaks
+    question2: fjasdkfj9dfas0dfa9d8f7
+    <span style="color:#f92672">[</span>master 3a133ec<span style="color:#f92672">]</span> Add given password <span style="color:#66d9ef">for</span> Personal/testing-multiline to store.
+     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
+     create mode <span style="color:#ae81ff">100644</span> Personal/testing-multiline.gpg</code></pre></div>
+<h2 id="consume-passwords">Consume passwords</h2>
+<p>To use a password just do <code>pass Personal/testing</code> that will echo your password, if you don&rsquo;t want to show the password in your terminal, pass the -c parameter to copy to clipboard <code>pass -c Personal/testing</code> that will keep your password in the clipboard for 45 seconds, enough to paste it where you need it.</p>
+<h2 id="update-a-password">Update a password</h2>
+<p>You can use <code>pass edit Personal/testing-multiline</code> that will open the decrypted content in a temporary file with your default editor, you can do changes and save &amp; exit.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    <span style="color:#f92672">[</span>master fa72ec0<span style="color:#f92672">]</span> Edit password <span style="color:#66d9ef">for</span> Personal/testing-multiline using nvim.
+     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
+     rewrite Personal/testing-multiline.gpg <span style="color:#f92672">(</span>100%<span style="color:#f92672">)</span></code></pre></div>
+<h2 id="having-a-diff-in-password-changes-directly-in-git">Having a diff in password changes directly in git</h2>
+<p>After you have edited a password you can check directly with git what the change was:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass git log</code></pre></div>
+<p>To copy the sha1 of the commit where you did the change</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass git show fa72ec0a9e51459e8223a6872647f3388ff8a96f
+    commit fa72ec0a9e51459e8223a6872647f3388ff8a96f <span style="color:#f92672">(</span>HEAD -&gt; master<span style="color:#f92672">)</span>
+    Author: Marcelo Andrade R
+    Date:   Thu Apr <span style="color:#ae81ff">11</span> 12:11:11 <span style="color:#ae81ff">2019</span> -0500
+
+        Edit password <span style="color:#66d9ef">for</span> Personal/testing-multiline using nvim.
+
+        diff --git a/Personal/testing-multiline.gpg b/Personal/testing-multiline.gpg
+        index 1c957b8..7dfa9a4 <span style="color:#ae81ff">100644</span>
+        --- a/Personal/testing-multiline.gpg
+        +++ b/Personal/testing-multiline.gpg
+        @@ -1,4 +1,4 @@
+        -thisismypassword
+        +thisismypassword2
+         url: http://example.com
+         login: marceloandrade</code></pre></div>
+<h2 id="removing-a-password">Removing a password</h2>
+<p>To delete use <code>pass rm Personal/testing</code> and will be removed from the store.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    Are you sure you would like to delete Personal/testing? <span style="color:#f92672">[</span>y/N<span style="color:#f92672">]</span> y
+    removed <span style="color:#e6db74">&#39;/home/marcelo/.password-store/Personal/testing.gpg&#39;</span>
+    <span style="color:#f92672">[</span>master 151f502<span style="color:#f92672">]</span> Remove Personal/testing from store.
+     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
+     delete mode <span style="color:#ae81ff">100644</span> Personal/testing.gpg</code></pre></div>
+<h1 id="specific-migration-from-keepassxc">Specific migration from keepassxc</h1>
+<h2 id="install-pass-import">Install pass-import</h2>
+<p>Go to the <a href="https://github.com/roddhjav/pass-import/">pass-import github repo</a> and install it the way best suit your needs and environment, I cloned it, make and then sudo make install</p>
+<h2 id="generate-filecsv-from-keepassxc">Generate file.csv from keepassxc</h2>
+<p>From KeePassXC application, open your database with your master password, and then go to menu Database/Export to CSV file&hellip; that will write the file to disk, make sure it&rsquo;s secured because all your passwords are written in plain text in that file.</p>
+<h2 id="run-the-pass-import-keepassxc-filecsv">Run the pass import keepassxc file.csv</h2>
+<p>The tool to import is really easy to use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass import keepassxc /path/to/file.csv</code></pre></div>
+<p>That command will insert each entry to the store, and do a commit on each one.</p>
+<p>##Shred the file</p>
+<p>Because the file.csv is really unsecure way to save your passwords make sure to delete it securely:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % shred -u file.csv</code></pre></div>
+<h1 id="conclusion">Conclusion</h1>
+<p>It became a bit of a long post, let me know if something is not clear, I&rsquo;ll be happy to answer. Also maybe I&rsquo;ll do another post about the android app configuration to use the git repo.</p>
+<h1 id="resources">Resources</h1>
+<ol>
+<li><a href="https://www.passwordstore.org/">pass</a></li>
+<li><a href="https://github.com/roddhjav/pass-import/">pass import extension</a></li>
+</ol>
+
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
+    </div>
+    
+
+
+    
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/tutorial">#tutorial</a>
+        
+            <a class="tag" href="/tags/security">#security</a>
+        
+            <a class="tag" href="/tags/git">#git</a>
+        
+            <a class="tag" href="/tags/showdev">#showdev</a>
+        
+      
+    </div>
+
+
+        
+        </div>
+        <footer class="footer-mobile">
+	<div class="social-icons">
+        
+
+    
+
+    
+    <a class="social-icon" href="https://twitter.com/MarceloAndrade" target="_blank" rel="noopener" title="Twitter">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M8.991284,24.971612 C19.180436,24.971612 24.752372,16.530224 24.752372,9.210524 C24.752372,8.970656 24.747512,8.731868 24.736496,8.494376 C25.818008,7.712564 26.758256,6.737 27.5,5.62622 C26.507372,6.067076 25.439252,6.364292 24.318752,6.498212 C25.462472,5.812628 26.340512,4.727444 26.754584,3.434036 C25.684088,4.068536 24.499004,4.53002 23.23724,4.778528 C22.226468,3.701876 20.786828,3.028388 19.193828,3.028388 C16.134404,3.028388 13.653536,5.509256 13.653536,8.567492 C13.653536,9.0023 13.702244,9.424904 13.797176,9.830552 C9.19346,9.599108 5.11106,7.39472 2.3792,4.04294 C1.903028,4.861364 1.629032,5.812628 1.629032,6.827072 C1.629032,8.74904 2.606972,10.445612 4.094024,11.438132 C3.185528,11.41016 2.331788,11.160464 1.585184,10.745096 C1.583888,10.768208 1.583888,10.791428 1.583888,10.815728 C1.583888,13.49888 3.493652,15.738584 6.028088,16.246508 C5.562932,16.373084 5.07326,16.44134 4.56782,16.44134 C4.210988,16.44134 3.863876,16.406024 3.526484,16.34144 C4.231724,18.542264 6.276596,20.143796 8.701412,20.18894 C6.805148,21.674696 4.416836,22.56008 1.821488,22.56008 C1.374476,22.56008 0.93362,22.534592 0.5,22.4834 C2.951708,24.054476 5.862524,24.971612 8.991284,24.971612"></path>
+        </svg>
+    </a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a class="social-icon" href="https://www.linkedin.com/in/marceloandrader" target="_blank" rel="noopener" title="LinkedIn">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M2,3.654102 C2,2.69908141 2.79442509,1.92397846 3.77383592,1.92397846 L24.2261641,1.92397846 C25.2058917,1.92397846 26,2.69908141 26,3.654102 L26,24.3462148 C26,25.3015521 25.2058917,26.0760215 24.2261641,26.0760215 L3.77383592,26.0760215 C2.79442509,26.0760215 2,25.3015521 2,24.3465315 L2,3.65378524 L2,3.654102 Z M9.27526132,22.1415901 L9.27526132,11.2356668 L5.65030092,11.2356668 L5.65030092,22.1415901 L9.27557808,22.1415901 L9.27526132,22.1415901 Z M7.46341463,9.74691162 C8.72727273,9.74691162 9.51409566,8.90940767 9.51409566,7.86284447 C9.49033893,6.79252455 8.72727273,5.97846056 7.48748812,5.97846056 C6.24675325,5.97846056 5.43649034,6.79252455 5.43649034,7.86284447 C5.43649034,8.90940767 6.22299652,9.74691162 7.4396579,9.74691162 L7.46309788,9.74691162 L7.46341463,9.74691162 Z M11.2815965,22.1415901 L14.9062401,22.1415901 L14.9062401,16.0519481 C14.9062401,15.7263225 14.9299968,15.4000634 15.0256573,15.1675641 C15.2876148,14.5159962 15.8840672,13.8416218 16.8856509,13.8416218 C18.1970225,13.8416218 18.7218879,14.8416218 18.7218879,16.3078872 L18.7218879,22.1415901 L22.3465315,22.1415901 L22.3465315,15.8885017 C22.3465315,12.5388027 20.5584416,10.9800443 18.1735825,10.9800443 C16.2182452,10.9800443 15.3595185,12.072854 14.8824834,12.8172315 L14.9065569,12.8172315 L14.9065569,11.2359835 L11.2819132,11.2359835 C11.3291099,12.2591067 11.2815965,22.1419069 11.2815965,22.1419069 L11.2815965,22.1415901 Z"></path>
+        </svg>
+    </a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <a class="social-icon" href="https://github.com/marceloandrader" target="_blank" rel="noopener" title="GitHub">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M13.9988029,1.32087331 C6.82105037,1.32087331 1,7.14112562 1,14.3212723 C1,20.0649109 4.72454649,24.9370678 9.89038951,26.6560892 C10.5408085,26.7757983 10.7778323,26.374374 10.7778323,26.0296121 C10.7778323,25.7215609 10.7666595,24.9035493 10.760275,23.8189856 C7.14426471,24.6042767 6.38131925,22.0760223 6.38131925,22.0760223 C5.78995672,20.5740732 4.93762853,20.1742451 4.93762853,20.1742451 C3.75729765,19.3682044 5.02701126,19.3841656 5.02701126,19.3841656 C6.33183953,19.4759425 7.01817121,20.7241085 7.01817121,20.7241085 C8.17775254,22.7104801 10.0611744,22.1366749 10.8017741,21.8038838 C10.919887,20.9643246 11.2558703,20.3913175 11.6269683,20.066507 C8.74038491,19.7385043 5.70536235,18.6228163 5.70536235,13.6413251 C5.70536235,12.2223743 6.21213051,11.0611968 7.04370914,10.1530044 C6.90963504,9.82420367 6.46351945,8.50181809 7.17139875,6.71256734 C7.17139875,6.71256734 8.26234691,6.36301702 10.7459099,8.04532771 C11.78259,7.75642995 12.8950858,7.61277914 14.000399,7.60719272 C15.1049142,7.61277914 16.2166119,7.75642995 17.2548881,8.04532771 C19.736855,6.36301702 20.8262071,6.71256734 20.8262071,6.71256734 C21.5356825,8.50181809 21.0895669,9.82420367 20.9562909,10.1530044 C21.7894656,11.0611968 22.2922435,12.2223743 22.2922435,13.6413251 C22.2922435,18.6355852 19.2524325,19.734514 16.3570705,20.0561322 C16.8231376,20.4575564 17.2389269,21.2508282 17.2389269,22.4638795 C17.2389269,24.2012564 17.2229657,25.603448 17.2229657,26.0296121 C17.2229657,26.3775663 17.4575954,26.7821827 18.116793,26.6552912 C23.2786458,24.9322794 27,20.0633148 27,14.3212723 C27,7.14112562 21.1789496,1.32087331 13.9988029,1.32087331"></path>
+        </svg>
+    </a>
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<div class="footer-mobile-links">
+		<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+		<span class="divider-bar">|</span>
+		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+	</div>
+
+	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+</footer>
+    </body>
+</html>

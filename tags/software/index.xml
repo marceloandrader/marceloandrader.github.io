@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>software on Tip Diario de Desarrollo Web</title>
+    <link>https://marceloandrader.github.io/tags/software/</link>
+    <description>Recent content in software on Tip Diario de Desarrollo Web</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ec</language>
+    <lastBuildDate>Fri, 15 Nov 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://marceloandrader.github.io/posts/2013-11-15-docker/</link>
+      <pubDate>Fri, 15 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/posts/2013-11-15-docker/</guid>
+      <description>Desplegar aplicaciones en linux es un proceso fácil si tu aplicación solo usa un servidor, normalmente se usa el sistema propio de manejo de paquetes para poner a punto el servidor con todos los componentes instalados para publicar una aplicación web, sitio web dinámico, etc.</description>
+    </item>
+    
+    <item>
+      <title>Caso práctico de uso de vagrant</title>
+      <link>https://marceloandrader.github.io/posts/2012-05-28-caso-practico-de-uso-de-vagrant/</link>
+      <pubDate>Mon, 28 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/posts/2012-05-28-caso-practico-de-uso-de-vagrant/</guid>
+      <description>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.</description>
+    </item>
+    
+    <item>
+      <title>Aislar ambientes de desarrollo con Vagrant</title>
+      <link>https://marceloandrader.github.io/posts/2012-02-06-aislar-ambientes-de-desarrollo-con-vagrant/</link>
+      <pubDate>Mon, 06 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/posts/2012-02-06-aislar-ambientes-de-desarrollo-con-vagrant/</guid>
+      <description>Si desarrollas en un solo tipo de &amp;lsquo;stack&amp;rsquo; de desarrollo lo más común es instalar este stack en tu máquina principal y desarrollar directamente en el sistema operativo de tu preferencia.</description>
+    </item>
+    
+    <item>
+      <title>Dependencias de Aplicaciones Web</title>
+      <link>https://marceloandrader.github.io/posts/2011-12-16-dependencias-de-aplicaciones-web/</link>
+      <pubDate>Fri, 16 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/posts/2011-12-16-dependencias-de-aplicaciones-web/</guid>
+      <description>En esta sección sí hay mucho por contar, cada día dependo más y más en servicios web.</description>
+    </item>
+    
+    <item>
+      <title>Dependencias de Aplicaciones CLI</title>
+      <link>https://marceloandrader.github.io/blog/2019/04/11/migration-keepassxc-to-pass/</link>
+      <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2019/04/11/migration-keepassxc-to-pass/</guid>
+      <description>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos</description>
+    </item>
+    
+    <item>
+      <title>Dependencias de Software de Escritorio</title>
+      <link>https://marceloandrader.github.io/posts/2011-12-15-dependencias-de-software-de-escritorio/</link>
+      <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/posts/2011-12-15-dependencias-de-software-de-escritorio/</guid>
+      <description>Como sistema operativo uso Mac OS X (Snow Leopard), las aplicaciones que más uso en orden de frecuencia de uso serían:</description>
+    </item>
+    
+  </channel>
+</rss>

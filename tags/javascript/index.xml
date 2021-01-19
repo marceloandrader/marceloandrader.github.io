@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Tip Diario de Desarrollo Web</title>
+    <link>https://marceloandrader.github.io/tags/javascript/</link>
+    <description>Recent content in javascript on Tip Diario de Desarrollo Web</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ec</language>
+    <lastBuildDate>Tue, 19 Feb 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aplicaciones Web del lado del Cliente con MVVM</title>
+      <link>https://marceloandrader.github.io/posts/2013-02-19-aplicaciones-web-del-lado-del-cliente-con-mvvm/</link>
+      <pubDate>Tue, 19 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/posts/2013-02-19-aplicaciones-web-del-lado-del-cliente-con-mvvm/</guid>
+      <description>Aplicaciones web con alta carga de lógica del lado cliente han comenzado a popularizarse, la idea es que mucho de lo que antes se hacía en el servidor, ahora se lo puede hacer en el cliente (browser) y dejar al servidor solo como un API de acceso a la persistencia de los datos.</description>
+    </item>
+    
+  </channel>
+</rss>
