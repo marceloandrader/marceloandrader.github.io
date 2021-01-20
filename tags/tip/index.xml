@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tip on Tip Diario de Desarrollo Web</title>
+    <link>https://marceloandrader.github.io/tags/tip/</link>
+    <description>Recent content in tip on Tip Diario de Desarrollo Web</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ec</language>
+    <lastBuildDate>Wed, 20 Jan 2021 07:00:25 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Php Web Server</title>
+      <link>https://marceloandrader.github.io/blog/2021/01/20/php-web-server/</link>
+      <pubDate>Wed, 20 Jan 2021 07:00:25 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/01/20/php-web-server/</guid>
+      <description>Sabían que la línea de comandos de php tiene un servidor web interno.
+Me ha servido mucho para realizar desarrollos de prueba o verificar un sitio estático o incluso para compartir archivos en una red interna.</description>
+    </item>
+    
+  </channel>
+</rss>

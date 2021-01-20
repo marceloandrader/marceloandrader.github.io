@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>software | Tip Diario de Desarrollo Web</title>
+    <title>Php Web Server | Tip Diario de Desarrollo Web</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/tags/software/index.xml" title="Tip Diario de Desarrollo Web" />
     </head>
 
     <body>
@@ -138,113 +136,45 @@
         <div id="content" class="content-container">
         
 
-  <h1>Tagged "software"</h1>
-  
-  
+<h1 class="post-title">Php Web Server</h1>
     
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2013/11/15/docker/">
-                    Docker
-                </a>
-            </h2>
-            <div>
-                <p>Desplegar aplicaciones en linux es un proceso fácil si tu aplicación solo usa un servidor, normalmente se usa el sistema propio de manejo de paquetes para poner a punto el servidor con todos los componentes instalados para publicar una aplicación web, sitio web dinámico, etc.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>November 15, 2013</time>
-            </div> 
-        </article>
+    <time>January 20, 2021</time>
     
-  
+    <div>
+        <p>
+        <p>Sabían que la línea de comandos de <code>php</code> tiene un servidor web interno.</p>
+<p>Me ha servido mucho para realizar desarrollos de prueba o verificar un sitio estático o
+incluso para compartir archivos en una red interna.</p>
+<p>El comando es:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ php -S 0.0.0.0:8000 -t www</code></pre></div>
+<p>Donde -S indica el host y puerto donde se escuchará las peticiones.
+0.0.0.0 indica abra el puerto en todas las interfaces disponibles
+Y -t indica el directorio desde donde se leerá los archivos.</p>
+<p>Esto creará un pequeño servidor web, puedes abrir el sitio en <a href="http://localhost:8000">http://localhost:8000</a> o
+desde otro dispositivo en la misma red http://ip-donde-ejecuto-php:8000</p>
+<p>Lo más importante de este tip es que si existen archivos php en ese directorio se ejecutan. El comando <code>artisan serve</code> de laravel
+usa este servidor interno.</p>
+
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
+    </div>
     
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2012/05/28/caso-pr%C3%A1ctico-de-uso-de-vagrant/">
-                    Caso práctico de uso de vagrant
-                </a>
-            </h2>
-            <div>
-                <p>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.
-##Pre-Requisitos Instalar VirtualBox Descargar VirtualBox vagrant soporta las versiones 4.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>May 28, 2012</time>
-            </div> 
-        </article>
+
+
     
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2012/02/06/aislar-ambientes-de-desarrollo-con-vagrant/">
-                    Aislar ambientes de desarrollo con Vagrant
-                </a>
-            </h2>
-            <div>
-                <p>Si desarrollas en un solo tipo de &lsquo;stack&rsquo; de desarrollo lo más común es instalar este stack en tu máquina principal y desarrollar directamente en el sistema operativo de tu preferencia.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 6, 2012</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2011/12/16/dependencias-de-aplicaciones-web/">
-                    Dependencias de Aplicaciones Web
-                </a>
-            </h2>
-            <div>
-                <p>En esta sección sí hay mucho por contar, cada día dependo más y más en servicios web.
-Entre los que más uso por frecuencia están:</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>December 16, 2011</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-aplicaciones-cli/">
-                    Dependencias de Aplicaciones CLI
-                </a>
-            </h2>
-            <div>
-                <p>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos
-history | awk &#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &#34; &#34; CMD[a]/count*100 &#34;% &#34; a;}&#39; | grep -v &#34;.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>December 15, 2011</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-software-de-escritorio/">
-                    Dependencias de Software de Escritorio
-                </a>
-            </h2>
-            <div>
-                <p>Como sistema operativo uso Mac OS X (Snow Leopard), las aplicaciones que más uso en orden de frecuencia de uso serían:</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>December 15, 2011</time>
-            </div> 
-        </article>
-    
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/php">#php</a>
+        
+            <a class="tag" href="/tags/tip">#tip</a>
+        
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
+        
+      
+    </div>
 
 
         

@@ -13,7 +13,8 @@
       <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
       
       <guid>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-aplicaciones-cli/</guid>
-      <description>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos</description>
+      <description>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos
+history | awk &amp;#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &amp;#34; &amp;#34; CMD[a]/count*100 &amp;#34;% &amp;#34; a;}&amp;#39; | grep -v &amp;#34;.</description>
     </item>
     
   </channel>

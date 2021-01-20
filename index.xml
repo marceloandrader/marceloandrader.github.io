@@ -6,7 +6,17 @@
     <description>Recent content on Tip Diario de Desarrollo Web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jan 2021 07:00:25 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Php Web Server</title>
+      <link>https://marceloandrader.github.io/blog/2021/01/20/php-web-server/</link>
+      <pubDate>Wed, 20 Jan 2021 07:00:25 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/01/20/php-web-server/</guid>
+      <description>Sabían que la línea de comandos de php tiene un servidor web interno.
+Me ha servido mucho para realizar desarrollos de prueba o verificar un sitio estático o incluso para compartir archivos en una red interna.</description>
+    </item>
+    
     <item>
       <title>My migration from keepassxc to pass (password store)</title>
       <link>https://marceloandrader.github.io/blog/2019/04/11/my-migration-from-keepassxc-to-pass-password-store/</link>
@@ -40,7 +50,8 @@
       <pubDate>Mon, 28 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://marceloandrader.github.io/blog/2012/05/28/caso-pr%C3%A1ctico-de-uso-de-vagrant/</guid>
-      <description>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.</description>
+      <description>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.
+##Pre-Requisitos Instalar VirtualBox Descargar VirtualBox vagrant soporta las versiones 4.</description>
     </item>
     
     <item>
@@ -58,7 +69,8 @@
       <pubDate>Fri, 16 Dec 2011 00:00:00 +0000</pubDate>
       
       <guid>https://marceloandrader.github.io/blog/2011/12/16/dependencias-de-aplicaciones-web/</guid>
-      <description>En esta sección sí hay mucho por contar, cada día dependo más y más en servicios web.</description>
+      <description>En esta sección sí hay mucho por contar, cada día dependo más y más en servicios web.
+Entre los que más uso por frecuencia están:</description>
     </item>
     
     <item>
@@ -67,7 +79,8 @@
       <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
       
       <guid>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-aplicaciones-cli/</guid>
-      <description>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos</description>
+      <description>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos
+history | awk &amp;#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &amp;#34; &amp;#34; CMD[a]/count*100 &amp;#34;% &amp;#34; a;}&amp;#39; | grep -v &amp;#34;.</description>
     </item>
     
     <item>

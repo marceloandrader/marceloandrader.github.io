@@ -149,7 +149,8 @@
                 </a>
             </h2>
             <div>
-                <p>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos</p>
+                <p>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos
+history | awk &#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &#34; &#34; CMD[a]/count*100 &#34;% &#34; a;}&#39; | grep -v &#34;.</p>
                 
             </div>
             <div class="post-footer">
