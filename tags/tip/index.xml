@@ -6,7 +6,16 @@
     <description>Recent content in tip on Tip Diario de Desarrollo Web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Wed, 20 Jan 2021 07:00:25 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jan 2021 06:44:11 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Compartir un sitio local al Internet</title>
+      <link>https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/</link>
+      <pubDate>Thu, 21 Jan 2021 06:44:11 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/</guid>
+      <description>Alguna vez les ha pasado que un cliente desea ver avances del desarrollo pero no tienen desplegado aún el ambiente de pruebas?</description>
+    </item>
+    
     <item>
       <title>Php Web Server</title>
       <link>https://marceloandrader.github.io/blog/2021/01/20/php-web-server/</link>

@@ -3,8 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/</loc>
+    <lastmod>2021-01-21T06:44:11-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
-    <lastmod>2021-01-20T07:00:25-05:00</lastmod>
+    <lastmod>2021-01-21T06:44:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/networking/</loc>
+    <lastmod>2021-01-21T06:44:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/posts/</loc>
+    <lastmod>2021-01-21T06:44:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/</loc>
+    <lastmod>2021-01-21T06:44:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/tip/</loc>
+    <lastmod>2021-01-21T06:44:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/</loc>
+    <lastmod>2021-01-21T06:44:11-05:00</lastmod>
   </url>
   
   <url>
@@ -14,26 +44,6 @@
   
   <url>
     <loc>https://marceloandrader.github.io/blog/2021/01/20/php-web-server/</loc>
-    <lastmod>2021-01-20T07:00:25-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/posts/</loc>
-    <lastmod>2021-01-20T07:00:25-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/</loc>
-    <lastmod>2021-01-20T07:00:25-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/tip/</loc>
-    <lastmod>2021-01-20T07:00:25-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/</loc>
     <lastmod>2021-01-20T07:00:25-05:00</lastmod>
   </url>
   
