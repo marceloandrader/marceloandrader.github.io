@@ -6,7 +6,16 @@
     <description>Recent content on Tip Diario de Desarrollo Web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Thu, 21 Jan 2021 06:44:11 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jan 2021 06:48:15 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autocompletado de alta velocidad Starship</title>
+      <link>https://marceloandrader.github.io/blog/2021/01/22/autocompletado-de-alta-velocidad-starship/</link>
+      <pubDate>Fri, 22 Jan 2021 06:48:15 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/01/22/autocompletado-de-alta-velocidad-starship/</guid>
+      <description>Como desarrolladores pasamos mucho tiempo en la línea de comandos, la mayoría del tiempo escribimos los mismos comandos una y otra vez, tan solo cambiando un poco la órden.</description>
+    </item>
+    
     <item>
       <title>Compartir un sitio local al Internet</title>
       <link>https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/</link>
