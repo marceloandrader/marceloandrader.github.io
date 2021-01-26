@@ -145,10 +145,10 @@
         <p>Existe una línea de código que agrego siempre a los script bash
 que me ayuda mucho a evitar errores comunes cuando se escribe
 un script.</p>
-<pre><code>#!/bin/bash
-
-set -euxo pipefail
-</code></pre><p>La tercera línea en este ejemplo sirve para indicar al interprete
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+set -euxo pipefail</code></pre></div>
+<p>La tercera línea en este ejemplo sirve para indicar al interprete
 lo siguiente:</p>
 <p><em>set -e</em> Le dice a bash que termine inmediatamente si algun comando falla</p>
 <p><em>set -o pipefail</em> Bash normalmente revisa el último código de salida cuando se ejecuta en pipes. Con este cambio el comportamiento hace que si un comando falla en un pipeline todo el pipeline falle.</p>
@@ -167,6 +167,13 @@ lo siguiente:</p>
 
     <div class="page-footer">
         
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/tip">#tip</a>
+        
+            <a class="tag" href="/tags/bash">#bash</a>
+        
+      
     </div>
 
 

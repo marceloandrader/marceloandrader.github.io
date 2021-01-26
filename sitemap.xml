@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marceloandrader.github.io/tags/bash/</loc>
+    <lastmod>2021-01-26T07:08:44-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/</loc>
     <lastmod>2021-01-26T07:08:44-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://marceloandrader.github.io/posts/</loc>
+    <lastmod>2021-01-26T07:08:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/</loc>
+    <lastmod>2021-01-26T07:08:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/tip/</loc>
     <lastmod>2021-01-26T07:08:44-05:00</lastmod>
   </url>
   
@@ -24,16 +39,6 @@
   
   <url>
     <loc>https://marceloandrader.github.io/blog/2021/01/25/formatea-t%C3%BA-c%C3%B3digo-con-prettier/</loc>
-    <lastmod>2021-01-25T07:07:48-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/</loc>
-    <lastmod>2021-01-25T07:07:48-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/tip/</loc>
     <lastmod>2021-01-25T07:07:48-05:00</lastmod>
   </url>
   
