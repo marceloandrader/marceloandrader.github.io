@@ -6,7 +6,16 @@
     <description>Recent content on Tip Diario de Desarrollo Web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Mon, 25 Jan 2021 07:07:48 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jan 2021 07:08:44 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bash sin sorpresas</title>
+      <link>https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/</link>
+      <pubDate>Tue, 26 Jan 2021 07:08:44 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/</guid>
+      <description>Existe una línea de código que agrego siempre a los script bash que me ayuda mucho a evitar errores comunes cuando se escribe un script.</description>
+    </item>
+    
     <item>
       <title>Formatea tú código con prettier</title>
       <link>https://marceloandrader.github.io/blog/2021/01/25/formatea-t%C3%BA-c%C3%B3digo-con-prettier/</link>
