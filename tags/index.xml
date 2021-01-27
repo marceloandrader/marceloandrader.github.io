@@ -6,22 +6,31 @@
     <description>Recent content in Tags on Tip Diario de Desarrollo Web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Tue, 26 Jan 2021 07:08:44 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jan 2021 09:49:03 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>bash</title>
-      <link>https://marceloandrader.github.io/tags/bash/</link>
-      <pubDate>Tue, 26 Jan 2021 07:08:44 -0500</pubDate>
+      <title>api</title>
+      <link>https://marceloandrader.github.io/tags/api/</link>
+      <pubDate>Wed, 27 Jan 2021 09:49:03 -0500</pubDate>
       
-      <guid>https://marceloandrader.github.io/tags/bash/</guid>
+      <guid>https://marceloandrader.github.io/tags/api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tip</title>
       <link>https://marceloandrader.github.io/tags/tip/</link>
-      <pubDate>Tue, 26 Jan 2021 07:08:44 -0500</pubDate>
+      <pubDate>Wed, 27 Jan 2021 09:49:03 -0500</pubDate>
       
       <guid>https://marceloandrader.github.io/tags/tip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://marceloandrader.github.io/tags/bash/</link>
+      <pubDate>Tue, 26 Jan 2021 07:08:44 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/tags/bash/</guid>
       <description></description>
     </item>
     

@@ -3,32 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marceloandrader.github.io/tags/api/</loc>
+    <lastmod>2021-01-27T09:49:03-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/blog/2021/01/27/formatear-y-convertir-json-al-vuelo-con-jq/</loc>
+    <lastmod>2021-01-27T09:49:03-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/posts/</loc>
+    <lastmod>2021-01-27T09:49:03-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/</loc>
+    <lastmod>2021-01-27T09:49:03-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/tip/</loc>
+    <lastmod>2021-01-27T09:49:03-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/</loc>
+    <lastmod>2021-01-27T09:49:03-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://marceloandrader.github.io/tags/bash/</loc>
     <lastmod>2021-01-26T07:08:44-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/</loc>
-    <lastmod>2021-01-26T07:08:44-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/posts/</loc>
-    <lastmod>2021-01-26T07:08:44-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/</loc>
-    <lastmod>2021-01-26T07:08:44-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/tip/</loc>
-    <lastmod>2021-01-26T07:08:44-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/</loc>
     <lastmod>2021-01-26T07:08:44-05:00</lastmod>
   </url>
   
