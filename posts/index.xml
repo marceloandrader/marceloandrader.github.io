@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Tip Diario de Desarrollo Web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Thu, 28 Jan 2021 07:36:53 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Feb 2021 07:44:10 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github Actions</title>
+      <link>https://marceloandrader.github.io/blog/2021/02/01/github-actions/</link>
+      <pubDate>Mon, 01 Feb 2021 07:44:10 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/02/01/github-actions/</guid>
+      <description>Verificar que tu código esté bien en tu máquina local es algo que se debe como parte del proceso de desarrollo, pero muchas veces cuando el cambio es muy pequeño y lo probaste en el browser y funciona, la opción más rápida es solo hacer commit y listo, no se ejecuta los tests, estilos de código, linters etc.</description>
+    </item>
+    
     <item>
       <title>El código es una carga</title>
       <link>https://marceloandrader.github.io/blog/2021/01/28/el-c%C3%B3digo-es-una-carga/</link>
