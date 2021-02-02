@@ -6,7 +6,16 @@
     <description>Recent content on Tip Diario de Desarrollo Web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Mon, 01 Feb 2021 07:44:10 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Feb 2021 10:47:23 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Siempre tener una base de datos de asuntos pendientes</title>
+      <link>https://marceloandrader.github.io/blog/2021/02/02/siempre-tener-una-base-de-datos-de-asuntos-pendientes/</link>
+      <pubDate>Tue, 02 Feb 2021 10:47:23 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/02/02/siempre-tener-una-base-de-datos-de-asuntos-pendientes/</guid>
+      <description>Hace muchos años ya, entré a trabajar en un banco, éramos un grupo pequeño de tecnología, 3 desarrolladores, 2 de soporte, 1 de operaciones y 1 jefe.</description>
+    </item>
+    
     <item>
       <title>Github Actions</title>
       <link>https://marceloandrader.github.io/blog/2021/02/01/github-actions/</link>
