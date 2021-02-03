@@ -6,7 +6,16 @@
     <description>Recent content in tip on Tip Diario de Desarrollo Web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Tue, 02 Feb 2021 10:47:23 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Feb 2021 12:19:28 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>curl: la navaja suiza de los protocolos de Internet</title>
+      <link>https://marceloandrader.github.io/blog/2021/02/03/curl-la-navaja-suiza-de-los-protocolos-de-internet/</link>
+      <pubDate>Wed, 03 Feb 2021 12:19:28 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/02/03/curl-la-navaja-suiza-de-los-protocolos-de-internet/</guid>
+      <description>Una de las herramientas que más uso en el día a día es curl, es muy versátil y soporta una gran cantidad de protocolos, los que más uso son solo http y https, pero tiene soporte para los siguientes protocolos de acuerdo a su página web DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP.</description>
+    </item>
+    
     <item>
       <title>Siempre tener una base de datos de asuntos pendientes</title>
       <link>https://marceloandrader.github.io/blog/2021/02/02/siempre-tener-una-base-de-datos-de-asuntos-pendientes/</link>
