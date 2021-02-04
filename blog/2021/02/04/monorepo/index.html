@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tip Diario de Desarrollo Web</title>
+    <title>Monorepo | Tip Diario de Desarrollo Web</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tip Diario de Desarrollo Web" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,147 +148,40 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2013/11/15/docker/">
-                    Docker
-                </a>
-            </h2>
-            <div>
-                <p>Desplegar aplicaciones en linux es un proceso fácil si tu aplicación solo usa un servidor, normalmente se usa el sistema propio de manejo de paquetes para poner a punto el servidor con todos los componentes instalados para publicar una aplicación web, sitio web dinámico, etc.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>November 15, 2013</time>
 
-            
-            
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-                    <a class="tag" href="/tags/linux">#linux</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2013/02/19/aplicaciones-web-del-lado-del-cliente-con-mvvm/">
-                    Aplicaciones Web del lado del Cliente con MVVM
-                </a>
-            </h2>
-            <div>
-                <p>Aplicaciones web con alta carga de lógica del lado cliente han comenzado a popularizarse, la idea es que mucho de lo que antes se hacía en el servidor, ahora se lo puede hacer en el cliente (browser) y dejar al servidor solo como un API de acceso a la persistencia de los datos.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 19, 2013</time>
+<h1 class="post-title">Monorepo</h1>
+    
+    <time>February 4, 2021</time>
+    
+    <div>
+        <p>
+        <p>En muchos sistemas modernos se opta por tener una aplicación web de página única o Single Page Application, en donde obligatoriamente tenemos al menos 2 partes, un backend y un frontend, los dos con diferentes estilos de programación y que deben ejecutarse en la misma versión para que todo funcione correctamente.</p>
+<p>Cuando se almacenan estos dos sistemas en diferentes repositorios es difícil mantener la dependencia de versiones, por ejemplo que el frontend tenga una funcionalidad que depende de una función en el backend, si desplegamos solo el frontend corremos el riesgo de tener bugs en producción ya que al tratar de ejecutar esta función el backend no tiene forma de responder.</p>
+<p>Hace un año con uno de mis clientes, hice una migración de una estructura multi repositorio a una de único repositorio o monorepo. Realmente fue un cambio significativo en la experiencia de desarrollo, teníamos 4 aplicaciones frontend 2 de administración y 2 portales web, cada una compartía 2 paquetes privados, y una REST API en PHP, por lo que teníamos 9 repositorios de código. Cuando hacíamos cambios era un dolor de cabeza el hacer que todas las dependencias vayan de la mano especialmente cuando hacíamos cambios en los paquetes privados.</p>
+<p>Utilice estas herramientas <a href="https://github.com/shopsys/monorepo-tools">monorepo-tools</a> que permiten importar todos los repositorios a uno solo, sin perder su historia, lo más importante durante este proceso es tratar de cerrar la mayoría de ramas de código para que no se pierda ningún commit.</p>
+<p>Para desplegar un monorepo cualquier rama de código siempre está en la correcta dependencia, si una app de frontend usa una función del REST API, estamos seguros que esa función también está en el backend en esa rama, de esa forma al realizar el merge correspondiente, toda la funcionalidad se une a la rama principal y el despliegue es seguro.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/javascript">#javascript</a>
-                
-                    <a class="tag" href="/tags/framework">#framework</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2012/05/28/caso-pr%C3%A1ctico-de-uso-de-vagrant/">
-                    Caso práctico de uso de vagrant
-                </a>
-            </h2>
-            <div>
-                <p>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.
-##Pre-Requisitos Instalar VirtualBox Descargar VirtualBox vagrant soporta las versiones 4.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>May 28, 2012</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2012/02/06/aislar-ambientes-de-desarrollo-con-vagrant/">
-                    Aislar ambientes de desarrollo con Vagrant
-                </a>
-            </h2>
-            <div>
-                <p>Si desarrollas en un solo tipo de &lsquo;stack&rsquo; de desarrollo lo más común es instalar este stack en tu máquina principal y desarrollar directamente en el sistema operativo de tu preferencia.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 6, 2012</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 4 of 5</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/3/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/5/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
         
+            <a class="tag" href="/tags/git">#git</a>
+        
+      
     </div>
+
 
         
         </div>
