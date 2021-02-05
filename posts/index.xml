@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Tip Diario de Desarrollo Web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Thu, 04 Feb 2021 18:07:18 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Feb 2021 06:53:50 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¿Qué sistema operativo es mejor para programar?</title>
+      <link>https://marceloandrader.github.io/blog/2021/02/05/qu%C3%A9-sistema-operativo-es-mejor-para-programar/</link>
+      <pubDate>Fri, 05 Feb 2021 06:53:50 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/02/05/qu%C3%A9-sistema-operativo-es-mejor-para-programar/</guid>
+      <description>Linux. Fin.
+Solo bromeaba, ojalá este tipo de preguntas fueran tan fáciles de responder, como todo en la vida no es una respuesta de blanco o negro, hay muchos matices y en este caso hay que escudriñar un poco más para poder tener una respuesta que se ajuste a tu contexto.</description>
+    </item>
+    
     <item>
       <title>Monorepo</title>
       <link>https://marceloandrader.github.io/blog/2021/02/04/monorepo/</link>

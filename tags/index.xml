@@ -6,13 +6,22 @@
     <description>Recent content in Tags on Tip Diario de Desarrollo Web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Thu, 04 Feb 2021 18:07:18 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Feb 2021 06:53:50 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>desarrollo</title>
       <link>https://marceloandrader.github.io/tags/desarrollo/</link>
-      <pubDate>Thu, 04 Feb 2021 18:07:18 -0500</pubDate>
+      <pubDate>Fri, 05 Feb 2021 06:53:50 -0500</pubDate>
       
       <guid>https://marceloandrader.github.io/tags/desarrollo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tip</title>
+      <link>https://marceloandrader.github.io/tags/tip/</link>
+      <pubDate>Fri, 05 Feb 2021 06:53:50 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/tags/tip/</guid>
       <description></description>
     </item>
     
@@ -22,15 +31,6 @@
       <pubDate>Thu, 04 Feb 2021 18:07:18 -0500</pubDate>
       
       <guid>https://marceloandrader.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tip</title>
-      <link>https://marceloandrader.github.io/tags/tip/</link>
-      <pubDate>Thu, 04 Feb 2021 18:07:18 -0500</pubDate>
-      
-      <guid>https://marceloandrader.github.io/tags/tip/</guid>
       <description></description>
     </item>
     
