@@ -155,7 +155,7 @@ if (!doNotTrack) {
     
     <div>
         <p>
-        <p>Cuando uno piensa que una aplicación va a ser muy pequeña como para usar un framework completo o un framework que no tiene migraciones para base de datos, y los cambios a la base de datos generalemente se hacen a mano. Pero luego de un tiempo el sistema sigue creciendo y el equipo también crece, es importante que los cambios a la estructura de la base de datos sean versionados dentro del repositorio.</p>
+        <p>Cuando uno piensa que una aplicación va a ser muy pequeña como para usar un framework completo o un framework que no tiene migraciones para base de datos, y los cambios a la base de datos generalmente se hacen a mano. Pero luego de un tiempo el sistema sigue creciendo y el equipo también crece, es importante que los cambios a la estructura de la base de datos sean versionados dentro del repositorio.</p>
 <p>Aquí es donde entra una excelente herramienta <a href="https://phinx.org/">phinx</a> un paquete de PHP escrito por Rob Morgan que es agnóstico a los frameworks. Puede ser instalado en cualquier proyecto de PHP usando composer. Permite crear migraciones en el ambiente de desarrollo que una vez probadas completamente, serán aplicadas en ambientes de pruebas y producción.</p>
 <p>Phinx permite a los desarrolladores alterar y manipular la base de datos en una manera clara y concisa. No ejecuta SQL directamente sino que ofrece una API poderosa para crear migraciones usando código PHP. Esto hace que las migraciones de phinx sean portables entre diferentes motores de bases de datos. Phinx sabe cuales migraciones ya se ejecutaron, así que no tienes que llevar cuenta de cuales migraciones tienen que ejecutarse.</p>
 <p>Para instalar solo necesita:</p>
