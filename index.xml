@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tip Diario de Desarrollo Web</title>
+    <title>Tips de Desarrollo</title>
     <link>https://marceloandrader.github.io/</link>
-    <description>Recent content on Tip Diario de Desarrollo Web</description>
+    <description>Recent content on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
     <lastBuildDate>Tue, 09 Feb 2021 06:43:23 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />

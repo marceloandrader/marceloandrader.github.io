@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bash on Tip Diario de Desarrollo Web</title>
+    <title>bash on Tips de Desarrollo</title>
     <link>https://marceloandrader.github.io/tags/bash/</link>
-    <description>Recent content in bash on Tip Diario de Desarrollo Web</description>
+    <description>Recent content in bash on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
     <lastBuildDate>Tue, 26 Jan 2021 07:08:44 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
