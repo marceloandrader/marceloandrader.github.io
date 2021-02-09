@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tip Diario de Desarrollo Web</title>
+    <title>Migraciones de base de datos con Phinx | Tip Diario de Desarrollo Web</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tip Diario de Desarrollo Web" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,146 +148,64 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/">
-                    Bash sin sorpresas
-                </a>
-            </h2>
-            <div>
-                <p>Existe una línea de código que agrego siempre a los script bash que me ayuda mucho a evitar errores comunes cuando se escribe un script.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 26, 2021</time>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/bash">#bash</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/25/formatea-t%C3%BA-c%C3%B3digo-con-prettier/">
-                    Formatea tú código con prettier
-                </a>
-            </h2>
-            <div>
-                <p>Trabajas en equipo y pasas tiempo insistiendo en que coloquen los paréntesis donde te gusta, que el indentado del código sea como dicta cierto estándar, o tu mismo pasas tiempo en tu editor dándole formato al código para que sea agradable a la vista.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 25, 2021</time>
+<h1 class="post-title">Migraciones de base de datos con Phinx</h1>
+    
+    <time>February 9, 2021</time>
+    
+    <div>
+        <p>
+        <p>Cuando uno piensa que una aplicación va a ser muy pequeña como para usar un framework completo o un framework que no tiene migraciones para base de datos, y los cambios a la base de datos generalemente se hacen a mano. Pero luego de un tiempo el sistema sigue creciendo y el equipo también crece, es importante que los cambios a la estructura de la base de datos sean versionados dentro del repositorio.</p>
+<p>Aquí es donde entra una excelente herramienta <a href="https://phinx.org/">phinx</a> un paquete de PHP escrito por Rob Morgan que es agnóstico a los frameworks. Puede ser instalado en cualquier proyecto de PHP usando composer. Permite crear migraciones en el ambiente de desarrollo que una vez probadas completamente, serán aplicadas en ambientes de pruebas y producción.</p>
+<p>Phinx permite a los desarrolladores alterar y manipular la base de datos en una manera clara y concisa. No ejecuta SQL directamente sino que ofrece una API poderosa para crear migraciones usando código PHP. Esto hace que las migraciones de phinx sean portables entre diferentes motores de bases de datos. Phinx sabe cuales migraciones ya se ejecutaron, así que no tienes que llevar cuenta de cuales migraciones tienen que ejecutarse.</p>
+<p>Para instalar solo necesita:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ composer require robmorgan/phinx</code></pre></div>
+<p>Y crear una carpeta donde se almacentarán las migraciones, generalmente <code>db/migrations</code>.</p>
+<p>Para iniciar el uso de phinx se ejecuta:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vendor/bin/phinx init</code></pre></div>
+<p>Revisar el archivo phinx.php donde se debe especificar las diferentes conexiones a las bases de datos.</p>
+<p>Para crear una nueva migración con</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vendor/bin/phinx create CrearTablaUsuarios</code></pre></div>
+<p>Una migración es una clase php con un nombre único, que se crea con el método <code>change</code> o que puede se puede cambiar para tener los métodos <code>up</code> y <code>down</code>. Y dentro de este método se utiliza el api de phinx para realizar las operaciones de cambios. Up para cambiar la estructura y down para reversar el cambio si hacemos un rollback. O simplemente change se usa para hacer el cambio y que phinx infiera la reversión. Por ejemplo las siguientes funciones son frecuentes al escribir migraciones:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">table</span>(<span style="color:#e6db74">&#39;usuarios&#39;</span>)
+<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addColumn</span>(<span style="color:#e6db74">&#39;name&#39;</span>, <span style="color:#e6db74">&#39;string&#39;</span>)
+<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addColumn</span>(<span style="color:#e6db74">&#39;created_on&#39;</span>, <span style="color:#e6db74">&#39;datetime&#39;</span>)
+<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">create</span>();
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/22/autocompletado-de-alta-velocidad-starship/">
-                    Autocompletado de alta velocidad Starship
-                </a>
-            </h2>
-            <div>
-                <p>Como desarrolladores pasamos mucho tiempo en la línea de comandos, la mayoría del tiempo escribimos los mismos comandos una y otra vez, tan solo cambiando un poco la orden.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 22, 2021</time>
+$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">table</span>(<span style="color:#e6db74">&#39;usuarios&#39;</span>)
+<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">removeColumn</span>(<span style="color:#e6db74">&#39;name&#39;</span>, <span style="color:#e6db74">&#39;string&#39;</span>)
+<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">udpate</span>();
+</code></pre></div>
+<p>Se aplica la migración con:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vendor/bin/phinx migrate -e development</code></pre></div>
+<p>donde -e indica que conexión definida en phinx.php usar</p>
+<p>Se reversa la migración con:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vendor/bin/phinx rollback</code></pre></div>
+<p>Verificar el estado del ambiente:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vendor/bin/phinx status</code></pre></div>
+<p>También se puede usar phinx para crear archivos <code>Seed</code> para generar datos en la base de desarrollo. Pueden investigar más en la <a href="https://book.cakephp.org/phinx/0/en/index.html">documentación</a> que es muy completa.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/cli">#cli</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/">
-                    Compartir un sitio local al Internet
-                </a>
-            </h2>
-            <div>
-                <p>Alguna vez les ha pasado que un cliente desea ver avances del desarrollo pero no tienen desplegado aún el ambiente de pruebas?</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 21, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/networking">#networking</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 3 of 6</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/2/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/4/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
         
+            <a class="tag" href="/tags/php">#php</a>
+        
+      
     </div>
+
 
         
         </div>

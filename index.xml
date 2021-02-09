@@ -6,7 +6,16 @@
     <description>Recent content on Tip Diario de Desarrollo Web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Fri, 05 Feb 2021 06:53:50 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Feb 2021 06:43:23 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migraciones de base de datos con Phinx</title>
+      <link>https://marceloandrader.github.io/blog/2021/02/09/migraciones-de-base-de-datos-con-phinx/</link>
+      <pubDate>Tue, 09 Feb 2021 06:43:23 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/02/09/migraciones-de-base-de-datos-con-phinx/</guid>
+      <description>Cuando uno piensa que una aplicación va a ser muy pequeña como para usar un framework completo o un framework que no tiene migraciones para base de datos, y los cambios a la base de datos generalemente se hacen a mano.</description>
+    </item>
+    
     <item>
       <title>¿Qué sistema operativo es mejor para programar?</title>
       <link>https://marceloandrader.github.io/blog/2021/02/05/qu%C3%A9-sistema-operativo-es-mejor-para-programar/</link>
