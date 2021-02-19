@@ -6,7 +6,16 @@
     <description>Recent content in tip on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Tue, 16 Feb 2021 07:08:58 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 07:14:40 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Máquinas de Estado Finito (FSM)</title>
+      <link>https://marceloandrader.github.io/blog/2021/02/19/m%C3%A1quinas-de-estado-finito-fsm/</link>
+      <pubDate>Fri, 19 Feb 2021 07:14:40 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/02/19/m%C3%A1quinas-de-estado-finito-fsm/</guid>
+      <description>Una cosa que aprendí luego de cometer el mismo error varias veces en proyectos pasados es dejar de usar booleans en los diseños de las tablas de la base de datos.</description>
+    </item>
+    
     <item>
       <title>Probando código en diferentes versiones de PHP</title>
       <link>https://marceloandrader.github.io/blog/2021/02/16/probando-c%C3%B3digo-en-diferentes-versiones-de-php/</link>
