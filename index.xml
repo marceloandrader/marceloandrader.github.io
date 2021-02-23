@@ -6,7 +6,16 @@
     <description>Recent content on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Fri, 19 Feb 2021 07:14:40 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Feb 2021 13:03:39 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enviando e-mails en ambientes de desarrollo</title>
+      <link>https://marceloandrader.github.io/blog/2021/02/23/enviando-e-mails-en-ambientes-de-desarrollo/</link>
+      <pubDate>Tue, 23 Feb 2021 13:03:39 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/02/23/enviando-e-mails-en-ambientes-de-desarrollo/</guid>
+      <description>Cuando se ejecuta un proyecto localmente, muchas veces se requiere poder enviar e-mails a los usuarios de prueba, en un ambiente de desarrollo NO es recomendable enviar e-mails reales ya que si no se es cuidadoso podemos llegar a usar datos de producción y enviar e-mails de prueba a usuarios reales causando confusión.</description>
+    </item>
+    
     <item>
       <title>Máquinas de Estado Finito (FSM)</title>
       <link>https://marceloandrader.github.io/blog/2021/02/19/m%C3%A1quinas-de-estado-finito-fsm/</link>

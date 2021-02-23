@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tags | Tips de Desarrollo</title>
+    <title>Enviando e-mails en ambientes de desarrollo | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/tags/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -150,47 +148,59 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Enviando e-mails en ambientes de desarrollo</h1>
+    
+    <time>February 23, 2021</time>
+    
+    <div>
+        <p>
+        <p>Cuando se ejecuta un proyecto localmente, muchas veces se requiere poder enviar e-mails
+a los usuarios de prueba, en un ambiente de desarrollo <strong>NO es recomendable</strong> enviar e-mails reales ya que
+si no se es cuidadoso podemos llegar a usar datos de producción y enviar e-mails de prueba a usuarios reales
+causando confusión.</p>
+<p>Existen algunas herramientas que permiten configurar la forma de enviar e-mails, <a href="https://mailtrap.io/">mailtrap</a>
+es una opción SAAS, es gratuito para uso personal, pero si tu equipo crece tiene un costo mensual.</p>
+<p>Una opción que me gusta es usar <a href="https://github.com/mailhog/MailHog">MailHog</a> es solo un ejecutable
+que no tiene dependencias, está escrito en go, y permite configurar tu proyecto para que envíe
+como SMTP y en un browser tienes el despliegue de los e-mails que el proyecto envíe.</p>
+<p>La configuración de cada proyecto depende de su estructura, este es un ejemplo en laravel 8, en el archivo <code>.env</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">MAIL_MAILER<span style="color:#f92672">=</span>smtp
+MAIL_HOST<span style="color:#f92672">=</span>localhost
+MAIL_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">1025</span>
+MAIL_USERNAME<span style="color:#f92672">=</span>null
+MAIL_PASSWORD<span style="color:#f92672">=</span>null
+MAIL_ENCRYPTION<span style="color:#f92672">=</span>null
+MAIL_FROM_ADDRESS<span style="color:#f92672">=</span>noreply@example.com
+MAIL_FROM_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Proyecto&#34;</span></code></pre></div>
+<p>Una vez que <code>mailhog</code> este ejecutandose, abre http://localhost:8025/ prueba enviando un email desde la aplicación
+y se mostrará en esa url como se vería desde un cliente de correo.</p>
+<p>Los e-mails enviados hacia mailhog son solo almacenados en memoria, así que si reinician mailhog, se perderán.</p>
+<p><img src="/images/mailhog.png" alt="MailHog screenshot"></p>
 
-<h1>Tags</h1>
-<ul>
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
+    </div>
     
-        <li><a href="https://marceloandrader.github.io/tags/api/">api</a> 1</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/bash/">bash</a> 1</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/cli/">cli</a> 3</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/desarrollo/">desarrollo</a> 15</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/desktop/">desktop</a> 1</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/framework/">framework</a> 1</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/git/">git</a> 2</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/javascript/">javascript</a> 1</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/linux/">linux</a> 1</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/networking/">networking</a> 1</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/php/">php</a> 4</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/security/">security</a> 1</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/showdev/">showdev</a> 1</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/software/">software</a> 7</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/tip/">tip</a> 16</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/tutorial/">tutorial</a> 1</li>
-    
-        <li><a href="https://marceloandrader.github.io/tags/web/">web</a> 1</li>
-    
-</ul>
 
-<div class="page-footer"></div>
+
+    
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/tip">#tip</a>
+        
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
+        
+      
+    </div>
+
 
         
         </div>
