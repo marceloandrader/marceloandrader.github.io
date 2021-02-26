@@ -6,7 +6,16 @@
     <description>Recent content in tip on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Tue, 23 Feb 2021 13:03:39 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Feb 2021 11:24:33 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>asdf para manejar varias versiones de tus herramientas</title>
+      <link>https://marceloandrader.github.io/blog/2021/02/26/asdf-para-manejar-varias-versiones-de-tus-herramientas/</link>
+      <pubDate>Fri, 26 Feb 2021 11:24:33 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/02/26/asdf-para-manejar-varias-versiones-de-tus-herramientas/</guid>
+      <description>Cuando realizamos desarrollo en nuestra máquina local, es normal que trabajemos en varios proyectos, algunos proyectos más antiguos otros más nuevos, hay veces que tenemos que volver a proyectos antiguos a realizar alguna modificación, pero como ya actualizamos ciertas herramientas a las nuevas versiones, estos proyectos dejan de funcionar.</description>
+    </item>
+    
     <item>
       <title>Enviando e-mails en ambientes de desarrollo</title>
       <link>https://marceloandrader.github.io/blog/2021/02/23/enviando-e-mails-en-ambientes-de-desarrollo/</link>

@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>asdf para manejar varias versiones de tus herramientas | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -152,180 +149,58 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/">
-                    Compartir un sitio local al Internet
-                </a>
-            </h2>
-            <div>
-                <p>Alguna vez les ha pasado que un cliente desea ver avances del desarrollo pero no tienen desplegado aún el ambiente de pruebas?</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 21, 2021</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">asdf para manejar varias versiones de tus herramientas</h1>
+    
+    <time>February 26, 2021</time>
+    
+    <div>
+        <p>
+        <p>Cuando realizamos desarrollo en nuestra máquina local, es normal que trabajemos en varios proyectos, algunos proyectos más antiguos otros más nuevos, hay veces que tenemos que volver a proyectos antiguos a realizar alguna modificación, pero como ya actualizamos ciertas herramientas a las nuevas versiones, estos proyectos dejan de funcionar.</p>
+<p>La solución para esto personalmente creo que es docker, pero si por algún motivo no es una opción para tí, otra solución que funciona bastante bien es <a href="https://asdf-vm.com/">asdf</a> es un manejador de versiones de diferentes herramientas, ha habido muchos de este tipo de paquetes en el pasado para manejar herramientas específicas como rvm, rbenv y ruby-build para ruby, nvm o volta para nodejs.</p>
+<p>La mejor parte de asdf es que es extendible, es decir que a través de plugins puede <code>aprender</code> como manejar varias versiones de diferentes paquetes. Aquí una lista de los plugins que tiene: <a href="https://asdf-vm.com/#/plugins-all?id=plugin-list">plugins asdf</a></p>
+<p>La página de instalación indica como se puede <a href="https://asdf-vm.com/#/core-manage-asdf?id=install">instalar</a> y agregarlo a tu shell.</p>
+<p>Para agregar un plugin se usa:</p>
+<p><code>asdf plugin add nodejs</code></p>
+<p>Instalar la última versión:</p>
+<p><code>asdf install nodejs latest</code></p>
+<p>Instalar una versión específica:</p>
+<p><code>asdf install nodejs 14</code></p>
+<p>Mostrar versiones instaladas:</p>
+<pre><code>asdf list nodejs
+  10.12.0
+  10.13.0
+  12.13.0
+  14.2.0
+</code></pre><p>Para usar una versión específica se puede usar asdf global, local o shell</p>
+<p><code>asdf global nodejs 14</code> crea el archivo $HOME/.tool-versions con ese valor y se usara esa como defecto</p>
+<p><code>asdf local nodejs 14</code> crea el archivo ./.tool-versions en el directorio donde lo llamaron con ese valor y se usará esa como defecto cuando se ingresa en ese directorio, esto es bueno para manejar distintos proyectos, la versión queda especificada en ese archivo.</p>
+<p><code>asdf shell nodejs 14</code> permite utilizar esa versión durante la sesión de shell activa en ese momento, el rato que cierres el terminal se pierde la configuración.</p>
+<p><code>asdf current</code> nos muestra las versiones seleccionadas en este momento.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/networking">#networking</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/20/php-web-server/">
-                    Php Web Server
-                </a>
-            </h2>
-            <div>
-                <p>Sabían que la línea de comandos de php tiene un servidor web interno.
-Me ha servido mucho para realizar desarrollos de prueba o verificar un sitio estático o incluso para compartir archivos en una red interna.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 20, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2019/04/11/my-migration-from-keepassxc-to-pass-password-store/">
-                    My migration from keepassxc to pass (password store)
-                </a>
-            </h2>
-            <div>
-                <p>Background My initial way to keep my long list of passwords/secrets safe in my computer was using the password manager keepassxc it served well, the way to share this with my mobile was putting the kdbx file in Dropbox and use KeePassDroid app to be able to use my passwords on the go.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>April 11, 2019</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tutorial">#tutorial</a>
-                
-                    <a class="tag" href="/tags/security">#security</a>
-                
-                    <a class="tag" href="/tags/git">#git</a>
-                
-                    <a class="tag" href="/tags/showdev">#showdev</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2013/11/15/docker/">
-                    Docker
-                </a>
-            </h2>
-            <div>
-                <p>Desplegar aplicaciones en linux es un proceso fácil si tu aplicación solo usa un servidor, normalmente se usa el sistema propio de manejo de paquetes para poner a punto el servidor con todos los componentes instalados para publicar una aplicación web, sitio web dinámico, etc.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>November 15, 2013</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-                    <a class="tag" href="/tags/linux">#linux</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2013/02/19/aplicaciones-web-del-lado-del-cliente-con-mvvm/">
-                    Aplicaciones Web del lado del Cliente con MVVM
-                </a>
-            </h2>
-            <div>
-                <p>Aplicaciones web con alta carga de lógica del lado cliente han comenzado a popularizarse, la idea es que mucho de lo que antes se hacía en el servidor, ahora se lo puede hacer en el cliente (browser) y dejar al servidor solo como un API de acceso a la persistencia de los datos.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 19, 2013</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/javascript">#javascript</a>
-                
-                    <a class="tag" href="/tags/framework">#framework</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 4 of 5</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/3/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/5/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
         
+      
     </div>
+
 
         
         </div>
