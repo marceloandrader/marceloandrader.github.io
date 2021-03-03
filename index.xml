@@ -6,7 +6,16 @@
     <description>Recent content on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Fri, 26 Feb 2021 11:24:33 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Mar 2021 07:20:20 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zeal documentación de programacion offline</title>
+      <link>https://marceloandrader.github.io/blog/2021/03/03/zeal-documentaci%C3%B3n-de-programacion-offline/</link>
+      <pubDate>Wed, 03 Mar 2021 07:20:20 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/03/03/zeal-documentaci%C3%B3n-de-programacion-offline/</guid>
+      <description>Como desarrolladores de software es imposible saber de memoria todas las API de un lenguaje de programación, la opción más fácil cuando dudas de algo o quieres encontrar más información acerca de una función o clase es buscarla en google y la mayoría de veces te va a llevar a la documentación oficial de la herramienta.</description>
+    </item>
+    
     <item>
       <title>asdf para manejar varias versiones de tus herramientas</title>
       <link>https://marceloandrader.github.io/blog/2021/02/26/asdf-para-manejar-varias-versiones-de-tus-herramientas/</link>
