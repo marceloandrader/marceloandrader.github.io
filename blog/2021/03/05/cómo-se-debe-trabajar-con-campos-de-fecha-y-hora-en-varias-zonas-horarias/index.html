@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>tip | Tips de Desarrollo</title>
+    <title>Cómo se debe trabajar con campos de fecha y hora en varias zonas horarias? | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/tags/tip/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,334 +149,59 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Cómo se debe trabajar con campos de fecha y hora en varias zonas horarias?</h1>
+    
+    <time>March 5, 2021</time>
+    
+    <div>
+        <p>
+        <p>Cuando trabajamos en un proyecto geográficamente local, es posible que no nos hayamos topado con este
+inconveniente todavía, se maneja una sola zona horaria, el servidor está configurado
+en sincronía con la hora local, todos los datos se guardan con hora local, no hay ningún
+problema. Pero qué pasa cuando nuestro producto comienza a hacer usado por personas
+alrededor del mundo? Su hora local ya no es la misma que la hora en el servidor.</p>
+<p>Si tenemos campos como fecha_creacion o fecha_actualizacion generalmente son del tipo
+DATETIME, y son auto-actualizados, cuando insertas un nuevo registro se creará
+con CURRENT_TIME() y cuando se actualiza podemos poner la fecha desde la aplicación o un trigger.</p>
+<p>Si tenemos esta configuración, si un registro se creó a las 8 am hora local,
+la fecha_creacion que ve el usuario A en zona horaria local es 8am pero la fecha_creacion
+que ve el usuario B en una zona horaria de menos 2 horas de diferencia debería ser 6am, pero es
+8am también. No estamos considerando en que zona horaria se encuentra el usuario B.</p>
+<p>Ahora bien, podemos comenzar a capturar la zona horaria en las preferencias del usuario B,
+o reconocer en dónde se encuentra ubicado usando geoip. Y comenzar a realizar operaciones
+de transformación de fecha/hora entre zonas horarias, pero esto rapidamente se vuelve
+inmanejable. Las operaciones de cambio de zona horaria siempre son complicadas.</p>
+<p>La mejor alternativa para solucionar este inconveniente es usar siempre una hora estandarizada
+<a href="https://es.wikipedia.org/wiki/Tiempo_universal_coordinado"><strong>UTC</strong></a>. Todas los campos fecha y hora deben estar guardados en UTC, la configuración de hora
+en los servidores de aplicación debe ser UTC, la configuración de la hora en el servidor
+de base de datos también debe ser UTC.</p>
+<p>Esto permite que el despliegue de una fecha y hora a un usuario específico se convierta en un asunto
+pertinente solo a la interfaz de usuario, solo al mostrar información al usuario se cambia de UTC a
+la zona horaria escogida por el usuario.</p>
 
-  <h1>Tagged "tip"</h1>
-  
-  
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
+    </div>
     
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/03/05/c%C3%B3mo-se-debe-trabajar-con-campos-de-fecha-y-hora-en-varias-zonas-horarias/">
-                    Cómo se debe trabajar con campos de fecha y hora en varias zonas horarias?
-                </a>
-            </h2>
-            <div>
-                <p>Cuando trabajamos en un proyecto geográficamente local, es posible que no nos hayamos topado con este inconveniente todavía, se maneja una sola zona horaria, el servidor está configurado en sincronía con la hora local, todos los datos se guardan con hora local, no hay ningún problema.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 5, 2021</time>
-            </div> 
-        </article>
+
+
     
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/03/03/zeal-documentaci%C3%B3n-de-programacion-offline/">
-                    Zeal documentación de programacion offline
-                </a>
-            </h2>
-            <div>
-                <p>Como desarrolladores de software es imposible saber de memoria todas las API de un lenguaje de programación, la opción más fácil cuando dudas de algo o quieres encontrar más información acerca de una función o clase es buscarla en google y la mayoría de veces te va a llevar a la documentación oficial de la herramienta.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 3, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/26/asdf-para-manejar-varias-versiones-de-tus-herramientas/">
-                    asdf para manejar varias versiones de tus herramientas
-                </a>
-            </h2>
-            <div>
-                <p>Cuando realizamos desarrollo en nuestra máquina local, es normal que trabajemos en varios proyectos, algunos proyectos más antiguos otros más nuevos, hay veces que tenemos que volver a proyectos antiguos a realizar alguna modificación, pero como ya actualizamos ciertas herramientas a las nuevas versiones, estos proyectos dejan de funcionar.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 26, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/23/enviando-e-mails-en-ambientes-de-desarrollo/">
-                    Enviando e-mails en ambientes de desarrollo
-                </a>
-            </h2>
-            <div>
-                <p>Cuando se ejecuta un proyecto localmente, muchas veces se requiere poder enviar e-mails a los usuarios de prueba, en un ambiente de desarrollo NO es recomendable enviar e-mails reales ya que si no se es cuidadoso podemos llegar a usar datos de producción y enviar e-mails de prueba a usuarios reales causando confusión.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 23, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/19/m%C3%A1quinas-de-estado-finito-fsm/">
-                    Máquinas de Estado Finito (FSM)
-                </a>
-            </h2>
-            <div>
-                <p>Una cosa que aprendí luego de cometer el mismo error varias veces en proyectos pasados es dejar de usar booleans en los diseños de las tablas de la base de datos.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 19, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/16/probando-c%C3%B3digo-en-diferentes-versiones-de-php/">
-                    Probando código en diferentes versiones de PHP
-                </a>
-            </h2>
-            <div>
-                <p>Cuando estoy dando mantenimiento a una aplicación escrita en PHP y actualizando la versión de PHP para mantenerla segura, a veces es necesario probar por qué cierto código en una versión funciona y en otra no.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 16, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/09/migraciones-de-base-de-datos-con-phinx/">
-                    Migraciones de base de datos con Phinx
-                </a>
-            </h2>
-            <div>
-                <p>Cuando uno piensa que una aplicación va a ser muy pequeña como para usar un framework completo o un framework que no tiene migraciones para base de datos, y los cambios a la base de datos generalmente se hacen a mano.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 9, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/05/qu%C3%A9-sistema-operativo-es-mejor-para-programar/">
-                    ¿Qué sistema operativo es mejor para programar?
-                </a>
-            </h2>
-            <div>
-                <p>Linux. Fin.
-Solo bromeaba, ojalá este tipo de preguntas fueran tan fáciles de responder, como todo en la vida no es una respuesta de blanco o negro, hay muchos matices y en este caso hay que escudriñar un poco más para poder tener una respuesta que se ajuste a tu contexto.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 5, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/04/monorepo/">
-                    Monorepo
-                </a>
-            </h2>
-            <div>
-                <p>En muchos sistemas modernos se opta por tener una aplicación web de página única o Single Page Application, en donde obligatoriamente tenemos al menos 2 partes, un backend y un frontend, los dos con diferentes estilos de programación y que deben ejecutarse en la misma versión para que todo funcione correctamente.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 4, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/03/curl-la-navaja-suiza-de-los-protocolos-de-internet/">
-                    curl: la navaja suiza de los protocolos de Internet
-                </a>
-            </h2>
-            <div>
-                <p>Una de las herramientas que más uso en el día a día es curl, es muy versátil y soporta una gran cantidad de protocolos, los que más uso son solo http y https, pero tiene soporte para los siguientes protocolos de acuerdo a su página web DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 3, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/02/siempre-tener-una-base-de-datos-de-asuntos-pendientes/">
-                    Siempre tener una base de datos de asuntos pendientes
-                </a>
-            </h2>
-            <div>
-                <p>Hace muchos años ya, entré a trabajar en un banco, éramos un grupo pequeño de tecnología, 3 desarrolladores, 2 de soporte, 1 de operaciones y 1 jefe.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 2, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/01/github-actions/">
-                    Github Actions
-                </a>
-            </h2>
-            <div>
-                <p>Verificar que tu código esté bien en tu máquina local es algo que se debe hacer como parte del proceso de desarrollo, pero muchas veces cuando el cambio es muy pequeño y lo probaste en el browser y funciona, la opción más rápida es solo hacer commit y listo, no se ejecuta los tests, estilos de código, linters etc.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 1, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/28/el-c%C3%B3digo-es-una-carga/">
-                    El código es una carga
-                </a>
-            </h2>
-            <div>
-                <p>Como profesionales en el área de tecnología generalmente tratamos el desarrollo de un sistema o aplicación, como la solución a muchos problemas en el negocio o en lo personal.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 28, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/27/formatear-y-convertir-json-al-vuelo-con-jq/">
-                    Formatear y convertir JSON al vuelo con jq
-                </a>
-            </h2>
-            <div>
-                <p>jq es una herramienta que permite formatear y/o convertir la respuesta de un JSON API a cualquier cosa que se les ocurra.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 27, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/">
-                    Bash sin sorpresas
-                </a>
-            </h2>
-            <div>
-                <p>Existe una línea de código que agrego siempre a los script bash que me ayuda mucho a evitar errores comunes cuando se escribe un script.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 26, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/25/formatea-t%C3%BA-c%C3%B3digo-con-prettier/">
-                    Formatea tú código con prettier
-                </a>
-            </h2>
-            <div>
-                <p>Trabajas en equipo y pasas tiempo insistiendo en que coloquen los paréntesis donde te gusta, que el indentado del código sea como dicta cierto estándar, o tu mismo pasas tiempo en tu editor dándole formato al código para que sea agradable a la vista.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 25, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/22/autocompletado-de-alta-velocidad-starship/">
-                    Autocompletado de alta velocidad Starship
-                </a>
-            </h2>
-            <div>
-                <p>Como desarrolladores pasamos mucho tiempo en la línea de comandos, la mayoría del tiempo escribimos los mismos comandos una y otra vez, tan solo cambiando un poco la orden.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 22, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/">
-                    Compartir un sitio local al Internet
-                </a>
-            </h2>
-            <div>
-                <p>Alguna vez les ha pasado que un cliente desea ver avances del desarrollo pero no tienen desplegado aún el ambiente de pruebas?</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 21, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/20/php-web-server/">
-                    Php Web Server
-                </a>
-            </h2>
-            <div>
-                <p>Sabían que la línea de comandos de php tiene un servidor web interno.
-Me ha servido mucho para realizar desarrollos de prueba o verificar un sitio estático o incluso para compartir archivos en una red interna.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 20, 2021</time>
-            </div> 
-        </article>
-    
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/tip">#tip</a>
+        
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
+        
+      
+    </div>
 
 
         
