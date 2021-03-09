@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Túneles ssh | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -152,178 +149,111 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/19/m%C3%A1quinas-de-estado-finito-fsm/">
-                    Máquinas de Estado Finito (FSM)
-                </a>
-            </h2>
-            <div>
-                <p>Una cosa que aprendí luego de cometer el mismo error varias veces en proyectos pasados es dejar de usar booleans en los diseños de las tablas de la base de datos.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 19, 2021</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Túneles ssh</h1>
+    
+    <time>March 9, 2021</time>
+    
+    <div>
+        <p>
+        <p>Una de las principales herramientas a la hora de conectarse con servidores linux es SSH
+esta permite usar claves privadas para conectarse evitando digitar el password
+y la conexión es encriptada lo que la hace segura.</p>
+<p>SSH puede hacer mucho más luego de conectarse y abrir un shell remoto, ese es el tema
+de hoy. Los túneles SSH son túneles de comunicación encriptados creados a través de
+una conexión SSH. Actúa como una VPN muy especializada.</p>
+<p>Algunos ejemplos para los cuales uso los túneles en mi día a día:</p>
+<h2 id="conectarse-a-la-base-de-datos-remota">Conectarse a la base de datos remota</h2>
+<p>En un ambiente de producción seguro, la base de datos <strong>NUNCA</strong> debe estar expuesta al
+Internet, es decir que si queremos conectarnos con alguna herramienta como DataGrip o PHPStorm
+no se puede, a menos que creemos el túnel primero.</p>
+<p>La idea es que el servidor si tiene acceso ssh, y es donde está instalada la base de datos
+pero la base no escucha en una interfaz externa solo en la local (127.0.0.1),
+por lo que podemos usar la conexión ssh a este servidor para conectarnos
+a la base de datos desde nuestro ambiente local.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -L 3306:localhost:3306 servidor-remoto
+</code></pre></div><p>Donde:</p>
+<p><code>ssh -L &lt;puerto-local&gt;:localhost:&lt;puerto-remoto&gt; &lt;gateway&gt;</code></p>
+<p>Una vez este se esté ejecutando, podemos usar cualquier herramienta para conectarnos a la
+base de datos en el host localhost puerto 3306 pero realmente nos estamos conectando a la base
+en el servidor.</p>
+<h2 id="usar-un-servidor-como-socks-proxy">Usar un servidor como SOCKS proxy</h2>
+<p>En el trabajo con uno de mis clientes, el ambiente de producción de la aplicación con la que trabajo
+está restringida geográficamente a usuarios de USA. Por lo que desde mi local no puedo acceder.
+Pero los servidores en AWS están en USA por lo que puedo hacer una conexión a estos servidores
+creando un proxy SOCKS y usando ese proxy en la configuración del navegador para acceder a esta
+aplicación a través del servidor.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -N -D <span style="color:#ae81ff">1080</span> servidor-remoto
+</code></pre></div><p>Este comando crea un proxy SOCKS en el puerto 1080 local. En la configuración de proxy del
+navegador escojen usar configuración de proxy manual, y en la casilla de SOCKS proxy
+colocan localhost y puerto 1080. Al aplicarlo están navegando y accediendo recursos como si
+estuvieran en USA.</p>
+<h2 id="usar-un-servidor-como-ambiente-de-desarrollo">Usar un servidor como ambiente de desarrollo</h2>
+<p>Hubo un tiempo en que mi laptop no estaba funcionando bien, y al cargarle de trabajo hacía
+que los ventiladores se encendieran y sonara mucho, para evitar eso por un tiempo
+decidí usar un servidor en AWS para ejecutar los proyectos en los que estaba trabajando
+para disminuir la carga en el local.</p>
+<p>Los servidores en AWS por defecto siempre están protegidos por los grupos de seguridad
+que generalmente solo dan acceso a los puertos 80, 443 y 22. Pero en los proyectos con los que
+trabajo necesito poder acceder a los puertos 3306, 8080, 4200, 4300, 4400, 4500, 8081 etc
+que son los puertos que abren las herramientas de desarrollo/frameworks.</p>
+<p>La opción fácil era abrir esos puertos en el grupo de seguridad, pero estaba haciendo
+al servidor más vulnerable.</p>
+<p>La opción más segura es conectarse a ese servidor via ssh, y automáticamente hacer
+<code>port forwarding</code>. Esto se logra editando directamente el archivo ~/.ssh/config local
+se crea un host y se coloca los puertos que se enlazaran automáticamente cuando se conecte via ssh.</p>
+<p>Ejemplo:</p>
+<pre><code>cat ~/.ssh/config
+Host dev-marcelo
+HostName 4.4.4.4 #IP del servidor
+IdentityFile ~/.ssh/aws-marcelo.pem
+ForwardAgent yes
+# remote ports
+LocalForward 9080 localhost:80
+LocalForward 9443 localhost:443
+LocalForward 3306 localhost:3306
+LocalForward 8080 localhost:8080
+LocalForward 8081 localhost:8081
+LocalForward 4200 localhost:4200
+LocalForward 4300 localhost:4300
+LocalForward 4400 localhost:4400
+LocalForward 4500 localhost:4500
+</code></pre><p>Cuando hago</p>
+<p><code>ssh dev-marcelo</code></p>
+<p>Automáticamente tengo todos los puertos especificados ya enlazados, si por ejemplo ejecuto
+<a href="https://marceloandrader.github.io/blog/2021/01/20/php-web-server/">php -S localhost:8080 index.php</a> en el servidor entonces puedo verlo en mi browser local como
+localhost:8080</p>
+<p>Otros sitios de referencia para entender los túneles en inglés:</p>
+<ul>
+<li><a href="https://robotmoon.com/ssh-tunnels/">A visual guide to SSH tunnels</a></li>
+<li><a href="https://chamibuddhika.wordpress.com/2012/03/21/ssh-tunnelling-explained/">SSH Tunneling Explained</a></li>
+</ul>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/16/probando-c%C3%B3digo-en-diferentes-versiones-de-php/">
-                    Probando código en diferentes versiones de PHP
-                </a>
-            </h2>
-            <div>
-                <p>Cuando estoy dando mantenimiento a una aplicación escrita en PHP y actualizando la versión de PHP para mantenerla segura, a veces es necesario probar por qué cierto código en una versión funciona y en otra no.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 16, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/09/migraciones-de-base-de-datos-con-phinx/">
-                    Migraciones de base de datos con Phinx
-                </a>
-            </h2>
-            <div>
-                <p>Cuando uno piensa que una aplicación va a ser muy pequeña como para usar un framework completo o un framework que no tiene migraciones para base de datos, y los cambios a la base de datos generalmente se hacen a mano.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 9, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/05/qu%C3%A9-sistema-operativo-es-mejor-para-programar/">
-                    ¿Qué sistema operativo es mejor para programar?
-                </a>
-            </h2>
-            <div>
-                <p>Linux. Fin.
-Solo bromeaba, ojalá este tipo de preguntas fueran tan fáciles de responder, como todo en la vida no es una respuesta de blanco o negro, hay muchos matices y en este caso hay que escudriñar un poco más para poder tener una respuesta que se ajuste a tu contexto.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 5, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/04/monorepo/">
-                    Monorepo
-                </a>
-            </h2>
-            <div>
-                <p>En muchos sistemas modernos se opta por tener una aplicación web de página única o Single Page Application, en donde obligatoriamente tenemos al menos 2 partes, un backend y un frontend, los dos con diferentes estilos de programación y que deben ejecutarse en la misma versión para que todo funcione correctamente.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 4, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/git">#git</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 2 of 6</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/3/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
         
+            <a class="tag" href="/tags/ssh">#ssh</a>
+        
+      
     </div>
+
 
         
         </div>

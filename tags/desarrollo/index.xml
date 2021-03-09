@@ -6,7 +6,16 @@
     <description>Recent content in desarrollo on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Fri, 05 Mar 2021 11:24:07 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/desarrollo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Mar 2021 07:21:29 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/desarrollo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Túneles ssh</title>
+      <link>https://marceloandrader.github.io/blog/2021/03/09/t%C3%BAneles-ssh/</link>
+      <pubDate>Tue, 09 Mar 2021 07:21:29 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/03/09/t%C3%BAneles-ssh/</guid>
+      <description>Una de las principales herramientas a la hora de conectarse con servidores linux es SSH esta permite usar claves privadas para conectarse evitando digitar el password y la conexión es encriptada lo que la hace segura.</description>
+    </item>
+    
     <item>
       <title>Cómo se debe trabajar con campos de fecha y hora en varias zonas horarias?</title>
       <link>https://marceloandrader.github.io/blog/2021/03/05/c%C3%B3mo-se-debe-trabajar-con-campos-de-fecha-y-hora-en-varias-zonas-horarias/</link>
