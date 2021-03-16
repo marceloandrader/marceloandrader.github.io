@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Tue, 09 Mar 2021 07:21:29 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Mar 2021 09:16:51 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Escoger la arquitectura correcta</title>
+      <link>https://marceloandrader.github.io/blog/2021/03/16/escoger-la-arquitectura-correcta/</link>
+      <pubDate>Tue, 16 Mar 2021 09:16:51 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/03/16/escoger-la-arquitectura-correcta/</guid>
+      <description>Ayer en Ecuador se iba a dar acceso a una página web para registrarse para recibir la vacuna en contra de COVID-19 planvacunarse.</description>
+    </item>
+    
     <item>
       <title>Túneles ssh</title>
       <link>https://marceloandrader.github.io/blog/2021/03/09/t%C3%BAneles-ssh/</link>

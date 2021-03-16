@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Escoger la arquitectura correcta | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -152,171 +149,118 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/27/formatear-y-convertir-json-al-vuelo-con-jq/">
-                    Formatear y convertir JSON al vuelo con jq
-                </a>
-            </h2>
-            <div>
-                <p>jq es una herramienta que permite formatear y/o convertir la respuesta de un JSON API a cualquier cosa que se les ocurra.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 27, 2021</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Escoger la arquitectura correcta</h1>
+    
+    <time>March 16, 2021</time>
+    
+    <div>
+        <p>
+        <p>Ayer en Ecuador se iba a dar acceso a una página web para registrarse
+para recibir la vacuna en contra de COVID-19 <strong>planvacunarse.ec</strong>, si eres de Ecuador
+probablemente ya sabes lo que pasó después, la página paso caída todo el día.</p>
+<p>El tema me pareció interesante traerlo en esta publicación
+primero porque es de interés nacional y segundo porque cada día la tecnología
+afecta más y más a nuestras vidas y la de todos los que nos rodean.</p>
+<p>Personalmente pienso que la vacunación no debía haberse hecho con registro
+previo, uno porque el acceso a esta opción está restringiendo a mucha
+gente que no tiene Internet, computadora y conocimientos para usar
+la página web; y dos creo que el gobierno debería saber lo suficiente de todos
+sus habitantes vía registro civil, IESS, escuelas, etc. como para hacer
+un listado y publicar el listado de las personas elegibles en cada fase.</p>
+<p>Si no era una opción hacerlo de esa forma, ahora sí vamos a la parte
+técnica que también deja mucho que desear.</p>
+<p>No tengo todos los requerimientos que debe cumplir el sistema de registro
+para vacunas, pero vamos a asumir los siguientes requerimientos funcionales:</p>
+<p><strong>Requerimiento informativo:</strong></p>
+<pre><code>Como usuario visitante de planvacunarse.ec
+Debo poder leer la información acerca de las fases de la vacunación
+Para poder estar informado y saber cuando me va a tocar el turno.
+</code></pre><p><strong>Requerimiento de registro:</strong></p>
+<pre><code>Como usuario visitante de planvacunarse.ec
+Debo poder ingresar mi cédula de identidad
+ingresar un email para recibir notificaciones
+y contestar algunas preguntas médicas
+Para poder quedar registrado y que me notifiquen
+lugar y fecha de vacunación en un futuro.
+</code></pre><p>Vamos a pretender que debemos diseñar un software que soporte estos
+requerimientos funcionales. Para un desarrollador junior es fácil
+tomar la herramienta que uso todos los días y hacer que cumpla estos
+dos requerimientos, en el caso de quien se encargó de esta página
+su herramienta fue wordpress para el sitio informativo y el plugin de formularios
+para el registro, funciona para algunos cientos de visitas concurrentes,
+dependiendo de las características del servidor, pero para millones
+de no-vacunados simplemente no.</p>
+<p>Como arquitectos de software debemos hilar más fino y obtener requerimientos
+que no están expresados explícitamente en los anteriores, temas como: quiénes
+van a usar este software, desde qué plataformas, con qué tipos de red, a cuántas
+personas podemos dar servicio al mismo tiempo, cuál es el nivel de servicio
+mínimo esperado, etc. etc.</p>
+<p>Escoger la arquitectura correcta se trata de analizar y tomar decisiones con
+todos los requerimientos explícitos e implícitos que el software debe tener.
+Es probable que las herramientas que tienes a disposición entren en conflicto
+con los requerimientos de la arquitectura y eso está bien, no siempre
+vas a poder usar las herramientas que te gustan o te sientes cómodo.</p>
+<p>En mi opinión profesional este sitio de registro de vacunación debió
+haberse hecho con la siguiente arquitectura:</p>
+<ul>
+<li>
+<p>Generador de sitios estáticos, como hugo, gatsby o nextjs. para satisfacer
+el primer requerimiento informativo. Esta opción tiene la ventaja de que
+puedes usar servicios de distribución de contenido y cache que han sido probados
+por empresas globales para servir sus sitios web. Servicios como AWS Cloudfront
+o Cloudfare son obligatorios en este tipo de ambientes en el que esperamos millones
+de visitantes al mismo tiempo. Dentro del mismo sitio estático se pudo haber tenido
+una aplicación de página única (single page application) para manejar el
+registro y usar una API hacia el backend para guardar la información.</p>
+</li>
+<li>
+<p>Funciones serverless, como AWS lambda o Serverless computing de google cloud para
+cumplir con el segundo requerimiento de registro. Esto permite tener flexibilidad
+a la hora de escalar la parte dinámica del sitio, como es recibir y guardar información
+para futuro. Este tipo de ambientes permiten recibir gran cantidad de tráfico
+sin manejar servidores.</p>
+</li>
+<li>
+<p>Y para la parte de guardar la información una base de
+datos SQL no tiene mucho sentido, ya que el requerimiento principal de guardar
+la información lo más rápido posible no es una característica de estas bases, para eso
+usaría una base mucho más eficiente como DynamoDB en AWS que está diseñada
+para manejar escalas de trillones de peticiones por día y 20 millones de peticiones por segundo.
+Es decir todo el Ecuador se pudo haber registrado sin problemas en poco tiempo.</p>
+</li>
+</ul>
+<p>Esto solo fue un experimento mental, estoy seguro que hay muchos más requerimientos internos
+como validar cédulas con el registro civil, validar emails, etc. Para la brevedad
+del artículo decidí dejarlos afuera. Por otro lado estoy seguro que haya otras herramientas
+con las que se puede construir una arquitectura correcta, ustedes que hubieran usado?</p>
+<p>Puedes contestarme registrandote y contestando al e-mail de bienvenida.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/api">#api</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/">
-                    Bash sin sorpresas
-                </a>
-            </h2>
-            <div>
-                <p>Existe una línea de código que agrego siempre a los script bash que me ayuda mucho a evitar errores comunes cuando se escribe un script.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 26, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/bash">#bash</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/25/formatea-t%C3%BA-c%C3%B3digo-con-prettier/">
-                    Formatea tú código con prettier
-                </a>
-            </h2>
-            <div>
-                <p>Trabajas en equipo y pasas tiempo insistiendo en que coloquen los paréntesis donde te gusta, que el indentado del código sea como dicta cierto estándar, o tu mismo pasas tiempo en tu editor dándole formato al código para que sea agradable a la vista.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 25, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/22/autocompletado-de-alta-velocidad-starship/">
-                    Autocompletado de alta velocidad Starship
-                </a>
-            </h2>
-            <div>
-                <p>Como desarrolladores pasamos mucho tiempo en la línea de comandos, la mayoría del tiempo escribimos los mismos comandos una y otra vez, tan solo cambiando un poco la orden.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 22, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/cli">#cli</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/">
-                    Compartir un sitio local al Internet
-                </a>
-            </h2>
-            <div>
-                <p>Alguna vez les ha pasado que un cliente desea ver avances del desarrollo pero no tienen desplegado aún el ambiente de pruebas?</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 21, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/networking">#networking</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 4 of 6</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/3/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/5/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
         
+            <a class="tag" href="/tags/ecuador">#ecuador</a>
+        
+      
     </div>
+
 
         
         </div>
