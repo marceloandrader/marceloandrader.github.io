@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Parte 1: Introduccion a Pruebas de Software | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,180 +148,60 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/">
-                    Compartir un sitio local al Internet
-                </a>
-            </h2>
-            <div>
-                <p>Alguna vez les ha pasado que un cliente desea ver avances del desarrollo pero no tienen desplegado aún el ambiente de pruebas?</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 21, 2021</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Parte 1: Introduccion a Pruebas de Software</h1>
+    
+    <time>March 23, 2021</time>
+    
+    <div>
+        <p>
+        <p>Cuando iniciamos en el mundo del desarrollo de software, generalmente estamos muy enfocados en hacer que una característica funcione, o arreglar un bug y dedicamos tiempo en un ciclo de: pruebo manualmente lo que los usuarios me piden, funciona? no, verifico que cambios necesito, hago los cambios en el código y vuelvo a probar que el requerimiento funciona, funciona? si, lo pongo en producción.</p>
+<p>Este ciclo de desarrollo está bien para proyectos pequeños que se van a quedar pequeños, y no críticos. El problema está en que no somos adivinos y no podemos saber a futuro que lo que estamos desarrollando va a quedarse pequeño y no crítico para el negocio.</p>
+<p>Generalmente no pasa eso, los desarrollos se realizan por algo y mientras más se usa más crítico se vuelve. Por esta razón es importante desde los inicios de un nuevo proyecto tener una infraestructura adecuada para tener pruebas automatizadas que las puedan ejecutar los desarrolladores localmente, y también se puedan ejecutar en los sistemas de integración continua. Adicional a pruebas automáticas es muy importante mantener pruebas manuales ya que las pruebas automáticas generalmente sólo verifican lo que el desarrollador piensa que se debe probar.</p>
+<p>Debido a que este tema es muy amplio, voy a escribir una serie de artículos que cubren diferentes conceptos acerca del desarrollo de software basado en pruebas. Para iniciar comencemos por lo básico:</p>
+<h1 id="qué-son-pruebas-de-software">¿Qué son pruebas de software?</h1>
+<p>Las pruebas de software, son procesos cíclicos que permiten a los desarrolladores verificar si un requerimiento o cambio en el sistema es correcto o no. Adicionalmente permite verificar que una versión específica del software tenga todos los requerimientos solicitados. También pueden ayudar a verificar que el software puede funcionar correctamente en diferentes medios o con diferentes integraciones, como por ejemplo en diferentes sistemas operativos, o en diferentes versiones de software base.</p>
+<h1 id="por-qué-son-importantes-las-pruebas-de-software">¿Por qué son importantes las pruebas de software?</h1>
+<p>Sin pruebas me parece que es imposible conocer si estamos haciendo algo correcto, no creo que nadie pueda simplemente cambiar código y ponerlo en producción sin siquiera verificar en su ambiente que el cambio hace lo que debe hacer.</p>
+<p>Aún en ambientes donde no se tienen pruebas automatizadas, las pruebas manuales son la única forma de verificación de que el software funcione luego de realizar un cambio, y son válidas pero estas no escalan con el software y su complejidad.</p>
+<h1 id="cómo-funcionan-las-pruebas-de-software">¿Cómo funcionan las pruebas de software?</h1>
+<p>Hay muchas formas de probar software, tenemos pruebas manuales, pruebas automáticas unitarias, de integración, aceptación, etc.</p>
+<p>Generalmente los desarrolladores primero deciden qué comportamiento o característica requiere una validación, planifican cómo se puede verificar que el software funciona como se detalla, crea un script de prueba para verificar y ejecuta este script cada vez que hace cambios en el código hasta confirmar que funciona.</p>
+<p>La parte de “crear un script de prueba”, es así tanto para pruebas manuales o automáticas, la diferencia radica en que para las manuales lo crea en su mente y en las automáticas lo crea en un archivo de código. Cómo pueden ir viendo las pruebas manuales cumplen el mismo papel que las automáticas pero de la forma en la que se crean no se pueden compartir con el equipo de trabajo y son muy lentas en ejecutar.</p>
+<h1 id="beneficios-de-pruebas-en-el-software">Beneficios de pruebas en el software</h1>
+<p><strong>Asegura funcionalidad completa</strong> Asegura que todos los requerimientos desarrollados estén presentes en el producto final.</p>
+<p><strong>Alerta temprana</strong> Permite saber muy temprano en el desarrollo de software acerca de defectos que pueden afectar negativamente al usuario.</p>
+<p><strong>Reconstrucción de código</strong> Si tenemos un conjunto de pruebas muy amplio, es mucho más fácil hacer reconstrucciones internas del código para mejorar arquitectura sin afectar al usuario final.</p>
+<p>Estos son algunos de los beneficios, debe haber muchos más. Pero lo más importante que me gustaría compartir es que las pruebas son muy críticas en el desarrollo, y que está bien si lo hace manualmente por ahora, pero que deben comenzar a planificar un cambio en sus mentes y en sus procesos para incorporar pruebas automáticas, al principio es muy duro van a pensar que escribir los tests los hace más lentos, que no son importantes, que hacen más complejo el desarrollo, pero una vez interiorizado el desarrollo con pruebas automáticas van a ver atrás y preguntarse ¿cómo realizaron tantos sistemas sin pruebas automáticas? Les va a parecer una locura. Sí tienen que cruzar ese valle oscuro, pero al otro lado hay cosas muy buenas, como tranquilidad de que no vas a dañar nada en producción, aumentar la calidad de tus productos para que el cliente ya no sea el departamento de QA.</p>
+<p>Si quieres recibir una notificación en tu correo cuando salga la parte 2, suscríbete.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/networking">#networking</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/20/php-web-server/">
-                    Php Web Server
-                </a>
-            </h2>
-            <div>
-                <p>Sabían que la línea de comandos de php tiene un servidor web interno.
-Me ha servido mucho para realizar desarrollos de prueba o verificar un sitio estático o incluso para compartir archivos en una red interna.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 20, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2019/04/11/my-migration-from-keepassxc-to-pass-password-store/">
-                    My migration from keepassxc to pass (password store)
-                </a>
-            </h2>
-            <div>
-                <p>Background My initial way to keep my long list of passwords/secrets safe in my computer was using the password manager keepassxc it served well, the way to share this with my mobile was putting the kdbx file in Dropbox and use KeePassDroid app to be able to use my passwords on the go.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>April 11, 2019</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tutorial">#tutorial</a>
-                
-                    <a class="tag" href="/tags/security">#security</a>
-                
-                    <a class="tag" href="/tags/git">#git</a>
-                
-                    <a class="tag" href="/tags/showdev">#showdev</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2013/11/15/docker/">
-                    Docker
-                </a>
-            </h2>
-            <div>
-                <p>Desplegar aplicaciones en linux es un proceso fácil si tu aplicación solo usa un servidor, normalmente se usa el sistema propio de manejo de paquetes para poner a punto el servidor con todos los componentes instalados para publicar una aplicación web, sitio web dinámico, etc.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>November 15, 2013</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-                    <a class="tag" href="/tags/linux">#linux</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2013/02/19/aplicaciones-web-del-lado-del-cliente-con-mvvm/">
-                    Aplicaciones Web del lado del Cliente con MVVM
-                </a>
-            </h2>
-            <div>
-                <p>Aplicaciones web con alta carga de lógica del lado cliente han comenzado a popularizarse, la idea es que mucho de lo que antes se hacía en el servidor, ahora se lo puede hacer en el cliente (browser) y dejar al servidor solo como un API de acceso a la persistencia de los datos.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 19, 2013</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/javascript">#javascript</a>
-                
-                    <a class="tag" href="/tags/framework">#framework</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 5 of 6</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/4/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/6/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
         
+            <a class="tag" href="/tags/pruebas">#pruebas</a>
+        
+            <a class="tag" href="/tags/software">#software</a>
+        
+      
     </div>
+
 
         
         </div>
