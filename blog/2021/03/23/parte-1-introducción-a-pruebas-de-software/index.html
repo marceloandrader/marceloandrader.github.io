@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>software | Tips de Desarrollo</title>
+    <title>Parte 1: Introducción a Pruebas de Software | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/tags/software/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -150,165 +148,59 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Parte 1: Introducción a Pruebas de Software</h1>
+    
+    <time>March 23, 2021</time>
+    
+    <div>
+        <p>
+        <p>Cuando iniciamos en el mundo del desarrollo de software, generalmente estamos muy enfocados en hacer que una característica funcione, o arreglar un bug y dedicamos tiempo en un ciclo de: pruebo manualmente lo que los usuarios me piden, funciona? no, verifico que cambios necesito, hago los cambios en el código y vuelvo a probar que el requerimiento funciona, funciona? si, lo pongo en producción.</p>
+<p>Este ciclo de desarrollo está bien para proyectos pequeños que se van a quedar pequeños, y no críticos. El problema está en que no somos adivinos y no podemos saber a futuro que lo que estamos desarrollando va a quedarse pequeño y no crítico para el negocio.</p>
+<p>Generalmente no pasa eso, los desarrollos se realizan por algo y mientras más se usa más crítico se vuelve. Por esta razón es importante desde los inicios de un nuevo proyecto tener una infraestructura adecuada para tener pruebas automatizadas que las puedan ejecutar los desarrolladores localmente, y también se puedan ejecutar en los sistemas de integración continua. Adicional a pruebas automáticas es muy importante mantener pruebas manuales ya que las pruebas automáticas generalmente sólo verifican lo que el desarrollador piensa que se debe probar.</p>
+<p>Debido a que este tema es muy amplio, voy a escribir una serie de artículos que cubren diferentes conceptos acerca del desarrollo de software basado en pruebas. Para iniciar comencemos por lo básico:</p>
+<h1 id="qué-son-pruebas-de-software">¿Qué son pruebas de software?</h1>
+<p>Las pruebas de software, son procesos cíclicos que permiten a los desarrolladores verificar si un requerimiento o cambio en el sistema es correcto o no. Adicionalmente permite verificar que una versión específica del software tenga todos los requerimientos solicitados. También pueden ayudar a verificar que el software puede funcionar correctamente en diferentes medios o con diferentes integraciones, como por ejemplo en diferentes sistemas operativos, o en diferentes versiones de software base.</p>
+<h1 id="por-qué-son-importantes-las-pruebas-de-software">¿Por qué son importantes las pruebas de software?</h1>
+<p>Sin pruebas me parece que es imposible conocer si estamos haciendo algo correcto, no creo que nadie pueda simplemente cambiar código y ponerlo en producción sin siquiera verificar en su ambiente que el cambio hace lo que debe hacer.</p>
+<p>Aún en ambientes donde no se tienen pruebas automatizadas, las pruebas manuales son la única forma de verificación de que el software funcione luego de realizar un cambio, y son válidas pero estas no escalan con el software y su complejidad.</p>
+<h1 id="cómo-funcionan-las-pruebas-de-software">¿Cómo funcionan las pruebas de software?</h1>
+<p>Hay muchas formas de probar software, tenemos pruebas manuales, pruebas automáticas unitarias, de integración, aceptación, etc.</p>
+<p>Generalmente los desarrolladores primero deciden qué comportamiento o característica requiere una validación, planifican cómo se puede verificar que el software funciona como se detalla, crea un script de prueba para verificar y ejecuta este script cada vez que hace cambios en el código hasta confirmar que funciona.</p>
+<p>La parte de “crear un script de prueba”, es así tanto para pruebas manuales o automáticas, la diferencia radica en que para las manuales lo crea en su mente y en las automáticas lo crea en un archivo de código. Cómo pueden ir viendo las pruebas manuales cumplen el mismo papel que las automáticas pero de la forma en la que se crean no se pueden compartir con el equipo de trabajo y son muy lentas en ejecutar.</p>
+<h1 id="beneficios-de-pruebas-en-el-software">Beneficios de pruebas en el software</h1>
+<p><strong>Asegura funcionalidad completa</strong> Asegura que todos los requerimientos desarrollados estén presentes en el producto final.</p>
+<p><strong>Alerta temprana</strong> Permite saber muy temprano en el desarrollo de software acerca de defectos que pueden afectar negativamente al usuario.</p>
+<p><strong>Reconstrucción de código</strong> Si tenemos un conjunto de pruebas muy amplio, es mucho más fácil hacer reconstrucciones internas del código para mejorar arquitectura sin afectar al usuario final.</p>
+<p>Estos son algunos de los beneficios, debe haber muchos más. Pero lo más importante que me gustaría compartir es que las pruebas son muy críticas en el desarrollo, y que está bien si lo hace manualmente por ahora, pero que deben comenzar a planificar un cambio en sus mentes y en sus procesos para incorporar pruebas automáticas, al principio es muy duro van a pensar que escribir los tests los hace más lentos, que no son importantes, que hacen más complejo el desarrollo, pero una vez interiorizado el desarrollo con pruebas automáticas van a ver atrás y preguntarse ¿cómo realizaron tantos sistemas sin pruebas automáticas? Les va a parecer una locura. Sí tienen que cruzar ese valle oscuro, pero al otro lado hay cosas muy buenas, como tranquilidad de que no vas a dañar nada en producción, aumentar la calidad de tus productos para que el cliente ya no sea el departamento de QA.</p>
+<p>Si quieres recibir una notificación en tu correo cuando salga la parte 2, suscríbete.</p>
 
-  <h1>Tagged "software"</h1>
-  
-  
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
+    </div>
     
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/">
-                    Parte 1: Introducción a Pruebas de Software
-                </a>
-            </h2>
-            <div>
-                <p>Cuando iniciamos en el mundo del desarrollo de software, generalmente estamos muy enfocados en hacer que una característica funcione, o arreglar un bug y dedicamos tiempo en un ciclo de: pruebo manualmente lo que los usuarios me piden, funciona?</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 23, 2021</time>
-            </div> 
-        </article>
+
+
     
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/03/03/zeal-documentaci%C3%B3n-de-programacion-offline/">
-                    Zeal documentación de programacion offline
-                </a>
-            </h2>
-            <div>
-                <p>Como desarrolladores de software es imposible saber de memoria todas las API de un lenguaje de programación, la opción más fácil cuando dudas de algo o quieres encontrar más información acerca de una función o clase es buscarla en google y la mayoría de veces te va a llevar a la documentación oficial de la herramienta.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 3, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/03/curl-la-navaja-suiza-de-los-protocolos-de-internet/">
-                    curl: la navaja suiza de los protocolos de Internet
-                </a>
-            </h2>
-            <div>
-                <p>Una de las herramientas que más uso en el día a día es curl, es muy versátil y soporta una gran cantidad de protocolos, los que más uso son solo http y https, pero tiene soporte para los siguientes protocolos de acuerdo a su página web DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 3, 2021</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2013/11/15/docker/">
-                    Docker
-                </a>
-            </h2>
-            <div>
-                <p>Desplegar aplicaciones en linux es un proceso fácil si tu aplicación solo usa un servidor, normalmente se usa el sistema propio de manejo de paquetes para poner a punto el servidor con todos los componentes instalados para publicar una aplicación web, sitio web dinámico, etc.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>November 15, 2013</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2012/05/28/caso-pr%C3%A1ctico-de-uso-de-vagrant/">
-                    Caso práctico de uso de vagrant
-                </a>
-            </h2>
-            <div>
-                <p>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.
-##Pre-Requisitos Instalar VirtualBox Descargar VirtualBox vagrant soporta las versiones 4.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>May 28, 2012</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2012/02/06/aislar-ambientes-de-desarrollo-con-vagrant/">
-                    Aislar ambientes de desarrollo con Vagrant
-                </a>
-            </h2>
-            <div>
-                <p>Si desarrollas en un solo tipo de &lsquo;stack&rsquo; de desarrollo lo más común es instalar este stack en tu máquina principal y desarrollar directamente en el sistema operativo de tu preferencia.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 6, 2012</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2011/12/16/dependencias-de-aplicaciones-web/">
-                    Dependencias de Aplicaciones Web
-                </a>
-            </h2>
-            <div>
-                <p>En esta sección sí hay mucho por contar, cada día dependo más y más en servicios web.
-Entre los que más uso por frecuencia están:</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>December 16, 2011</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-aplicaciones-cli/">
-                    Dependencias de Aplicaciones CLI
-                </a>
-            </h2>
-            <div>
-                <p>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos
-history | awk &#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &#34; &#34; CMD[a]/count*100 &#34;% &#34; a;}&#39; | grep -v &#34;.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>December 15, 2011</time>
-            </div> 
-        </article>
-    
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-software-de-escritorio/">
-                    Dependencias de Software de Escritorio
-                </a>
-            </h2>
-            <div>
-                <p>Como sistema operativo uso Mac OS X (Snow Leopard), las aplicaciones que más uso en orden de frecuencia de uso serían:</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>December 15, 2011</time>
-            </div> 
-        </article>
-    
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/tip">#tip</a>
+        
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
+        
+            <a class="tag" href="/tags/pruebas">#pruebas</a>
+        
+            <a class="tag" href="/tags/software">#software</a>
+        
+      
+    </div>
 
 
         
