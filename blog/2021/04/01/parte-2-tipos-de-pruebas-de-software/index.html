@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>pruebas | Tips de Desarrollo</title>
+    <title>Parte 2: Tipos De Pruebas de Software | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/tags/pruebas/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -150,43 +148,148 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Parte 2: Tipos De Pruebas de Software</h1>
+    
+    <time>April 1, 2021</time>
+    
+    <div>
+        <p>
+        <p>Esta es la seguna parte de la serie de Pruebas de Software,
+si aún no has leído la <a href="https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/">primera parte</a> puedes hacerlo ahora.</p>
+<p>En esta ocasión vamos a revisar los tipos de pruebas, por ejemplo
+dependiendo del tipo de defecto que verifican las pruebas cada especialización
+tiene su nombre, pero todos los tipos de pruebas en general se pueden clasificar
+como pruebas de Caja Negra o Caja Blanca.</p>
+<h1 id="pruebas-de-caja-negra">Pruebas de Caja Negra</h1>
+<p>Toda la arquitectura interna del sistema es oculta a quien lo prueba. Es decir
+el usuario de prueba solo conoce <strong>lo que el producto se supone que tiene que hacer</strong>
+pero no <strong>cómo lo hace</strong>. Los usuarios de prueba solo observa los resultados
+o el comportamiento del producto y no necesitan ser programadores. Generalmente
+estas pruebas las realizan los usuarios finales o personas que no son parte del
+proceso de desarrollo.</p>
+<h1 id="pruebas-de-caja-blanca">Pruebas de Caja Blanca</h1>
+<p>Es lo opuesto a las anteriores, es decir que quien prueba conce la estructura
+interna del software. Estos usuarios de prueba evaluan la lógica de los programas
+a travéz de casos de prueba específicos. Al auditar el flujo de las entradas
+de prueba, el usuario puede verificar que todos los casos han sido manejados
+correctamente.</p>
+<p>Otra clasificación general para los métodos de pruebas es pruebas manuales versus
+pruebas automatizadas. Muchas tipos de pruebas se pueden hacer tanto manualmente
+como de forma automatizada. Esta distinción indica como la prueba es completada.</p>
+<h1 id="pruebas-manuales">Pruebas Manuales</h1>
+<p>Una persona como probador toma el rol de un usuario final del software y chequea
+casos de prueba uno por uno. Es una forma tradicional de verificar el software
+y en algunos casos es necesario porque puede detectar cosas que no pueden las
+pruebas automatizadas como apariencia visual de un sitio. Pero esta forma de
+ejecutar pruebas no escala, cuando el software es muy grande y complejo
+no se puede volver a probar todo el sistema.</p>
+<h1 id="pruebas-automatizadas">Pruebas Automatizadas</h1>
+<p>Es el proceso de usar software denominado un framework de pruebas para
+crear casos de pruebas que se ejecutan y comparan el resultado del programa
+con el resultado esperado. Algunos ejemplos de este tipo de frameworks son
+selenium, codeception, cucumber.</p>
+<p>Ahora revisaremos las metodologías de pruebas clasificadas entre funcionales y no
+funcionales, la diferencia está en si la prueba se enfoca en el comportamiento
+del software o su operación interna.</p>
+<h1 id="pruebas-funcionales">Pruebas Funcionales</h1>
+<p>Son un tipo de pruebas de caja negra que generan los casos de prueba usando
+los requerimientos y especificaciones del software.</p>
+<p>Algunas de estas metodologías incluyen:</p>
+<ul>
+<li>Pruebas unitarias (Unit testing)</li>
+<li>Pruebas de integración (Integration testing)</li>
+<li>Pruebas de sistema (System testing)</li>
+<li>Pruebas de aceptación de usuario (Acceptance testing)</li>
+<li>Pruebas de regresión (Regression testing)</li>
+<li>Pruebas de humo (Smoke testing)</li>
+</ul>
+<p>Un proceso funcional común tiene 4 etapas, abriendo el alcance
+del test en cada paso. El proceso inicia con:</p>
+<h2 id="1-pruebas-unitarias">1. Pruebas unitarias</h2>
+<p>Verifica el correcto funcionamiento de un componente individual del software,
+en el caso de orientación a objetos puede verificarse clases individuales.
+Este tipo de pruebas las realiza el programador como parte de su trabajo.
+Y casi siempre están automatizadas para obtener resultados muy rápidamente.</p>
+<h2 id="2-pruebas-de-integración">2. Pruebas de integración</h2>
+<p>Estas son usadas para verificar cómo varios componentes conectados del software
+funcionan juntos. Esto se hace luego de verificar que cada componente funciona
+individualmente, luego se valida que funcionen bien juntos. Al igual
+que las unitarias estas las hace el desarrollador de forma automatizada.</p>
+<h2 id="3-pruebas-de-sistema">3. Pruebas de sistema</h2>
+<p>Prueban el producto completo, con todos los componentes ensamblados. Verifica
+que modulos completos funcionen unos con otros. Generalmente este tipo
+de pruebas las realiza un equipo de QA.</p>
+<h2 id="4-pruebas-de-aceptación">4. Pruebas de aceptación</h2>
+<p>Verifica si el producto final satisface los requerimientos originales. Estas
+pruebas pueden ser realizadas por usuarios internos (pruebas alpha) o externos (pruebas beta)
+que revisan cómo funciona el producto al usarlo.</p>
+<p>Existen metodologías especialiazadas que verifican aspectos específicos de un programa
+que van más allá del proceso anterior. Por ejemplo las pruebas de regresión
+que sirven para verificar la integridad del producto luego de un cambio o upgrade
+verifican la salida del nuevo programa con la salida de versiones anteriores del mismo.
+Pruebas de humo sirven para verificar rápidamente que las funciones más esenciales de un producto
+sigan estables, cosas como el programa se abre, una página muestra datos.</p>
+<h1 id="pruebas-no-funcionales">Pruebas No Funcionales</h1>
+<p>Son un tipo de pruebas que verifican cómo un programa opera en lugar de si un comportamiento
+es correcto. Por ejemplo un test no funcional prueba que tan bien un programa
+se ejecuta con una carga alta de transacciones, o mientras funciona por un largo tiempo.</p>
+<p>Las pruebas no funcionales más usadas son:</p>
+<ul>
+<li>Pruebas de desempeño (Performance testing)</li>
+<li>Pruebas de seguridad (Security testing)</li>
+<li>Pruebas de usabilidad (Usability testing)</li>
+<li>Pruebas de compatibilidad (Compatibility testing)</li>
+<li>Pruebas de estres (Stress or load testing)</li>
+</ul>
+<h2 id="pruebas-de-desempeño">Pruebas de desempeño</h2>
+<p>Validan la velocidad, responsividad y fiabilidad en que un sistema cumple una función. Si una
+función funciona pero se demora mucho o a veces funciona y otra no, este test va a fallar
+y debe regresar a desarrollo.</p>
+<h2 id="pruebas-de-seguridad">Pruebas de seguridad</h2>
+<p>Son usadas para encontrar debilidades en la seguridad de la información, hay pruebas por ejemplo
+de pentesting o escaner de vulnerabilidades. Pero todas buscan que se mantenga la confidencialidad, integridad, autenticación, autorización, disponibilidad y no repudiación.</p>
+<h2 id="pruebas-de-usabilidad">Pruebas de usabilidad</h2>
+<p>Usadas para verificar si una característica del software no produce confusión o dificultad
+al usuario final. Generalmente se verifica por un investigador que observa cómo un
+usuario final realiza las tareas en el sistema. Se pide a los usuarios hacer una tarea
+pero sin indicarles cómo realizarlas.</p>
+<h2 id="pruebas-de-compatibilidad">Pruebas de compatibilidad</h2>
+<p>Verifican que tan bien un software se desempeña en diferentes ambientes, por ejemplo si
+se tuvieran el mismo software para mac, linux y pc.</p>
+<h2 id="pruebas-de-estres">Pruebas de estres</h2>
+<p>Los desarrolladores verifican hasta cuánto un sistema puede seguir trabajando aumentando
+la cantidad de usuarios o transacciones simultáneas. La idea es tratar de encontrar
+los cuellos de botella o puntos débiles que pueden hacer que un sistema en vivo colapse
+cuando hay muchos usuarios a la vez.</p>
+<p>Si quieres recibir una notificación en tu correo cuando salga la parte 3, suscríbete.</p>
 
-  <h1>Tagged "pruebas"</h1>
-  
-  
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
+    </div>
     
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/04/01/parte-2-tipos-de-pruebas-de-software/">
-                    Parte 2: Tipos De Pruebas de Software
-                </a>
-            </h2>
-            <div>
-                <p>Esta es la seguna parte de la serie de Pruebas de Software, si aún no has leído la primera parte puedes hacerlo ahora.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>April 1, 2021</time>
-            </div> 
-        </article>
+
+
     
-  
-    
-    <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/">
-                    Parte 1: Introducción a Pruebas de Software
-                </a>
-            </h2>
-            <div>
-                <p>Cuando iniciamos en el mundo del desarrollo de software, generalmente estamos muy enfocados en hacer que una característica funcione, o arreglar un bug y dedicamos tiempo en un ciclo de: pruebo manualmente lo que los usuarios me piden, funciona?</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 23, 2021</time>
-            </div> 
-        </article>
-    
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/tip">#tip</a>
+        
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
+        
+            <a class="tag" href="/tags/pruebas">#pruebas</a>
+        
+            <a class="tag" href="/tags/software">#software</a>
+        
+      
+    </div>
 
 
         
