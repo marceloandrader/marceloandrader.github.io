@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Parte 3: Proceso de creación de pruebas y mejores prácticas | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,169 +148,129 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/02/siempre-tener-una-base-de-datos-de-asuntos-pendientes/">
-                    Siempre tener una base de datos de asuntos pendientes
-                </a>
-            </h2>
-            <div>
-                <p>Hace muchos años ya, entré a trabajar en un banco, éramos un grupo pequeño de tecnología, 3 desarrolladores, 2 de soporte, 1 de operaciones y 1 jefe.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 2, 2021</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Parte 3: Proceso de creación de pruebas y mejores prácticas</h1>
+    
+    <time>April 9, 2021</time>
+    
+    <div>
+        <p>
+        <p>En esta parte vamos a revisar el proceso para la creación de pruebas y algunas mejores prácticas.</p>
+<p>Si no han leído las partes anteriores:</p>
+<ul>
+<li><a href="https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/">primera parte</a></li>
+<li><a href="https://marceloandrader.github.io/blog/2021/04/01/parte-2-tipos-de-pruebas-de-software/">segunda parte</a></li>
+</ul>
+<h1 id="ciclo-de-vida-de-las-pruebas">Ciclo de vida de las pruebas</h1>
+<p>Cualquiera sea la metodología para las diferentes partes del sistema, se espera poder seguir
+un proceso que permita mantenernos enfocados en los requerimientos del producto y en desarrollar
+características una a la vez.</p>
+<p>Este proceso tiene 6 pasos:</p>
+<ol>
+<li>
+<p>Análisis de requerimientos: El equipo de desarrollo se reune con los usuarios para revisar
+que requerimientos y características va a tener el producto. Por cada característica el grupo
+analiza una especificación que pueda ser probada y que permita indicar que se ha hecho correctamente.</p>
+</li>
+<li>
+<p>Plan de pruebas: Aquí el equipo de desarrollo analiza the forma específica cómo se desarrollaran
+las pruebas. Puntos comunes son: qué recursos se necesitan? qué métricas cuantitativas podemos
+usar para probar el requerimiento? y cuáles factores de riesgo iniciales pueden afectar el resultado?
+Lo más importante es tener las métricas y los casos específicos muy enlazados a la especificación del producto.</p>
+</li>
+<li>
+<p>Desarrollo de los casos de prueba: En este paso ya se desarrolla los casos de prueba o el conjunto de pruebas
+que verifica que el requerimiento se ha completado. Aquí usamos los procesos de pruebas funcionales
+para pruebas generales, o procesos de pruebas no funcionales para requerimientos específicos como pruebas de usabilidad.</p>
+</li>
+<li>
+<p>Configuración de ambiente de pruebas: Se creará un amgiente de pruebas. Si el producto se va a instalar
+en varias plataformas, se requiere al menos un ambiente de pruebas por cada plataforma. Esto se logra
+generalmente con frameworks de pruebas y algunas máquinas virtuales. O a través de un sistema de integración
+continua como <a href="https://marceloandrader.github.io/blog/2021/02/01/github-actions/">Github actions</a></p>
+</li>
+<li>
+<p>Ejecución de las pruebas: En este paso se ejecuta las pruebas y se guarda todas las métricas
+decididas.</p>
+</li>
+<li>
+<p>Análisis de resultados: En este punto se verifica cómo estuvo la ejecución de las pruebas. Es posible
+que para los próximos tests se requiere diferentes métricas, un ambiente de pruebas más refinado (diferentes dependencias),
+regresar al desarrollo de la solución para mejorar las métricas alcanzadas.</p>
+</li>
+</ol>
+<p>Todo este proceso es iterativo y generalmente no se lo ve como pasos, si te dan un requerimiento
+generalmente en tu cabeza analizas que tipos de pruebas puedes ejecutar para revisar la funcionalidad, qué voy a medir
+como parte del desarrollo del producto, se genera el caso de prueba usando Red-Green development
+que es escribo el test, lo ejecuto, da error <strong>RED</strong>, implemento el código mínimo para pasar la prueba y hacerlo <strong>GREEN</strong>
+y sigo implementado el programa al mismo tiempo que el test.</p>
+<h1 id="mejores-prácticas-de-pruebas-de-software">Mejores prácticas de pruebas de software</h1>
+<ul>
+<li>
+<p><strong>No usen solamente pruebas automatizadas</strong> Las pruebas automatizadas solo verifican defectos que el programador sabe y busca.
+Al menos tener un paso de pruebas manuales para verificar defectos inesperados.</p>
+</li>
+<li>
+<p><strong>Escribir casos de pruebas en lenguaje simple o pseudocódigo</strong> Esto permite compartir la verificación de las pruebas con los
+miembros no técnicos del equipo.</p>
+</li>
+<li>
+<p><strong>Usar solo ambientes de tests controlados y aislados para evitar interferencia externa</strong> Es preferible trabajar en un ambiente
+repetible como un contenedor <a href="https://marceloandrader.github.io/blog/2013/11/15/docker/">docker</a>, ya que se sabe específicamente qué está instalado en ese contenedor, no ejecutarlos en la máquina local ya que puede haber dependencias no controladas.</p>
+</li>
+<li>
+<p><strong>Escojer métricas específicas y cuantificables</strong> De esta forma se puede llevar un registro para agregar a los reportes.</p>
+</li>
+<li>
+<p><strong>Probar antes del paso de QA</strong> Esto permite probar siempre durante el desarrollo y no solo al final, ayuda a ahorrar mucho tiempo
+al probar los componentes centrales bien desde el principio.</p>
+</li>
+<li>
+<p><strong>Crear pruebas incrementales</strong> Hay que ir agregando condiciones dentro de la prueba para verificar dónde el programa falla.</p>
+</li>
+<li>
+<p><strong>Maximizar cobertura</strong> Lo ideal es llegar a un 100% de cobertura, que quiere decir que las pruebas ejecutan todo el código fuente.
+De tal forma que todos los posibles caminos dentro del programa son ejecutados por las pruebas.</p>
+</li>
+<li>
+<p><strong>Hacer que otro desarrollador cree las pruebas de integración o aceptación</strong> Esto permite evitar un sesgo de confirmación, ya que
+los casos de pruebas son escritos por alguien más.</p>
+</li>
+<li>
+<p><strong>Usar nombres útiles</strong> Los casos se deben nombrar de acuerdo a la condición y requerimiento de la prueba. Evitar nombres como test1 o performanceTest, usar algo más específico por ejemplo calculoDeHorasParaEmpleadosConTurnosDeCambioDeDia</p>
+</li>
+<li>
+<p><strong>Usar herramientas de pruebas de software</strong> En el mercado hay un sin número de herramientas que permiten realizar las pruebas
+analiza la que mejor se adapte a tu equipo.</p>
+</li>
+</ul>
+<p>El siguiente artículo será un caso de ejemplo, si quieres recibir una notificación regístrate.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/01/github-actions/">
-                    Github Actions
-                </a>
-            </h2>
-            <div>
-                <p>Verificar que tu código esté bien en tu máquina local es algo que se debe hacer como parte del proceso de desarrollo, pero muchas veces cuando el cambio es muy pequeño y lo probaste en el browser y funciona, la opción más rápida es solo hacer commit y listo, no se ejecuta los tests, estilos de código, linters etc.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 1, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/28/el-c%C3%B3digo-es-una-carga/">
-                    El código es una carga
-                </a>
-            </h2>
-            <div>
-                <p>Como profesionales en el área de tecnología generalmente tratamos el desarrollo de un sistema o aplicación, como la solución a muchos problemas en el negocio o en lo personal.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 28, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/27/formatear-y-convertir-json-al-vuelo-con-jq/">
-                    Formatear y convertir JSON al vuelo con jq
-                </a>
-            </h2>
-            <div>
-                <p>jq es una herramienta que permite formatear y/o convertir la respuesta de un JSON API a cualquier cosa que se les ocurra.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 27, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/api">#api</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/">
-                    Bash sin sorpresas
-                </a>
-            </h2>
-            <div>
-                <p>Existe una línea de código que agrego siempre a los script bash que me ayuda mucho a evitar errores comunes cuando se escribe un script.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 26, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/bash">#bash</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 4 of 7</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/3/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/5/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
         
+            <a class="tag" href="/tags/software">#Software</a>
+        
+      
     </div>
+
 
         
         </div>

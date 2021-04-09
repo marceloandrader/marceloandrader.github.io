@@ -6,7 +6,17 @@
     <description>Recent content on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Thu, 01 Apr 2021 07:00:15 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Apr 2021 06:51:22 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parte 3: Proceso de creación de pruebas y mejores prácticas</title>
+      <link>https://marceloandrader.github.io/blog/2021/04/09/parte-3-proceso-de-creaci%C3%B3n-de-pruebas-y-mejores-pr%C3%A1cticas/</link>
+      <pubDate>Fri, 09 Apr 2021 06:51:22 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/04/09/parte-3-proceso-de-creaci%C3%B3n-de-pruebas-y-mejores-pr%C3%A1cticas/</guid>
+      <description>En esta parte vamos a revisar el proceso para la creación de pruebas y algunas mejores prácticas.
+Si no han leído las partes anteriores:</description>
+    </item>
+    
     <item>
       <title>Parte 2: Tipos De Pruebas de Software</title>
       <link>https://marceloandrader.github.io/blog/2021/04/01/parte-2-tipos-de-pruebas-de-software/</link>
