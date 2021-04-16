@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Parte 3: Proceso de creación de pruebas y mejores prácticas | Tips de Desarrollo</title>
+    <title>Parte 4: Ejemplo práctico de Pruebas De Software | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -153,102 +153,95 @@ if (!doNotTrack) {
         max-width: 100%;
     }
 </style>
-<h1 class="post-title">Parte 3: Proceso de creación de pruebas y mejores prácticas</h1>
+<h1 class="post-title">Parte 4: Ejemplo práctico de Pruebas De Software</h1>
     
-    <time>April 9, 2021</time>
+    <time>April 13, 2021</time>
     
     <div>
         <p>
-        <p>En esta parte vamos a revisar el proceso para la creación de pruebas y algunas mejores prácticas.</p>
+        <p>En esta artículo vamos a aplicar los conceptos anteriors al crear una aplicación
+pequeña en laravel.</p>
 <p>Si no han leído las partes anteriores:</p>
 <ul>
 <li><a href="https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/">primera parte</a></li>
 <li><a href="https://marceloandrader.github.io/blog/2021/04/01/parte-2-tipos-de-pruebas-de-software/">segunda parte</a></li>
+<li><a href="https://marceloandrader.github.io/blog/2021/04/09/parte-3-proceso-de-creaci%C3%B3n-de-pruebas-y-mejores-pr%C3%A1cticas/">tercera parte</a></li>
 </ul>
-<h1 id="ciclo-de-vida-de-las-pruebas">Ciclo de vida de las pruebas</h1>
-<p>Cualquiera sea la metodología para las diferentes partes del sistema, se espera poder seguir
-un proceso que permita mantenernos enfocados en los requerimientos del producto y en desarrollar
-características una a la vez.</p>
-<p>Este proceso tiene 6 pasos:</p>
-<ol>
-<li>
-<p>Análisis de requerimientos: El equipo de desarrollo se reune con los usuarios para revisar
-que requerimientos y características va a tener el producto. Por cada característica el grupo
-analiza una especificación que pueda ser probada y que permita indicar que se ha hecho correctamente.</p>
-</li>
-<li>
-<p>Plan de pruebas: Aquí el equipo de desarrollo analiza the forma específica cómo se desarrollaran
-las pruebas. Puntos comunes son: qué recursos se necesitan? qué métricas cuantitativas podemos
-usar para probar el requerimiento? y cuáles factores de riesgo iniciales pueden afectar el resultado?
-Lo más importante es tener las métricas y los casos específicos muy enlazados a la especificación del producto.</p>
-</li>
-<li>
-<p>Desarrollo de los casos de prueba: En este paso ya se desarrolla los casos de prueba o el conjunto de pruebas
-que verifica que el requerimiento se ha completado. Aquí usamos los procesos de pruebas funcionales
-para pruebas generales, o procesos de pruebas no funcionales para requerimientos específicos como pruebas de usabilidad.</p>
-</li>
-<li>
-<p>Configuración de ambiente de pruebas: Se creará un amgiente de pruebas. Si el producto se va a instalar
-en varias plataformas, se requiere al menos un ambiente de pruebas por cada plataforma. Esto se logra
-generalmente con frameworks de pruebas y algunas máquinas virtuales. O a través de un sistema de integración
-continua como <a href="https://marceloandrader.github.io/blog/2021/02/01/github-actions/">Github actions</a></p>
-</li>
-<li>
-<p>Ejecución de las pruebas: En este paso se ejecuta las pruebas y se guarda todas las métricas
-decididas.</p>
-</li>
-<li>
-<p>Análisis de resultados: En este punto se verifica cómo estuvo la ejecución de las pruebas. Es posible
-que para los próximos tests se requiere diferentes métricas, un ambiente de pruebas más refinado (diferentes dependencias),
-regresar al desarrollo de la solución para mejorar las métricas alcanzadas.</p>
-</li>
-</ol>
-<p>Todo este proceso es iterativo y generalmente no se lo ve como pasos, si te dan un requerimiento
-generalmente en tu cabeza analizas que tipos de pruebas puedes ejecutar para revisar la funcionalidad, qué voy a medir
-como parte del desarrollo del producto, se genera el caso de prueba usando Red-Green development
-que es escribo el test, lo ejecuto, da error <strong>RED</strong>, implemento el código mínimo para pasar la prueba y hacerlo <strong>GREEN</strong>
-y sigo implementado el programa al mismo tiempo que el test.</p>
-<h1 id="mejores-prácticas-de-pruebas-de-software">Mejores prácticas de pruebas de software</h1>
-<ul>
-<li>
-<p><strong>No usen solamente pruebas automatizadas</strong> Las pruebas automatizadas solo verifican defectos que el programador sabe y busca.
-Al menos tener un paso de pruebas manuales para verificar defectos inesperados.</p>
-</li>
-<li>
-<p><strong>Escribir casos de pruebas en lenguaje simple o pseudocódigo</strong> Esto permite compartir la verificación de las pruebas con los
-miembros no técnicos del equipo.</p>
-</li>
-<li>
-<p><strong>Usar solo ambientes de tests controlados y aislados para evitar interferencia externa</strong> Es preferible trabajar en un ambiente
-repetible como un contenedor <a href="https://marceloandrader.github.io/blog/2013/11/15/docker/">docker</a>, ya que se sabe específicamente qué está instalado en ese contenedor, no ejecutarlos en la máquina local ya que puede haber dependencias no controladas.</p>
-</li>
-<li>
-<p><strong>Escojer métricas específicas y cuantificables</strong> De esta forma se puede llevar un registro para agregar a los reportes.</p>
-</li>
-<li>
-<p><strong>Probar antes del paso de QA</strong> Esto permite probar siempre durante el desarrollo y no solo al final, ayuda a ahorrar mucho tiempo
-al probar los componentes centrales bien desde el principio.</p>
-</li>
-<li>
-<p><strong>Crear pruebas incrementales</strong> Hay que ir agregando condiciones dentro de la prueba para verificar dónde el programa falla.</p>
-</li>
-<li>
-<p><strong>Maximizar cobertura</strong> Lo ideal es llegar a un 100% de cobertura, que quiere decir que las pruebas ejecutan todo el código fuente.
-De tal forma que todos los posibles caminos dentro del programa son ejecutados por las pruebas.</p>
-</li>
-<li>
-<p><strong>Hacer que otro desarrollador cree las pruebas de integración o aceptación</strong> Esto permite evitar un sesgo de confirmación, ya que
-los casos de pruebas son escritos por alguien más.</p>
-</li>
-<li>
-<p><strong>Usar nombres útiles</strong> Los casos se deben nombrar de acuerdo a la condición y requerimiento de la prueba. Evitar nombres como test1 o performanceTest, usar algo más específico por ejemplo calculoDeHorasParaEmpleadosConTurnosDeCambioDeDia</p>
-</li>
-<li>
-<p><strong>Usar herramientas de pruebas de software</strong> En el mercado hay un sin número de herramientas que permiten realizar las pruebas
-analiza la que mejor se adapte a tu equipo.</p>
-</li>
-</ul>
-<p>El siguiente artículo será un caso de ejemplo, si quieres recibir una notificación regístrate.</p>
+<h1 id="requerimiento-funcional-de-la-aplicación">Requerimiento funcional de la aplicación</h1>
+<p>La aplicación va a servir a una escuela, y se requiere registrar a los estudiantes
+los datos a registrar son nombres completos, ciudad y fecha de nacimiento.
+Se debe validar que los estudiantes sean menores de 18 años. Y que tenga todos
+los datos completos.</p>
+<h1 id="crear-la-aplicación">Crear la aplicación</h1>
+<p>Este no es un tutorial para aprender laravel, pero voy a poner los comandos que use
+para generar una <a href="https://github.com/marceloandrader/laravel-example-software-testing">aplicación inicial</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ composer create-project laravel/laravel laravel-example-software-testing
+$ cd laravel-example-software-testing
+$ php artisan serve</code></pre></div>
+<p>Editar el archivo .env para usar sqlite <code>DB_CONNECTION=sqlite</code> y <code>DB_DATABASE=/full-path-a-la-base/software-testing-dev.sqlite</code> y crear la base de datos usando <code>sqlite3 /full-path-a-la-base/software-testing-dev.sqlite</code>.</p>
+<p><a href="https://github.com/marceloandrader/laravel-example-software-testing/commit/42b506bcec7141c978d88ae387f7fe25c82ae90f">Github commit con cambio de configuración de la base</a></p>
+<p>Por defecto al crear una nueva aplicación, también se crean 2 tests de ejemplo<br>
+una prueba unitaria y otra funcional:</p>
+<p><img src="/images/software-testing-01.png" alt="laravel tests"></p>
+<p>También voy a crear un modelo denominado Estudiante con los campos solicitados,
+para poder almacenar en una base de datos.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ php artisan make:model -m Estudiante
+$ php artisan migrate</code></pre></div>
+<p><a href="https://github.com/marceloandrader/laravel-example-software-testing/commit/ee937a15951e2e050eef9e55ef557d6c364c9fd3">Github commit con modelo y migración</a></p>
+<h1 id="casos-de-prueba">Casos de prueba</h1>
+<h2 id="prueba-unitaria">Prueba unitaria</h2>
+<p>Para poder crear un estudiante debemos primero validar si su edad es menor a 18 años.
+Como habíamos visto en la parte 2 generalmente las pruebas funcionales se comienzan
+desde lo más pequeño hasta lo más grande. Vamos a iniciar con una prueba unitaria
+para calcular la edad del estudiante. Para esto voy a generar un test unitario con:
+<code>php artisan make:test --unit CalcularEdadTest</code> dentro de este test voy a comenzar creando
+un objeto de tipo Estudiante seteando una fecha de nacimiento y llamando a la funcion <code>getEdad()</code> por supuesto este test va a fallar al llamar a <code>php artisan test tests/Unit/CalcularEdadTest.php</code>
+al realizar esto también voy formando mi API pública ya que la forma de llamar
+ciertas funciones desde el test es cómo se llamaran las funciones desde la aplicación.</p>
+<p>Regreso a mi modelo y creo la función <code>getEdad</code> que reste la fecha actual con la fecha de nacimiento
+y obtengo la edad del estudiante.</p>
+<p><a href="https://github.com/marceloandrader/laravel-example-software-testing/commit/cf80fc35fd8d26141453734e401c338463219985">Github commit con prueba unitaria e implementación</a></p>
+<p>Como pueden observar en el test, se trata de verificar la mayor cantidad de posibilidades
+en nuestro caso probe con 2 fechas y sin fecha para verificar que la prueba pase en los 3 casos.</p>
+<p><img src="/images/software-testing-02.png" alt="pruebas unitarias"></p>
+<h2 id="prueba-de-integración">Prueba de Integración</h2>
+<p>Un ejemplo de prueba de integración es usar más de 1 componente, en este caso podemos
+probar el uso de la clase Estudiante ya en el contexto de creación desde un controlador. Para
+lo cual crearemos uno usando <code>php artisan make:controller --model=Estudiante EstudianteController</code>
+y comenzaré a probar la función create. Pero antes de comenzar en el controlador
+crearé una prueba de integración con <code>php artisan make:test CrearEstudianteTest</code>.
+Al realizar un post con datos a /estudiantes que es donde montamos el recurso en app/routes/web.php
+el error fallará con error status code 200 es diferente a 201 esperado.</p>
+<p>Implemento la función <code>store</code> en el controlador tomando los datos del request y creando un estudiante.</p>
+<p><a href="https://github.com/marceloandrader/laravel-example-software-testing/commit/88850fd140f1cfd6f9f631868642c76c9f22c3ea">Github commit con prueba de integración e implementación</a></p>
+<p>Pero aun nos falta realizar la prueba con un estudiante que quiera registrarse que no
+sea menor de edad. Actualizamos el test para enviar una persona adulta y al ejecutar
+va a funcionar sin problema, debemos cambiar el test para esperar un resultado <a href="https://httpstatuses.com/422">422</a> entidad no procesable.</p>
+<p><a href="https://github.com/marceloandrader/laravel-example-software-testing/commit/791606c9bb2fd9536087c1bbffbca379b03052bf">Github commit con validación de edad en controlador</a></p>
+<p><img src="/images/software-testing-03.png" alt="pruebas integración"></p>
+<h2 id="pruebas-de-sistema">Pruebas de Sistema</h2>
+<p>Para realizar una prueba de sistema se debe realizar la prueba como si fuera un usuario
+real manejando un browser, para esto existen varias herramientas, en nuestro caso
+no he creado pantallas de usuario para poder interactuar con la aplicación por lo que no
+puedo todavía crear este tipo de pruebas. Pero una vez hecho ese paso en laravel se puede instalar <a href="https://laravel.com/docs/8.x/dusk">dusk</a> para realizar las pruebas usando chromedriver.</p>
+<p>El API de dusk es muy fluida, puedes crear sesiones de usuario llenar formularios etc.</p>
+<h2 id="pruebas-de-aceptación">Pruebas de Aceptación</h2>
+<p>Estas las debe realizar alguien adicional al desarrollador, en nuestro caso que es un ejemplo
+pequeño y se requiere conocimientos técnicos, la prueba la puede realizar otro desarrollador
+usando alguna herramienta como <a href="https://marceloandrader.github.io/blog/2021/02/03/curl-la-navaja-suiza-de-los-protocolos-de-internet/">curl</a> o <a href="https://insomnia.rest/">imsomnia</a> para realizar la llamada a crear un estudiante.</p>
+<h1 id="pruebas-no-funcionales">Pruebas no funcionales</h1>
+<p>Se puede realizar varias pruebas no funcionales a nuestra aplicación de ejemplo.</p>
+<p>Para el caso de pruebas de desempeño se puede probar el servicio de creación de estudiantes usando
+<a href="https://github.com/wg/wrk">wrk</a> para verificar la cantidad de peticiones que puede recibir.</p>
+<p>No podemos realizar pruebas de seguridad ya que este servicio no está protegido todavía,
+pero una vez que se agregue un token JWT o algún otro, se puede usar una herramienta de
+pentesting para verificar. Adicional como parte de medida de seguridad del código se puede usar
+<code>composer outdated</code> para escanear dependencias desactualizadas que generalmente son la causa
+de problemas de seguridad.</p>
+<p>Por motivos de tiempo hay otros tipos de pruebas que no estamos tomando en cuenta,
+pero si comienzan con las pruebas anteriormente mencionadas ya están bastante bien, y su código
+puede seguir creciendo en complejidad y pueden estar tranquilos al realizar cambios ya
+que tienen una buena batería de tests que puede identificar errores fácil y rápidamente.</p>
 
         </p>
       <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>

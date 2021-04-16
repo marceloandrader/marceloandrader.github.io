@@ -6,7 +6,17 @@
     <description>Recent content on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Fri, 09 Apr 2021 06:51:22 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 06:44:33 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parte 4: Ejemplo práctico de Pruebas De Software</title>
+      <link>https://marceloandrader.github.io/blog/2021/04/13/parte-4-ejemplo-pr%C3%A1ctico-de-pruebas-de-software/</link>
+      <pubDate>Tue, 13 Apr 2021 06:44:33 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/04/13/parte-4-ejemplo-pr%C3%A1ctico-de-pruebas-de-software/</guid>
+      <description>En esta artículo vamos a aplicar los conceptos anteriors al crear una aplicación pequeña en laravel.
+Si no han leído las partes anteriores:</description>
+    </item>
+    
     <item>
       <title>Parte 3: Proceso de creación de pruebas y mejores prácticas</title>
       <link>https://marceloandrader.github.io/blog/2021/04/09/parte-3-proceso-de-creaci%C3%B3n-de-pruebas-y-mejores-pr%C3%A1cticas/</link>

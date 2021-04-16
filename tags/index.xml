@@ -6,20 +6,29 @@
     <description>Recent content in Tags on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Fri, 09 Apr 2021 06:51:22 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 06:44:33 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>desarrollo</title>
       <link>https://marceloandrader.github.io/tags/desarrollo/</link>
-      <pubDate>Fri, 09 Apr 2021 06:51:22 -0500</pubDate>
+      <pubDate>Tue, 13 Apr 2021 06:44:33 -0500</pubDate>
       
       <guid>https://marceloandrader.github.io/tags/desarrollo/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>pruebas</title>
+      <link>https://marceloandrader.github.io/tags/pruebas/</link>
+      <pubDate>Tue, 13 Apr 2021 06:44:33 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/tags/pruebas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>software</title>
       <link>https://marceloandrader.github.io/tags/software/</link>
-      <pubDate>Fri, 09 Apr 2021 06:51:22 -0500</pubDate>
+      <pubDate>Tue, 13 Apr 2021 06:44:33 -0500</pubDate>
       
       <guid>https://marceloandrader.github.io/tags/software/</guid>
       <description></description>
@@ -28,18 +37,9 @@
     <item>
       <title>tip</title>
       <link>https://marceloandrader.github.io/tags/tip/</link>
-      <pubDate>Fri, 09 Apr 2021 06:51:22 -0500</pubDate>
+      <pubDate>Tue, 13 Apr 2021 06:44:33 -0500</pubDate>
       
       <guid>https://marceloandrader.github.io/tags/tip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pruebas</title>
-      <link>https://marceloandrader.github.io/tags/pruebas/</link>
-      <pubDate>Thu, 01 Apr 2021 07:00:15 -0500</pubDate>
-      
-      <guid>https://marceloandrader.github.io/tags/pruebas/</guid>
       <description></description>
     </item>
     
