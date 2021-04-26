@@ -326,7 +326,8 @@ history | awk &amp;#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &amp
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://marceloandrader.github.io/gracias/</guid>
-      <description>Por suscribirte, espero que el contenido sea de provecho y te ayude en tu carrera de desarrollo de software.</description>
+      <description>Por suscribirte, espero que el contenido sea de provecho y te ayude en tu carrera de desarrollo de software.
+Ahora solo falta aceptar la suscripción en tu email para que no te pierdas de ningún artículo nuevo.</description>
     </item>
     
   </channel>
