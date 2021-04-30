@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Cómo utilizar symplify/vendor-patches en proyectos php | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,173 +148,105 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/04/monorepo/">
-                    Monorepo
-                </a>
-            </h2>
-            <div>
-                <p>En muchos sistemas modernos se opta por tener una aplicación web de página única o Single Page Application, en donde obligatoriamente tenemos al menos 2 partes, un backend y un frontend, los dos con diferentes estilos de programación y que deben ejecutarse en la misma versión para que todo funcione correctamente.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 4, 2021</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Cómo utilizar symplify/vendor-patches en proyectos php</h1>
+    
+    <time>April 30, 2021</time>
+    
+    <div>
+        <p>
+        <p>Es posible que alguna vez hayan encontrado un bug en una dependencia de un proyecto de php que utiliza composer, y el arreglo es simple y lo único que se requiere es cambiar 1 o 2 líneas de código en el paquete referenciado es decir en <code>/vendor/usuario/paquete-con-error</code>.</p>
+<p>Como buen ciudadano del mundo open source, lo primero que se debe hacer es abrir un issue y crear un pull request con los cambios en el proyecto dependencia para que el dueño lo pueda aceptar y se arregle para todos los usuarios de ese paquete, pero no vamos a negar que este proceso toma bastante tiempo, y si necesitamos arreglar lo más pronto hay otras opciones.</p>
+<p>Puedes crear un fork del proyecto en tu github y usar ese url de github en la version de composer.json, pero estarías tomando una responsabilidad manual de actualizar y aplicar el cambio cada vez que haya actualizaciones. Se puede copiar el paquete localmente que es más rápido pero con esto ya no hay actualizaciones.</p>
+<p>O la mejor opción se puede usar &ldquo;composer patches&rdquo;.</p>
+<p>Hace un tiempo estaba trabajando en un proyecto laravel con el paquete de administración nova, y un addon para manejo de archivos <code>infinety-es/nova-filemanager</code> el paquete funcionaba muy bien con archivos públicos, pero para mi proyecto necesitaba guardar los archivos en un bucket privado de S3 y para descargarlos debía generar una url temporal con un tiempo de expiración máximo.</p>
+<p>Analizando el código del paquete encontré 2 lugares donde se generaba la url del archivo para descarga en el archivo fuente <code>src/Http/Services/NormalizeFile.php</code> en la función <a href="https://github.com/InfinetyEs/Nova-Filemanager/blob/master/src/Http/Services/NormalizeFile.php#L53">toArray</a> y en la función <a href="https://github.com/InfinetyEs/Nova-Filemanager/blob/master/src/Http/Services/NormalizeFile.php#L148">getImage</a> lo único que había que hacer es realizar el siguiente cambio:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">--- /dev/null
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ ../src/Http/Services/NormalizeFile.php
+</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -50,7 +50,7 @@
+</span><span style="color:#75715e"></span>             &#39;mime&#39; =&gt; $this-&gt;getCorrectMimeFileType(),
+             &#39;path&#39; =&gt; $this-&gt;storagePath,
+             &#39;size&#39; =&gt; $this-&gt;getFileSize(),
+<span style="color:#f92672">-            &#39;url&#39;  =&gt; $this-&gt;cleanSlashes($this-&gt;storage-&gt;url($this-&gt;storagePath)),
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+            &#39;url&#39;  =&gt; $this-&gt;cleanSlashes($this-&gt;storage-&gt;temporaryUrl($this-&gt;storagePath, &#39;+5 minutes&#39;)),
+</span><span style="color:#a6e22e"></span>             &#39;date&#39; =&gt; $this-&gt;modificationDate(),
+             &#39;ext&#39;  =&gt; $this-&gt;file-&gt;getExtension(),
+         ]);
+<span style="color:#75715e">@@ -145,7 +145,7 @@
+</span><span style="color:#75715e"></span>     private function getImage($mime, $extension = false)
+     {
+         if (Str::contains($mime, &#39;image&#39;) || $extension == &#39;svg&#39;) {
+<span style="color:#f92672">-            return $this-&gt;storage-&gt;url($this-&gt;storagePath);
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+            return $this-&gt;storage-&gt;temporaryUrl($this-&gt;storagePath, &#39;+5 minutes&#39;);
+</span><span style="color:#a6e22e"></span>         }
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/git">#git</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/03/curl-la-navaja-suiza-de-los-protocolos-de-internet/">
-                    curl: la navaja suiza de los protocolos de Internet
-                </a>
-            </h2>
-            <div>
-                <p>Una de las herramientas que más uso en el día a día es curl, es muy versátil y soporta una gran cantidad de protocolos, los que más uso son solo http y https, pero tiene soporte para los siguientes protocolos de acuerdo a su página web DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 3, 2021</time>
+         $fileType = new FileTypesImages();
+</code></pre></div>
+<h2 id="cómo-se-cambia-esas-2-líneas-en-vendor">Cómo se cambia esas 2 líneas en /vendor?</h2>
+<p>Se hace en 4 simples pasos:</p>
+<ol>
+<li>Instalar el paquete que controla los parches</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require cweagans/composer-patches symplify/vendor-patches --dev</code></pre></div>
+<ol start="2">
+<li>Se crea una copia del archivo a cambiar en /vendor por la extensión <code>.old</code></li>
+</ol>
+<p>Por ejemplo en mi caso cambie <code>vendor/infinety-es/nova-filemanager/src/Http/Services/NormalizeFile.php</code> a
+<code>vendor/infinety-es/nova-filemanager/src/Http/Services/NormalizeFile.php.old</code></p>
+<ol start="3">
+<li>
+<p>Abrir el archivo original <code>vendor/infinety-es/nova-filemanager/src/Http/Services/NormalizeFile.php</code> y realizar los cambios necesarios. Se verifica que los cambios funcionen ya que solo el archivo <code>*.php</code> funciona no el <code>*.php.old</code>.</p>
+</li>
+<li>
+<p>Generar el parche usando el comando:</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vendor/bin/vendor-patches generate</code></pre></div>
+<p>La herramienta de symplify genera todos los parches en el directorio <code>/patches/</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -l patches
+.rw-r--r-- <span style="color:#ae81ff">883</span> marcelo <span style="color:#ae81ff">30</span> Apr  7:16 infinety-es-nova-filemanager-src-http-services-normalizefile-php.patch</code></pre></div>
+<p>Y también genera la configuración de parches al composer.json:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    <span style="color:#960050;background-color:#1e0010">...</span>
+    <span style="color:#e6db74">&#34;extra&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+        <span style="color:#f92672">&#34;laravel&#34;</span>: [],
+        <span style="color:#f92672">&#34;patches&#34;</span>: {
+            <span style="color:#f92672">&#34;infinety-es/nova-filemanager&#34;</span>: [
+                <span style="color:#e6db74">&#34;patches/infinety-es-nova-filemanager-src-http-services-normalizefile-php.patch&#34;</span>
+            ]
+        }
+    }<span style="color:#960050;background-color:#1e0010">,</span>
+    <span style="color:#960050;background-color:#1e0010">...</span></code></pre></div>
+<p>Y eso es todo, la siguiente vez que realicen <code>composer install</code>, el parche se aplica automáticamente.</p>
+<p>Referencias:</p>
+<ul>
+<li><a href="https://tomasvotruba.com/blog/2020/07/02/how-to-patch-package-in-vendor-yet-allow-its-updates/">How to Patch a Package in Vendor, Yet Allow its Updates | Tomas Votruba</a></li>
+</ul>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-                    <a class="tag" href="/tags/cli">#cli</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/02/siempre-tener-una-base-de-datos-de-asuntos-pendientes/">
-                    Siempre tener una base de datos de asuntos pendientes
-                </a>
-            </h2>
-            <div>
-                <p>Hace muchos años ya, entré a trabajar en un banco, éramos un grupo pequeño de tecnología, 3 desarrolladores, 2 de soporte, 1 de operaciones y 1 jefe.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 2, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/01/github-actions/">
-                    Github Actions
-                </a>
-            </h2>
-            <div>
-                <p>Verificar que tu código esté bien en tu máquina local es algo que se debe hacer como parte del proceso de desarrollo, pero muchas veces cuando el cambio es muy pequeño y lo probaste en el browser y funciona, la opción más rápida es solo hacer commit y listo, no se ejecuta los tests, estilos de código, linters etc.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 1, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/28/el-c%C3%B3digo-es-una-carga/">
-                    El código es una carga
-                </a>
-            </h2>
-            <div>
-                <p>Como profesionales en el área de tecnología generalmente tratamos el desarrollo de un sistema o aplicación, como la solución a muchos problemas en el negocio o en lo personal.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 28, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 4 of 7</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/3/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/5/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
         
+            <a class="tag" href="/tags/php">#php</a>
+        
+      
     </div>
+
 
         
         </div>
