@@ -3,37 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
+    <lastmod>2021-05-07T10:22:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/postgres/</loc>
+    <lastmod>2021-05-07T10:22:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/posts/</loc>
+    <lastmod>2021-05-07T10:22:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/</loc>
+    <lastmod>2021-05-07T10:22:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/tip/</loc>
+    <lastmod>2021-05-07T10:22:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/</loc>
+    <lastmod>2021-05-07T10:22:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/blog/2021/05/07/verificar-rangos-de-fechas-en-postgresql/</loc>
+    <lastmod>2021-05-07T10:22:47-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://marceloandrader.github.io/blog/2021/04/30/c%C3%B3mo-utilizar-symplify/vendor-patches-en-proyectos-php/</loc>
     <lastmod>2021-04-30T07:03:53-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
-    <lastmod>2021-04-30T07:03:53-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://marceloandrader.github.io/tags/php/</loc>
-    <lastmod>2021-04-30T07:03:53-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/posts/</loc>
-    <lastmod>2021-04-30T07:03:53-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/</loc>
-    <lastmod>2021-04-30T07:03:53-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/tip/</loc>
-    <lastmod>2021-04-30T07:03:53-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/</loc>
     <lastmod>2021-04-30T07:03:53-05:00</lastmod>
   </url>
   

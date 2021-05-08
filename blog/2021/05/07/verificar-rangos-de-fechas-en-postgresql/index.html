@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Verificar rangos de fechas en PostgreSQL | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,177 +148,100 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/">
-                    Parte 1: Introducción a Pruebas de Software
-                </a>
-            </h2>
-            <div>
-                <p>Cuando iniciamos en el mundo del desarrollo de software, generalmente estamos muy enfocados en hacer que una característica funcione, o arreglar un bug y dedicamos tiempo en un ciclo de: pruebo manualmente lo que los usuarios me piden, funciona?</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 23, 2021</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Verificar rangos de fechas en PostgreSQL</h1>
+    
+    <time>May 7, 2021</time>
+    
+    <div>
+        <p>
+        <p>Mi motor de base de datos favorito para proyectos nuevos es PostgreSQL o postgres. Es una base muy solida, open source, con más de 30 años de desarrollo, se ha ganado una gran reputación por su confiabilidad, robustez y desempeño.</p>
+<p>Hoy les quiero compartir un pequeño tip que me ha servido mucho en un  par de proyectos, en los cuales se requiere mantener un registro de datos históricos y que no debe haber superposición de un valor en un mismo rango de fechas. Por ejemplo, el valor del IVA generalmente es fijo, pero hubo un tiempo en que cambió. Una tabla para manejar estos cambios en el tiempo sería de la forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> historico_iva(
+    id serial,
+    empresa_id integer <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+    desde date <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+    hasta date <span style="color:#66d9ef">null</span>,
+    porcentaje_iva numeric(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">2</span>)
+)</code></pre></div>
+<p>Esta validación de datos se podría realizar a nivel de aplicación al verificar que no haya 2 valores de IVA para la misma fecha, por ejemplo digamos que el 1 de junio cambia el valor al 10% en la tabla habría los siguientes registros:</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>empresa_id</th>
+<th>desde</th>
+<th>hasta</th>
+<th>porcentaje_iva</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>2000-01-01</td>
+<td>2021-05-31</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>2021-06-01</td>
+<td>null</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>Para buscar que valor de iva debo aplicar en una fecha específica puedo usar la consulta:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> porcentaje_iva 
+<span style="color:#66d9ef">from</span> historico_iva 
+<span style="color:#66d9ef">where</span> empresa_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> 
+<span style="color:#66d9ef">and</span> <span style="color:#66d9ef">current_date</span> <span style="color:#66d9ef">between</span> desde <span style="color:#66d9ef">and</span> coalesce(hasta, <span style="color:#e6db74">&#39;Infinity&#39;</span>)</code></pre></div>
+<p>Esta debe devolver siempre un solo valor, pero por cualquier error de programación o al editar datos en la base directamente en el registro 2 le pongo 2021-05-31 en la fecha desde, el día 31 de mayo no se sabría si fue 10 o 12 el IVA ya que la consulta devuelve 2 valores. O también que la fecha desde sea mayor a la fecha hasta en cuyo caso nunca retornaría un valor.</p>
+<p>Para evitar este inconveniente se puede agregar un par de checks a nivel de base de datos, y para esto postgres ayuda mucho con una extensión para manejo de este tipo de validaciones denominada <code>btree_gist</code>.</p>
+<p>Para nuestro ejemplo se debe agregar los siguientes CHECKs en la tabla:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">--- activa la extension btree_gist
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> EXTENSION btree_gist;
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/pruebas">#pruebas</a>
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/03/16/escoger-la-arquitectura-correcta/">
-                    Escoger la arquitectura correcta
-                </a>
-            </h2>
-            <div>
-                <p>Ayer en Ecuador se iba a dar acceso a una página web para registrarse para recibir la vacuna en contra de COVID-19 planvacunarse.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 16, 2021</time>
+<span style="color:#75715e">--- verifica que la fecha desde sea menor a la fecha hasta
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> porcentaje_iva 
+    <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">CHECK</span> ( <span style="color:#e6db74">&#34;desde&#34;</span> <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">&#34;hasta&#34;</span>);
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/ecuador">#ecuador</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/03/09/t%C3%BAneles-ssh/">
-                    Túneles ssh
-                </a>
-            </h2>
-            <div>
-                <p>Una de las principales herramientas a la hora de conectarse con servidores linux es SSH esta permite usar claves privadas para conectarse evitando digitar el password y la conexión es encriptada lo que la hace segura.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 9, 2021</time>
+<span style="color:#75715e">--- evita superposición de rango de fechas en una misma empresa
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> porcentaje_iva 
+    <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">CONSTRAINT</span> no_sobreponer_fechas_iva 
+        EXCLUDE <span style="color:#66d9ef">USING</span> GIST (
+            empresa_id <span style="color:#66d9ef">WITH</span> <span style="color:#f92672">=</span>,
+            daterange(<span style="color:#e6db74">&#34;desde&#34;</span>, coalesce(<span style="color:#e6db74">&#34;hasta&#34;</span>, <span style="color:#e6db74">&#39;Infinity&#39;</span>), <span style="color:#e6db74">&#39;[]&#39;</span>) <span style="color:#66d9ef">WITH</span> <span style="color:#f92672">&amp;&amp;</span>
+        );</code></pre></div>
+<p>Esto implica que al tratar de crear un registro de la misma empresa, que tenga fechas sobrepuestas
+la base de datos no lo va a permitir y generará un error.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/ssh">#ssh</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/03/05/c%C3%B3mo-se-debe-trabajar-con-campos-de-fecha-y-hora-en-varias-zonas-horarias/">
-                    Cómo se debe trabajar con campos de fecha y hora en varias zonas horarias?
-                </a>
-            </h2>
-            <div>
-                <p>Cuando trabajamos en un proyecto geográficamente local, es posible que no nos hayamos topado con este inconveniente todavía, se maneja una sola zona horaria, el servidor está configurado en sincronía con la hora local, todos los datos se guardan con hora local, no hay ningún problema.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 5, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/03/03/zeal-documentaci%C3%B3n-de-programacion-offline/">
-                    Zeal documentación de programacion offline
-                </a>
-            </h2>
-            <div>
-                <p>Como desarrolladores de software es imposible saber de memoria todas las API de un lenguaje de programación, la opción más fácil cuando dudas de algo o quieres encontrar más información acerca de una función o clase es buscarla en google y la mayoría de veces te va a llevar a la documentación oficial de la herramienta.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 3, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 2 of 7</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/3/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
         
+            <a class="tag" href="/tags/postgres">#postgres</a>
+        
+      
     </div>
+
 
         
         </div>

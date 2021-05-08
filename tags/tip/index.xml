@@ -6,7 +6,16 @@
     <description>Recent content in tip on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Fri, 30 Apr 2021 07:03:53 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 May 2021 10:22:47 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Verificar rangos de fechas en PostgreSQL</title>
+      <link>https://marceloandrader.github.io/blog/2021/05/07/verificar-rangos-de-fechas-en-postgresql/</link>
+      <pubDate>Fri, 07 May 2021 10:22:47 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/05/07/verificar-rangos-de-fechas-en-postgresql/</guid>
+      <description>Mi motor de base de datos favorito para proyectos nuevos es PostgreSQL o postgres. Es una base muy solida, open source, con más de 30 años de desarrollo, se ha ganado una gran reputación por su confiabilidad, robustez y desempeño.</description>
+    </item>
+    
     <item>
       <title>Cómo utilizar symplify/vendor-patches en proyectos php</title>
       <link>https://marceloandrader.github.io/blog/2021/04/30/c%C3%B3mo-utilizar-symplify/vendor-patches-en-proyectos-php/</link>
