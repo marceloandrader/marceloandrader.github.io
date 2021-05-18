@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Encontrando errores en el código con git bisect | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,173 +148,48 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/03/03/zeal-documentaci%C3%B3n-de-programacion-offline/">
-                    Zeal documentación de programacion offline
-                </a>
-            </h2>
-            <div>
-                <p>Como desarrolladores de software es imposible saber de memoria todas las API de un lenguaje de programación, la opción más fácil cuando dudas de algo o quieres encontrar más información acerca de una función o clase es buscarla en google y la mayoría de veces te va a llevar a la documentación oficial de la herramienta.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 3, 2021</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Encontrando errores en el código con git bisect</h1>
+    
+    <time>May 18, 2021</time>
+    
+    <div>
+        <p>
+        <p>Cuando se usa <code>git</code> en un equipo de trabajo a veces alguien del grupo puede introducir un error en el código que no fue descubierto por los tests ni en la revisión de usuario, y se publica el error al sistema de producción. El momento que se recibe el reporte del error en producción generalmente desde el último despliegue hay varios commits hechos por varios desarrolladores, para encontrar dónde se introdujo el error podemos usar <code>git bisect</code>.</p>
+<p><a href="https://git-scm.com/docs/git-bisect"><code>git bisect</code></a> de acuerdo a su documentación nos indica que realiza una búsqueda binaria para encontrar el commit que introdujo un bug. Una búsqueda binaria es un algoritmo en el que se va reduciendo la búsqueda de un commit eliminando posibles commits &ldquo;buenos&rdquo; o &ldquo;malos&rdquo;.</p>
+<p>La búsqueda de nuestro bug de ejemplo puede comenzar de la siguiente manera:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git bisect start <span style="color:#75715e"># Permite iniciar la búsqueda</span>
+git bisect bad   <span style="color:#75715e"># Indica que la versión actual es la incorrecta</span>
+git bisect good 4f0dfa72bcdc2ba489629949883392aaa3a4e43b   <span style="color:#75715e"># Es la referencia al último commit correcto puede ser un tag on un branch</span></code></pre></div>
+<p>Una vez que tenemos al menos un commit bueno y uno malo, git bisect seleccionara un commit en el medio del rango para verificación. Nos mostrará un mensaje que indica el commit que está en el área de trabajo cuantas revisiones quedan por hacer y un estimado de pasos hasta encontrar el error.</p>
+<p>Cuando estemos en este paso tenemos que verificar el error existe en ese commit, si no existe, ejecutamos <code>git bisect good</code> y git bisect nos dará un nuevo commit para probar. En este paso podemos ejecutar tests, probar manualmente, ejecutar algún proceso que verifique si hay no error o simplemente ver el código. Si es un commit malo se ejecuta <code>git bisect bad</code> hasta que git bisect indique el mensaje que un commit es el primer bad commit (<code>first bad commit</code>).</p>
+<p>Al final de la sesión de trabajo se ejecuta <code>git bisect reset</code> para volver al branch que estuvimos inicialmente.</p>
+<p>Hay también una forma automática de verificar si un commit es válido, usando <code>git bisect run your_script arguments</code>. El script denominado your_script debe retornar un código de salida 0 para marcar un commit como bueno, y un código entre 1 y 127 (exceptuando 125) cuando el commit es malo. El 125 se usa para cuando no se puede probar y lo marca como skipped.</p>
+<p>Si hay alguna duda, por favor no duden en suscribirse y responder directamente a mis emails.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/26/asdf-para-manejar-varias-versiones-de-tus-herramientas/">
-                    asdf para manejar varias versiones de tus herramientas
-                </a>
-            </h2>
-            <div>
-                <p>Cuando realizamos desarrollo en nuestra máquina local, es normal que trabajemos en varios proyectos, algunos proyectos más antiguos otros más nuevos, hay veces que tenemos que volver a proyectos antiguos a realizar alguna modificación, pero como ya actualizamos ciertas herramientas a las nuevas versiones, estos proyectos dejan de funcionar.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 26, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/23/enviando-e-mails-en-ambientes-de-desarrollo/">
-                    Enviando e-mails en ambientes de desarrollo
-                </a>
-            </h2>
-            <div>
-                <p>Cuando se ejecuta un proyecto localmente, muchas veces se requiere poder enviar e-mails a los usuarios de prueba, en un ambiente de desarrollo NO es recomendable enviar e-mails reales ya que si no se es cuidadoso podemos llegar a usar datos de producción y enviar e-mails de prueba a usuarios reales causando confusión.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 23, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/19/m%C3%A1quinas-de-estado-finito-fsm/">
-                    Máquinas de Estado Finito (FSM)
-                </a>
-            </h2>
-            <div>
-                <p>Una cosa que aprendí luego de cometer el mismo error varias veces en proyectos pasados es dejar de usar booleans en los diseños de las tablas de la base de datos.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 19, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/16/probando-c%C3%B3digo-en-diferentes-versiones-de-php/">
-                    Probando código en diferentes versiones de PHP
-                </a>
-            </h2>
-            <div>
-                <p>Cuando estoy dando mantenimiento a una aplicación escrita en PHP y actualizando la versión de PHP para mantenerla segura, a veces es necesario probar por qué cierto código en una versión funciona y en otra no.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 16, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 3 of 8</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/2/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/4/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/git">#git</a>
         
+      
     </div>
+
 
         
         </div>

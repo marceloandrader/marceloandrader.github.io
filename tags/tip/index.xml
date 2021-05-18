@@ -6,7 +6,16 @@
     <description>Recent content in tip on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Fri, 07 May 2021 10:22:47 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 06:46:23 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Encontrando errores en el código con git bisect</title>
+      <link>https://marceloandrader.github.io/blog/2021/05/18/encontrando-errores-en-el-c%C3%B3digo-con-git-bisect/</link>
+      <pubDate>Tue, 18 May 2021 06:46:23 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/05/18/encontrando-errores-en-el-c%C3%B3digo-con-git-bisect/</guid>
+      <description>Cuando se usa git en un equipo de trabajo a veces alguien del grupo puede introducir un error en el código que no fue descubierto por los tests ni en la revisión de usuario, y se publica el error al sistema de producción.</description>
+    </item>
+    
     <item>
       <title>Verificar rangos de fechas en PostgreSQL</title>
       <link>https://marceloandrader.github.io/blog/2021/05/07/verificar-rangos-de-fechas-en-postgresql/</link>

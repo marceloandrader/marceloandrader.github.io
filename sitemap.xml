@@ -3,32 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marceloandrader.github.io/blog/2021/05/18/encontrando-errores-en-el-c%C3%B3digo-con-git-bisect/</loc>
+    <lastmod>2021-05-18T06:46:23-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/git/</loc>
+    <lastmod>2021-05-18T06:46:23-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/posts/</loc>
+    <lastmod>2021-05-18T06:46:23-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/</loc>
+    <lastmod>2021-05-18T06:46:23-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/tip/</loc>
+    <lastmod>2021-05-18T06:46:23-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/</loc>
+    <lastmod>2021-05-18T06:46:23-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
     <lastmod>2021-05-07T10:22:47-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://marceloandrader.github.io/tags/postgres/</loc>
-    <lastmod>2021-05-07T10:22:47-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/posts/</loc>
-    <lastmod>2021-05-07T10:22:47-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/</loc>
-    <lastmod>2021-05-07T10:22:47-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/tip/</loc>
-    <lastmod>2021-05-07T10:22:47-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/</loc>
     <lastmod>2021-05-07T10:22:47-05:00</lastmod>
   </url>
   
@@ -140,11 +150,6 @@
   <url>
     <loc>https://marceloandrader.github.io/blog/2021/02/05/qu%C3%A9-sistema-operativo-es-mejor-para-programar/</loc>
     <lastmod>2021-02-05T06:53:50-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/git/</loc>
-    <lastmod>2021-02-04T18:07:18-05:00</lastmod>
   </url>
   
   <url>

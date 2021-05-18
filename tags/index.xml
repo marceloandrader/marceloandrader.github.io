@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Fri, 07 May 2021 10:22:47 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 06:46:23 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git</title>
+      <link>https://marceloandrader.github.io/tags/git/</link>
+      <pubDate>Tue, 18 May 2021 06:46:23 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tip</title>
+      <link>https://marceloandrader.github.io/tags/tip/</link>
+      <pubDate>Tue, 18 May 2021 06:46:23 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/tags/tip/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>desarrollo</title>
       <link>https://marceloandrader.github.io/tags/desarrollo/</link>
@@ -22,15 +40,6 @@
       <pubDate>Fri, 07 May 2021 10:22:47 -0500</pubDate>
       
       <guid>https://marceloandrader.github.io/tags/postgres/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tip</title>
-      <link>https://marceloandrader.github.io/tags/tip/</link>
-      <pubDate>Fri, 07 May 2021 10:22:47 -0500</pubDate>
-      
-      <guid>https://marceloandrader.github.io/tags/tip/</guid>
       <description></description>
     </item>
     
@@ -76,15 +85,6 @@
       <pubDate>Tue, 09 Mar 2021 07:21:29 -0500</pubDate>
       
       <guid>https://marceloandrader.github.io/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://marceloandrader.github.io/tags/git/</link>
-      <pubDate>Thu, 04 Feb 2021 18:07:18 -0500</pubDate>
-      
-      <guid>https://marceloandrader.github.io/tags/git/</guid>
       <description></description>
     </item>
     
