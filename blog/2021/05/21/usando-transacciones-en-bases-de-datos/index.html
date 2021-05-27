@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Usando transacciones en bases de datos | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,84 +148,119 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-aplicaciones-cli/">
-                    Dependencias de Aplicaciones CLI
-                </a>
-            </h2>
-            <div>
-                <p>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos
-history | awk &#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &#34; &#34; CMD[a]/count*100 &#34;% &#34; a;}&#39; | grep -v &#34;.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>December 15, 2011</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Usando transacciones en bases de datos</h1>
+    
+    <time>May 21, 2021</time>
+    
+    <div>
+        <p>
+        <p>Al escribir la lógica de una aplicación que interactúa con una base de datos relacional
+para almacenar la información, generalmente se puede tener varios
+pasos para guardar cada pedazo en un lugar específico de la base, las bases de datos denominadas
+<a href="https://es.wikipedia.org/wiki/ACID">ACID</a> tienen una herramienta poderoza para evitar inconsistencias de datos
+hoy nos concentraremos en la A de ACID Atomicidad.</p>
+<p>Por ejemplo cuando se crea una factura, no solo se guarda como un documento en la base,
+se tiene varias tablas como: <code>factura</code>, <code>detalle_factura</code>, <code>inventario</code>, <code>producto</code>, etc. Al enviar la información
+desde la interfaz de usuario hacia la aplicación podemos tener una sola estructura con todos los
+datos necesarios para crear la factura, pero a nivel de aplicación debemos analizar esa estructura
+y leerla para que cada parte se guarde en una tabla específica de la base de datos, de tal forma
+que tendremos un registro para <code>factura</code> con los datos de la cabecera, varios registros de <code>detalle_factura</code>
+y adicionalmente se debe modificar las cantidades de los productos en el detalle del <code>inventario</code> de cada <code>producto</code>.</p>
+<p>Si tomamos la vía rápida de hacerlo todo esperando que nada falle, tendremos código cómo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 
-            
-            
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-                    <a class="tag" href="/tags/cli">#cli</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-software-de-escritorio/">
-                    Dependencias de Software de Escritorio
-                </a>
-            </h2>
-            <div>
-                <p>Como sistema operativo uso Mac OS X (Snow Leopard), las aplicaciones que más uso en orden de frecuencia de uso serían:</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>December 15, 2011</time>
+<span style="color:#75715e">// ... solo el código que interesa para el ejemplo
+</span><span style="color:#75715e"></span>$factura <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Factura</span>($datosDeFactura);
+$factura<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+<span style="color:#66d9ef">foreach</span> ($detalleDeFactura <span style="color:#66d9ef">as</span> $detalle) {
+    $detalle <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DetalleFactura</span>($detalle);
+    $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">factura</span> <span style="color:#f92672">=</span> $factura;
+    $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
+    $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
 
-            
-            
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-                    <a class="tag" href="/tags/desktop">#desktop</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+    $inventario <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Inventario</span>($detalle);
+    $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
+    $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+}
+</code></pre></div><p>Como podemos ver estamos usando algún tipo de ORM en el que creamos los objetos con datos y guardamos cada uno,
+el problema sucede si digamos en la estructura de datos enviada, uno de los <code>producto_id</code> no está en la tabla de productos.
+De tal forma que si enviamos una lista con 3 productos y el último id no está definido, en este código se creará
+una factura con 2 detalles y 2 afectaciones a inventario, en el último producto el sistema dará un fallo y no podrá
+seguir, pero en la base de datos ya se escribió parte de la información.</p>
+<p>Para solucionar este gran inconveniente debemos usar una herramienta que todas las bases de datos relacionales
+tienen, <strong>TRANSACCIONES</strong>.</p>
+<p>A nivel de base de datos desde un cliente por ejemplo, es fácil comenzar una transacción con el comando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">BEGIN</span>;
+</code></pre></div><p>Luego se puede hacer varias operaciones de lectura y/o escritura:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>factura<span style="color:#f92672">`</span> (numero, fecha, estado) 
+<span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;001-001-1000&#39;</span>, <span style="color:#e6db74">&#39;2021-05-27&#39;</span>, <span style="color:#e6db74">&#39;Facturada&#39;</span>);
+
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>detalle_factura<span style="color:#f92672">`</span> (item, producto_id, cantidad, precio) 
+<span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#ae81ff">2000</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">500</span>);
+</code></pre></div><p>Al final se puede decidir si guardo todos los cambios o regreso al estado original antes de enviar el comando BEGIN. Si deseo escribir
+uso el comando <strong>COMMIT</strong>, si quiero descartar todos los cambios uso el comando <strong>ROLLBACK</strong>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">COMMIT</span>;
+<span style="color:#75715e">--- o 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">ROLLBACK</span>;
+</code></pre></div><p>Esto nos asegura que en el COMMIT todas las operaciones realizadas se ejecutan como una sola operación o no se ejecuta nada,
+a esto se le llama <strong>ATOMICIDAD</strong>.</p>
+<p>En nuestro ejemplo de php, se puede implementar de varias formas, pero la que normalmente uso es hacer un try catch.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+
+<span style="color:#75715e">// ... solo el código que interesa para el ejemplo
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">try</span> {
+    $conexionBd<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">begin</span>();
+
+    $factura <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Factura</span>($datosDeFactura);
+    $factura<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+    <span style="color:#66d9ef">foreach</span> ($detalleDeFactura <span style="color:#66d9ef">as</span> $detalle) {
+        $detalle <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DetalleFactura</span>($detalle);
+        $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">factura</span> <span style="color:#f92672">=</span> $factura;
+        $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
+        $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+
+        $inventario <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Inventario</span>($detalle);
+        $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
+        $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+    }
+
+    $conexionBd<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">commit</span>();
+} 
+<span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">\Exception</span> $e)
+{
+    $conexionBd<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">rollback</span>();
+    <span style="color:#66d9ef">throw</span> $e;
+}
+</code></pre></div><p>Agregando estas líneas de código estamos asegurando que la factura se crea con los 3 productos enviados, o no se crea la factura, y
+la integridad de los datos está asegurada sin datos basura en la base.</p>
+
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 8 of 8</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/7/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-        </div>
+            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
         
+            <a class="tag" href="/tags/software">#software</a>
+        
+      
     </div>
+
 
         
         </div>

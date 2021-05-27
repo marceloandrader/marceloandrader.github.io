@@ -6,7 +6,16 @@
     <description>Recent content on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Tue, 18 May 2021 06:46:23 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 May 2021 07:16:10 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Usando transacciones en bases de datos</title>
+      <link>https://marceloandrader.github.io/blog/2021/05/21/usando-transacciones-en-bases-de-datos/</link>
+      <pubDate>Fri, 21 May 2021 07:16:10 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2021/05/21/usando-transacciones-en-bases-de-datos/</guid>
+      <description>Al escribir la lógica de una aplicación que interactúa con una base de datos relacional para almacenar la información, generalmente se puede tener varios pasos para guardar cada pedazo en un lugar específico de la base, las bases de datos denominadas ACID tienen una herramienta poderoza para evitar inconsistencias de datos hoy nos concentraremos en la A de ACID Atomicidad.</description>
+    </item>
+    
     <item>
       <title>Encontrando errores en el código con git bisect</title>
       <link>https://marceloandrader.github.io/blog/2021/05/18/encontrando-errores-en-el-c%C3%B3digo-con-git-bisect/</link>
