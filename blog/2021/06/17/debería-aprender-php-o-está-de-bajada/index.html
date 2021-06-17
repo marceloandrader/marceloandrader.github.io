@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Debería aprender PHP o está de bajada? | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,178 +148,47 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/19/m%C3%A1quinas-de-estado-finito-fsm/">
-                    Máquinas de Estado Finito (FSM)
-                </a>
-            </h2>
-            <div>
-                <p>Una cosa que aprendí luego de cometer el mismo error varias veces en proyectos pasados es dejar de usar booleans en los diseños de las tablas de la base de datos.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 19, 2021</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Debería aprender PHP o está de bajada?</h1>
+    
+    <time>June 17, 2021</time>
+    
+    <div>
+        <p>
+        <p>He escuchado muchas veces la pregunta si debería o no un nuevo programador o ingeniero salido de la universidad aprender PHP. La respuesta como todo en la vida, <strong>depende</strong>. Depende especialmente de hacia dónde quiera dirigir su carrera esta persona.</p>
+<p>En el ambiente empresarial siempre hay un sentimiento de desprecio hacia el lenguaje PHP, y un tinte de superioridad hacia lenguajes más usados en estas instituciones como java o C#. Es verdad que desde hace mucho tiempo hasta las versiones 4 o 5 de PHP, realmente PHP tenía muchas &ldquo;características&rdquo; que no lo hacían ver bien en el ambiente empresarial, hacía conversiones automáticas de tipos de datos, si sumabas cadenas y números &ldquo;asumía&rdquo; lo que querías hacer y simplemente convertía la cadena a número y luego sumaba, es un lenguaje dinámico, hasta cierto punto demasiado dinámico para muchos gustos. Pero este lenguaje ha ido evolucionando bastante, se tiene soporte muy extendido de programación Orientada a Objetos y también Funcional, pero no se puede negar que aún con estas nuevas características un mal programador aún puede crear programas &ldquo;Frankensteins&rdquo; en este, usando código procedural, mezclando html con php para generar páginas dinámicas, etc.</p>
+<p>Así que si la ídea es trabajar en empresas, PHP tal vez no sea la mejor recomendación para aprender.</p>
+<p>Tampoco podemos tapar el sol con un dedo y disminuir todo lo que es posible hacer con PHP. Con el <a href="https://w3techs.com/technologies/overview/programming_language">79%</a> del mercado de sitios web usando PHP, tampoco es que le va a faltar trabajo si se orienta la carrera hacia negocios en la web. Entre las grandes empresas de tecnología que usan PHP en alguna parte de su &ldquo;stack&rdquo; están Facebook, Slack, Wikipedia, entre otras. Muchos negocios pequeños también tienen su nido en la web a través de Wordpress, Drupal o Joomla que son CMS desarrollados en PHP.</p>
+<p>PHP tiene mucahs ventajas, entre ellas por ejemplo a la hora de desplegar sitios web o applicaciones web en Internet, la mayoría de las empresas de hosting hacen muy fácil poner una aplicación PHP en sus servidores a través de subir archivos via sFTP o SCP, no lo recomiendo pero así se empieza. También se puede usar con muchas bases de datos, en la web las preferidas son mysql y postgres, pero de ser necesario también se puede conectar con bases oracle o sql server. El flujo de trabajo en PHP es muy rápido, pienso, hago el cambio en el archivo y hago f5 en el browser y ya puedo ver el cambio.</p>
+<p>Ahora también hay muchos frameworks que van a evitar que te dispares en tu propio pie a la hora de hacer una aplicación PHP, mi recomendación es aprender el lenguaje tratar una aplicación pequeña en PHP puro (que no vaya a ponerse en producción) y luego aprender un framework de desarrollo PHP como <a href="https://symfony.com/">symfony</a> o <a href="https://laravel.com/">laravel</a> aparte de proveer mucha funcionalidad estos frameworks permiten mantener una aplicación ordenada y bien separada cada capa de programación.</p>
+<p>Otra recomendación es leer este sitio web <a href="https://phptherightway.com/">PHP The Right Way</a> por favor la versión en Inglés porque la de español está bastante desactualizada. Este informa bastante bien cómo trabajar con PHP de una forma sensata y ordenada para evitar sorpresas.</p>
+<h2 id="conclusión">Conclusión</h2>
+<p>Al final la decisión es propia y es cuestión de gustos. En mi caso al inicio de mi carrera luego de la universidad use PowerBuilder, java y tecnologías Microsoft, pero una vez que hice el cambio a PHP se abrieron muchas puertas, especialmente en el exterior por lo que si aprendes PHP recomendaría también aprender Inglés.</p>
+<p><a href="https://forms.gle/VNBQara7jQq8HdzcA">Gracias por llegar hasta aquí, ayúdame llenando esta encuesta, me gustaría saber en qué lenguaje trabajas</a></p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/16/probando-c%C3%B3digo-en-diferentes-versiones-de-php/">
-                    Probando código en diferentes versiones de PHP
-                </a>
-            </h2>
-            <div>
-                <p>Cuando estoy dando mantenimiento a una aplicación escrita en PHP y actualizando la versión de PHP para mantenerla segura, a veces es necesario probar por qué cierto código en una versión funciona y en otra no.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 16, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/09/migraciones-de-base-de-datos-con-phinx/">
-                    Migraciones de base de datos con Phinx
-                </a>
-            </h2>
-            <div>
-                <p>Cuando uno piensa que una aplicación va a ser muy pequeña como para usar un framework completo o un framework que no tiene migraciones para base de datos, y los cambios a la base de datos generalmente se hacen a mano.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 9, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/05/qu%C3%A9-sistema-operativo-es-mejor-para-programar/">
-                    ¿Qué sistema operativo es mejor para programar?
-                </a>
-            </h2>
-            <div>
-                <p>Linux. Fin.
-Solo bromeaba, ojalá este tipo de preguntas fueran tan fáciles de responder, como todo en la vida no es una respuesta de blanco o negro, hay muchos matices y en este caso hay que escudriñar un poco más para poder tener una respuesta que se ajuste a tu contexto.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 5, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/04/monorepo/">
-                    Monorepo
-                </a>
-            </h2>
-            <div>
-                <p>En muchos sistemas modernos se opta por tener una aplicación web de página única o Single Page Application, en donde obligatoriamente tenemos al menos 2 partes, un backend y un frontend, los dos con diferentes estilos de programación y que deben ejecutarse en la misma versión para que todo funcione correctamente.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 4, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/git">#git</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/php">#php</a>
         
-        <p>Page 4 of 8</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/3/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/5/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/carrera">#carrera</a>
         
+      
     </div>
+
 
         
         </div>

@@ -3,12 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
-    <lastmod>2021-05-21T07:16:10-05:00</lastmod>
+    <loc>https://marceloandrader.github.io/tags/carrera/</loc>
+    <lastmod>2021-06-17T06:44:22-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/blog/2021/06/17/deber%C3%ADa-aprender-php-o-est%C3%A1-de-bajada/</loc>
+    <lastmod>2021-06-17T06:44:22-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/php/</loc>
+    <lastmod>2021-06-17T06:44:22-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://marceloandrader.github.io/posts/</loc>
+    <lastmod>2021-06-17T06:44:22-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/</loc>
+    <lastmod>2021-06-17T06:44:22-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/</loc>
+    <lastmod>2021-06-17T06:44:22-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
     <lastmod>2021-05-21T07:16:10-05:00</lastmod>
   </url>
   
@@ -18,17 +43,7 @@
   </url>
   
   <url>
-    <loc>https://marceloandrader.github.io/tags/</loc>
-    <lastmod>2021-05-21T07:16:10-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://marceloandrader.github.io/tags/tip/</loc>
-    <lastmod>2021-05-21T07:16:10-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/</loc>
     <lastmod>2021-05-21T07:16:10-05:00</lastmod>
   </url>
   
@@ -59,11 +74,6 @@
   
   <url>
     <loc>https://marceloandrader.github.io/blog/2021/04/30/c%C3%B3mo-utilizar-symplify/vendor-patches-en-proyectos-php/</loc>
-    <lastmod>2021-04-30T07:03:53-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/php/</loc>
     <lastmod>2021-04-30T07:03:53-05:00</lastmod>
   </url>
   
