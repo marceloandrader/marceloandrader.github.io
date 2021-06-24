@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.79.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Aplicaciones web ambiciosas con Ember.js | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,171 +148,85 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/27/formatear-y-convertir-json-al-vuelo-con-jq/">
-                    Formatear y convertir JSON al vuelo con jq
-                </a>
-            </h2>
-            <div>
-                <p>jq es una herramienta que permite formatear y/o convertir la respuesta de un JSON API a cualquier cosa que se les ocurra.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 27, 2021</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Aplicaciones web ambiciosas con Ember.js</h1>
+    
+    <time>June 24, 2021</time>
+    
+    <div>
+        <p>
+        <p>Cuando se trata de crear aplicaciones de página única o SPA en inglés,
+como desarrolladores tenemos muchas opciones de dónde escoger
+hay frameworks y librerías muy conocidas como angular en el área de framework
+y vue | react en el área de librería.</p>
+<p>Hoy quiero hablarles de un framework no muy usado o conocido
+pero que merece ser mencionado: <a href="https://emberjs.com/">Ember.js</a>. He trabajado
+con este framework por al menos 6 años, y la forma en la que llegué a este
+fue un poco graciosa, en ese tiempo estaba dando los tests para entrar
+a la comunidad de freelancers <a href="https://www.toptal.com/NWaLA1/worlds-top-talent">Toptal</a> uno
+de los pasos era realizar un pequeño proyecto y para esto escogí Ember.js y PHP en el backend
+lo escogí como para aprender, había trabajado en el pasado con knockout.js, angular js,
+backbone y por supuesto jQuery; pero quería algo que realmente ayudara en la productividad,
+luego de ser aceptado en Toptal, la primera entrevista con un cliente era
+para llenar un puesto para trabajar con Ember, en principio dude en aplicar
+porque solo lo había aprendido para hacer este test, pero el reclutador me
+animó y la entrevista fue muy bien y desde entonces estoy trabajando con este cliente
+con 4 aplicaciones internas grandes hechas en Ember.</p>
+<p>Una de los principios de Ember.js es que la evolución no debe ser drástica,
+como en el caso de angular que hubo un re-write del framework y los que crearon
+una app con angular js no pudieron pasar directamente a angular v2, la idea
+de Ember era siempre hacer las transiciones de versiones lo más seguras
+y fáciles posibles, para esto proveen con muchas herramientas, como <code>deprecations</code>
+para que desde una versión anterior comiencen a notarse los cambios que se activarán
+en las versiones posteriores y que alertan a los desarrolladores para cambiar el código de la aplicación
+para una futura actualización sin novedades, también existen <code>codemods</code>
+para que los cambios se hagan automáticamente, e incluso hay <code>feature flags</code> que
+permiten probar características que saldrán públicas en futuras versiones
+en versiones anteriores.</p>
+<p>El framework ya lleva 10 años con una comunidad pequeña pero
+con gente de mucha calidad y muy abierta e inclusiva. En cuestión de paquetes disponibles
+para la comunidad hay una gran variedad, puedes chequear <a href="https://emberobserver.com/">Ember Observer</a>
+donde se registran todos los addons que tienen compatibilidad con Ember.</p>
+<p>Como ejemplos de aplicaciones públicas desarrolladass con Ember están LinkedIn, Heroku, Intercom, Square.</p>
+<p>En cuestiones un poco más técnicas, el framework tiene muchas opiniones en su diseño
+tal vez para muchos esto no es bueno, para mi es fantástico, no tienes que tomar decisiones
+de qué usar cada 5 minutos, porque como comunidad ya se hizo esta decisión a travez
+de procesos denominados RFC en github para realizar cambios. La estructura de las aplicaciones
+es estándar, si has trabajado en una app ember, puedes trabajar en otra muy rápidamente
+porque sabes dónde está y cómo funciona todo.</p>
+<p>La URL en aplicaciones ember es tratada como una parte fundamental, ya que de la misma se puede derivar
+el ruteo, estático y dinámico, y adicional parametros de consulta. Es el punto de entrada
+hacia las rutas de la aplicación que a su vez manejan el modelo de datos que es transferido hacia
+los templates que usan componentes para mostrar y manejar la interfaz al usuario.</p>
+<p>Se puede hacer Test Driven Development muy fácilmente con tests unitarios para cada componente o utilidad
+y tests e2e para ejecutar caminos complejos de interacciones de usuario.</p>
+<p>Si a alguien le interesa más detalles de cómo funciona el framework, suscríbanse y dejenme saber.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/api">#api</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/">
-                    Bash sin sorpresas
-                </a>
-            </h2>
-            <div>
-                <p>Existe una línea de código que agrego siempre a los script bash que me ayuda mucho a evitar errores comunes cuando se escribe un script.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 26, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/bash">#bash</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/25/formatea-t%C3%BA-c%C3%B3digo-con-prettier/">
-                    Formatea tú código con prettier
-                </a>
-            </h2>
-            <div>
-                <p>Trabajas en equipo y pasas tiempo insistiendo en que coloquen los paréntesis donde te gusta, que el indentado del código sea como dicta cierto estándar, o tu mismo pasas tiempo en tu editor dándole formato al código para que sea agradable a la vista.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 25, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/22/autocompletado-de-alta-velocidad-starship/">
-                    Autocompletado de alta velocidad Starship
-                </a>
-            </h2>
-            <div>
-                <p>Como desarrolladores pasamos mucho tiempo en la línea de comandos, la mayoría del tiempo escribimos los mismos comandos una y otra vez, tan solo cambiando un poco la orden.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 22, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/cli">#cli</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/">
-                    Compartir un sitio local al Internet
-                </a>
-            </h2>
-            <div>
-                <p>Alguna vez les ha pasado que un cliente desea ver avances del desarrollo pero no tienen desplegado aún el ambiente de pruebas?</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>January 21, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/networking">#networking</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 6 of 8</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/5/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/7/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/spa">#spa</a>
         
+            <a class="tag" href="/tags/software">#software</a>
+        
+      
     </div>
+
 
         
         </div>
