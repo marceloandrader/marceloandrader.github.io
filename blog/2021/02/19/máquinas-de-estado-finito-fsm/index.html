@@ -167,16 +167,15 @@ if (!doNotTrack) {
 <p><strong>Transiciones</strong> (transitions) son las posibles acciones que pueden hacer que un objeto cambie de un estado a otro. En nuestro ejemplo las transiciones pueden ser <code>activar</code> que va de inactivo a activo, <code>desactivar</code> que va de activo a inactivo y <code>resetear</code> que va de inactivo o activo a reseteando y <code>reestablecer</code> que va de reseteando a activo.</p>
 <p><strong>Llamadas</strong> (callbacks) son funciones del objeto que se llaman cuando una transición se ejecuta, esto me ha sido útil por ejemplo para llevar un control de cambios en el objeto, cuándo se hizo la transición y quién la ejecutó.</p>
 <p>Una vez realizada la configuración, el API para verificar que transiciones puede realizar el objeto son:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getCurrentState</span>(); <span style="color:#75715e">// por ejemplo ‘activo’
-</span><span style="color:#75715e"></span>
-$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">can</span>(<span style="color:#a6e22e">‘activar’</span>); <span style="color:#75715e">// false porque está en estado activo solo puede ir a reseteando
-</span><span style="color:#75715e"></span>$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">can</span>(<span style="color:#a6e22e">‘desactivar’</span>); <span style="color:#75715e">// true si se puede realizar esta transición de acuerdo a la configuración
-</span><span style="color:#75715e"></span>
-$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">‘desactivar’</span>); <span style="color:#75715e">// se realiza el cambio
-</span><span style="color:#75715e"></span>$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getCurrentState</span>(); <span style="color:#75715e">// ahora es ‘inactivo’
-</span><span style="color:#75715e"></span>
-$user<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">getCurrentState</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getTransitions</span>(); <span style="color:#75715e">// muestra que posibles transiciones tiene disponible, en el caso de inactivo puede ir solo a ‘activar’
-</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$user-&gt;getCurrentState(); // por ejemplo ‘activo’
+
+$user-&gt;can(‘activar’); // false porque está en estado activo solo puede ir a reseteando
+$user-&gt;can(‘desactivar’); // true si se puede realizar esta transición de acuerdo a la configuración
+
+$user-&gt;apply(‘desactivar’); // se realiza el cambio
+$user-&gt;getCurrentState(); // ahora es ‘inactivo’
+
+$user&gt;getCurrentState()-&gt;getTransitions(); // muestra que posibles transiciones tiene disponible, en el caso de inactivo puede ir solo a ‘activar’</code></pre></div>
 <p>Para mayor información la <a href="https://finite.readthedocs.io/en/master/index.html">documentación de yohang/finite</a> es muy completa.</p>
 
         </p>

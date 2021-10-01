@@ -6,13 +6,35 @@
     <description>Recent content in Tags on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Thu, 24 Jun 2021 07:22:44 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Oct 2021 06:46:09 -0500</lastBuildDate>
+    
+	<atom:link href="https://marceloandrader.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>alternativos</title>
+      <link>https://marceloandrader.github.io/tags/alternativos/</link>
+      <pubDate>Fri, 01 Oct 2021 06:46:09 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/tags/alternativos/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>software</title>
       <link>https://marceloandrader.github.io/tags/software/</link>
-      <pubDate>Thu, 24 Jun 2021 07:22:44 -0500</pubDate>
+      <pubDate>Fri, 01 Oct 2021 06:46:09 -0500</pubDate>
       
       <guid>https://marceloandrader.github.io/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tip</title>
+      <link>https://marceloandrader.github.io/tags/tip/</link>
+      <pubDate>Fri, 01 Oct 2021 06:46:09 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/tags/tip/</guid>
       <description></description>
     </item>
     
@@ -22,15 +44,6 @@
       <pubDate>Thu, 24 Jun 2021 07:22:44 -0500</pubDate>
       
       <guid>https://marceloandrader.github.io/tags/spa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tip</title>
-      <link>https://marceloandrader.github.io/tags/tip/</link>
-      <pubDate>Thu, 24 Jun 2021 07:22:44 -0500</pubDate>
-      
-      <guid>https://marceloandrader.github.io/tags/tip/</guid>
       <description></description>
     </item>
     

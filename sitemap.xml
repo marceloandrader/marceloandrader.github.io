@@ -3,37 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marceloandrader.github.io/tags/alternativos/</loc>
+    <lastmod>2021-10-01T06:46:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/blog/2021/10/01/elixir-y-la-m%C3%A1quina-virtual-de-erlang/</loc>
+    <lastmod>2021-10-01T06:46:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/posts/</loc>
+    <lastmod>2021-10-01T06:46:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/software/</loc>
+    <lastmod>2021-10-01T06:46:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/</loc>
+    <lastmod>2021-10-01T06:46:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/tip/</loc>
+    <lastmod>2021-10-01T06:46:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/</loc>
+    <lastmod>2021-10-01T06:46:09-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://marceloandrader.github.io/blog/2021/06/24/aplicaciones-web-ambiciosas-con-ember.js/</loc>
     <lastmod>2021-06-24T07:22:44-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://marceloandrader.github.io/posts/</loc>
-    <lastmod>2021-06-24T07:22:44-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/software/</loc>
-    <lastmod>2021-06-24T07:22:44-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://marceloandrader.github.io/tags/spa/</loc>
-    <lastmod>2021-06-24T07:22:44-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/</loc>
-    <lastmod>2021-06-24T07:22:44-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/tip/</loc>
-    <lastmod>2021-06-24T07:22:44-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/</loc>
     <lastmod>2021-06-24T07:22:44-05:00</lastmod>
   </url>
   

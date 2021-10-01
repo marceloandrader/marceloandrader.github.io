@@ -172,7 +172,7 @@ y leerla para que cada parte se guarde en una tabla específica de la base de da
 que tendremos un registro para <code>factura</code> con los datos de la cabecera, varios registros de <code>detalle_factura</code>
 y adicionalmente se debe modificar las cantidades de los productos en el detalle del <code>inventario</code> de cada <code>producto</code>.</p>
 <p>Si tomamos la vía rápida de hacerlo todo esperando que nada falle, tendremos código cómo:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 
 <span style="color:#75715e">// ... solo el código que interesa para el ejemplo
 </span><span style="color:#75715e"></span>$factura <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Factura</span>($datosDeFactura);
@@ -210,7 +210,7 @@ uso el comando <strong>COMMIT</strong>, si quiero descartar todos los cambios us
 </code></pre></div><p>Esto nos asegura que en el COMMIT todas las operaciones realizadas se ejecutan como una sola operación o no se ejecuta nada,
 a esto se le llama <strong>ATOMICIDAD</strong>.</p>
 <p>En nuestro ejemplo de php, se puede implementar de varias formas, pero la que normalmente uso es hacer un try catch.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 
 <span style="color:#75715e">// ... solo el código que interesa para el ejemplo
 </span><span style="color:#75715e"></span>

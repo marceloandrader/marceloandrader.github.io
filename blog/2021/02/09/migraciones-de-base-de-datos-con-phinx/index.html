@@ -171,15 +171,14 @@ if (!doNotTrack) {
 <p>Para crear una nueva migración con</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vendor/bin/phinx create CrearTablaUsuarios</code></pre></div>
 <p>Una migración es una clase php con un nombre único, que se crea con el método <code>change</code> o que puede se puede cambiar para tener los métodos <code>up</code> y <code>down</code>. Y dentro de este método se utiliza el api de phinx para realizar las operaciones de cambios. Up para cambiar la estructura y down para reversar el cambio si hacemos un rollback. O simplemente change se usa para hacer el cambio y que phinx infiera la reversión. Por ejemplo las siguientes funciones son frecuentes al escribir migraciones:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">table</span>(<span style="color:#e6db74">&#39;usuarios&#39;</span>)
-<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addColumn</span>(<span style="color:#e6db74">&#39;name&#39;</span>, <span style="color:#e6db74">&#39;string&#39;</span>)
-<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addColumn</span>(<span style="color:#e6db74">&#39;created_on&#39;</span>, <span style="color:#e6db74">&#39;datetime&#39;</span>)
-<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">create</span>();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$this-&gt;table(&#39;usuarios&#39;)
+-&gt;addColumn(&#39;name&#39;, &#39;string&#39;)
+-&gt;addColumn(&#39;created_on&#39;, &#39;datetime&#39;)
+-&gt;create();
 
-$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">table</span>(<span style="color:#e6db74">&#39;usuarios&#39;</span>)
-<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">removeColumn</span>(<span style="color:#e6db74">&#39;name&#39;</span>, <span style="color:#e6db74">&#39;string&#39;</span>)
-<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">udpate</span>();
-</code></pre></div>
+$this-&gt;table(&#39;usuarios&#39;)
+-&gt;removeColumn(&#39;name&#39;, &#39;string&#39;)
+-&gt;udpate();</code></pre></div>
 <p>Se aplica la migración con:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vendor/bin/phinx migrate -e development</code></pre></div>
 <p>donde -e indica que conexión definida en phinx.php usar</p>

@@ -165,44 +165,44 @@ if (!doNotTrack) {
 <p>Luego se definen los trabajos (jobs) que se ejecutarán, cada job tiene una lista de steps, cada step puede ejecutarse directamente como comando bash o puede usar una imagen docker que ya tiene pre configurados los comandos a realizar.</p>
 <p>Otra alternativa es también encontrar acciones pre-fabricadas en el <a href="https://github.com/marketplace?type=actions">marketplace</a> para realizar acciones puntuales en tu código existen para todo, chat, code review, code quality, deployment, publishing, etc.</p>
 <p>Ejemplo de workflow básico, que configura un proyecto php con la imagen setup-php y luego ejecuta composer tests y composer ecs que son scripts definidos en composer para ejecutar tests y estilo con easy-coding-standard:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Code Analysis</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: Code Analysis
 
-<span style="color:#f92672">on</span>:
-    <span style="color:#f92672">pull_request</span>: <span style="color:#66d9ef">null</span>
-    <span style="color:#f92672">push</span>:
-        <span style="color:#f92672">branches</span>:
-            - <span style="color:#ae81ff">dev</span>
-            - <span style="color:#ae81ff">staging</span>
-            - <span style="color:#ae81ff">master</span>
+<span style="color:#66d9ef">on</span>:
+    <span style="color:#66d9ef">pull_request</span>: <span style="color:#66d9ef">null</span>
+    <span style="color:#66d9ef">push</span>:
+        <span style="color:#66d9ef">branches</span>:
+            - dev
+            - staging
+            - master
 
-<span style="color:#f92672">jobs</span>:
-    <span style="color:#f92672">code_analysis</span>:
-        <span style="color:#f92672">strategy</span>:
-            <span style="color:#f92672">fail-fast</span>: <span style="color:#66d9ef">false</span>
-            <span style="color:#f92672">matrix</span>:
-                <span style="color:#f92672">actions</span>:
-                    -
-                        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Run tests</span>
-                        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">composer tests</span>
-                    -
-                        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Check code style</span>
-                        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">composer ecs</span>
+<span style="color:#66d9ef">jobs</span>:
+    <span style="color:#66d9ef">code_analysis</span>:
+        <span style="color:#66d9ef">strategy</span>:
+            <span style="color:#66d9ef">fail-fast</span>: <span style="color:#66d9ef">false</span>
+            <span style="color:#66d9ef">matrix</span>:
+                <span style="color:#66d9ef">actions</span>:
+                    <span style="color:#e6db74">-
+</span><span style="color:#e6db74">                        name: Run tests</span>
+                        <span style="color:#66d9ef">run</span>: composer tests
+                    <span style="color:#e6db74">-
+</span><span style="color:#e6db74">                        name: Check code style</span>
+                        <span style="color:#66d9ef">run</span>: composer ecs
 
-        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">${{ matrix.actions.name }}</span>
-        <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+        <span style="color:#66d9ef">name</span>: ${{ matrix.actions.name }}
+        <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
 
-        <span style="color:#f92672">steps</span>:
-            -   <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span>
+        <span style="color:#66d9ef">steps</span>:
+            -   <span style="color:#66d9ef">uses</span>: actions/checkout@v2
             <span style="color:#75715e"># see https://github.com/shivammathur/setup-php</span>
-            -   <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">shivammathur/setup-php@v2</span>
-                <span style="color:#f92672">with</span>:
-                    <span style="color:#f92672">php-version</span>: <span style="color:#ae81ff">7.4</span>
-                    <span style="color:#f92672">coverage</span>: <span style="color:#ae81ff">none</span>
+            -   <span style="color:#66d9ef">uses</span>: shivammathur/setup-php@v2
+                <span style="color:#66d9ef">with</span>:
+                    <span style="color:#66d9ef">php-version</span>: <span style="color:#ae81ff">7.4</span>
+                    <span style="color:#66d9ef">coverage</span>: none
 
             <span style="color:#75715e"># composer install cache - https://github.com/ramsey/composer-install</span>
-            -   <span style="color:#f92672">uses</span>: <span style="color:#e6db74">&#34;ramsey/composer-install@v1&#34;</span>
+            -   <span style="color:#66d9ef">uses</span>: <span style="color:#e6db74">&#34;ramsey/composer-install@v1&#34;</span>
 
-            -   <span style="color:#f92672">run</span>: <span style="color:#ae81ff">${{ matrix.actions.run }}</span></code></pre></div>
+            -   <span style="color:#66d9ef">run</span>: ${{ matrix.actions.run }}</code></pre></div>
 
         </p>
       <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>

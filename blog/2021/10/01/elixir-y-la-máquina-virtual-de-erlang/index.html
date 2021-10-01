@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Elixir y la máquina virtual de Erlang | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -151,175 +148,78 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/26/asdf-para-manejar-varias-versiones-de-tus-herramientas/">
-                    asdf para manejar varias versiones de tus herramientas
-                </a>
-            </h2>
-            <div>
-                <p>Cuando realizamos desarrollo en nuestra máquina local, es normal que trabajemos en varios proyectos, algunos proyectos más antiguos otros más nuevos, hay veces que tenemos que volver a proyectos antiguos a realizar alguna modificación, pero como ya actualizamos ciertas herramientas a las nuevas versiones, estos proyectos dejan de funcionar.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 26, 2021</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Elixir y la máquina virtual de Erlang</h1>
+    
+    <time>October 1, 2021</time>
+    
+    <div>
+        <p>
+        <p><img src="/images/elixir.png" alt="Elixir"></p>
+<p>En el trabajo soy desarrollador de software y uso PHP
+y JavaScript el 99% del tiempo. Pero siempre estoy buscando
+alternativas en el área de programación, herramientas
+que me permitan ser más eficiente o lenguajes de los
+que pueda aprender algo diferente a lo acostumbrado, esto
+me permite tener diferentes puntos de vista.</p>
+<p>En el pasado esto me llevo a aprender lenguajes tan distintos como
+Objective C para hacer algunas app en las primeras versiones de iphone OS.
+Hoy estoy explorando el mundo de <a href="https://elixir-lang.org">Elixir</a>
+me ha llamado mucho la atención ya que es un lenguaje que se compila
+a un bytecode que se ejecuta en la máquina virtual de erlang, esto
+hace que las aplicaciones escritas en Elixir cuenten con algunas
+características que las hacen ideales para ambientes de alto
+tráfico, la Erlang VM permite ejecutar sistemas:</p>
+<ul>
+<li>Concurrentes</li>
+<li>Con baja latencia</li>
+<li>Escalables</li>
+<li>Distribuidos</li>
+<li>Tolerantes a fallas</li>
+</ul>
+<p>Esta máquina virtual ejecuta procesos (diferentes a los procesos del sistema operativo)
+que son mucho más ligeros y puede ejecutar millones de ellos a la vez. La
+comunicación entre ellos es a través de mensajes.</p>
+<p>Algunas empresas que ya están usando esta teconología:</p>
+<ul>
+<li>WhatsApp, teniendo 2 mil millones de usuarios solo necesitaban un equipo de 50 ingenieros de desarrollo y operaciones.</li>
+<li>Bleacher Report, un sitio web de deportes, migraron de ruby a Elixir y bajaron la cantidad de servidores de 150 a 5.</li>
+<li>Discord, es una aplicación de VoIP (generlamente para gamers) que permite comunicar via voz, texto y videos, 56 millones de usuarios.</li>
+</ul>
+<p>Retomando a la parte del lenguaje en sí, Elixir es un lenguaje dinámico y funcional, esto quiere
+decir que no se necesita declarar los tipos de datos en el código, y que usa funciones para la transformación
+de datos, no soporta orientación a objetos.
+Su creador José Valim de Brasil tomo la sintaxis del código ruby.</p>
+<p>Tiene su propio manejador de paquetes llamado <a href="https://hex.pm/">Hex</a> en el que se puede encontrar
+librerías publicadas por la comunidad para facilitar el desarrollo de los sistemas.</p>
+<p>Para la parte web, Chris McCord  creó un framework web para aplicaciones que requieren comunicaciones en tiempo real <a href="https://www.phoenixframework.org/">Phoenix</a></p>
+<p>Les invito a visitar los sitios oficiales para más información.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/23/enviando-e-mails-en-ambientes-de-desarrollo/">
-                    Enviando e-mails en ambientes de desarrollo
-                </a>
-            </h2>
-            <div>
-                <p>Cuando se ejecuta un proyecto localmente, muchas veces se requiere poder enviar e-mails a los usuarios de prueba, en un ambiente de desarrollo NO es recomendable enviar e-mails reales ya que si no se es cuidadoso podemos llegar a usar datos de producción y enviar e-mails de prueba a usuarios reales causando confusión.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 23, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/19/m%C3%A1quinas-de-estado-finito-fsm/">
-                    Máquinas de Estado Finito (FSM)
-                </a>
-            </h2>
-            <div>
-                <p>Una cosa que aprendí luego de cometer el mismo error varias veces en proyectos pasados es dejar de usar booleans en los diseños de las tablas de la base de datos.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 19, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/16/probando-c%C3%B3digo-en-diferentes-versiones-de-php/">
-                    Probando código en diferentes versiones de PHP
-                </a>
-            </h2>
-            <div>
-                <p>Cuando estoy dando mantenimiento a una aplicación escrita en PHP y actualizando la versión de PHP para mantenerla segura, a veces es necesario probar por qué cierto código en una versión funciona y en otra no.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 16, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2021/02/09/migraciones-de-base-de-datos-con-phinx/">
-                    Migraciones de base de datos con Phinx
-                </a>
-            </h2>
-            <div>
-                <p>Cuando uno piensa que una aplicación va a ser muy pequeña como para usar un framework completo o un framework que no tiene migraciones para base de datos, y los cambios a la base de datos generalmente se hacen a mano.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 9, 2021</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/tip">#tip</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/php">#php</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
     </div>
+    
+
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/tip">#tip</a>
         
-        <p>Page 4 of 8</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/3/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/5/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
+            <a class="tag" href="/tags/software">#software</a>
         
+            <a class="tag" href="/tags/alternativos">#alternativos</a>
+        
+      
     </div>
+
 
         
         </div>
