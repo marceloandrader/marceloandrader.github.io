@@ -397,5 +397,14 @@ history | awk &amp;#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &amp
 Ahora solo falta aceptar la suscripción en tu email para que no te pierdas de ningún artículo nuevo.</description>
     </item>
     
+    <item>
+      <title>Servicios</title>
+      <link>https://marceloandrader.github.io/services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/services/</guid>
+      <description>Servicios para Negocios Tienes una empresa y necesitas un desarrollo a la medida o una integración que te permita mejorar tus procesos del negocio y a su vez incrementar los ingresos o reducir los costos operativos?</description>
+    </item>
+    
   </channel>
 </rss>
