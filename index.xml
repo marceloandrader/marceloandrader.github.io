@@ -388,6 +388,17 @@ history | awk &amp;#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &amp
     </item>
     
     <item>
+      <title>Contacto</title>
+      <link>https://marceloandrader.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/contact/</guid>
+      <description>Por favor descarga la información de contacto en tu celular:
+vCard
+O escanea este código QR</description>
+    </item>
+    
+    <item>
       <title>Gracias</title>
       <link>https://marceloandrader.github.io/gracias/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+FN;CHARSET=UTF-8:Marcelo Andrade R.
+N;CHARSET=UTF-8:Andrade R.;Marcelo;;Ing.;
+EMAIL;CHARSET=UTF-8;type=HOME,INTERNET:marcelo.andrade.r@gmail.com
+TEL;TYPE=CELL:+593 999 44 33 60
+ADR;CHARSET=UTF-8;TYPE=HOME:;;;Quito;;;Ecuador
+TITLE;CHARSET=UTF-8:Software Engineer
+URL;type=WORK;CHARSET=UTF-8:https://marceloandrader.github.io/
+X-SOCIALPROFILE;TYPE=twitter:https://twitter.com/MarceloAndrade
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/marceloandrader/
+X-SOCIALPROFILE;TYPE=GitHub:https://github.com/marceloandrader/
+REV:2021-11-02T15:57:46.746Z
+END:VCARD
