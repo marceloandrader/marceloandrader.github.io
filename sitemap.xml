@@ -3,8 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
+    <lastmod>2022-02-15T07:00:45-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/negocio/</loc>
+    <lastmod>2022-02-15T07:00:45-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://marceloandrader.github.io/posts/</loc>
-    <lastmod>2022-02-04T07:46:26-05:00</lastmod>
+    <lastmod>2022-02-15T07:00:45-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/software/</loc>
+    <lastmod>2022-02-15T07:00:45-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/</loc>
+    <lastmod>2022-02-15T07:00:45-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/</loc>
+    <lastmod>2022-02-15T07:00:45-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/blog/2022/02/15/por-qu%C3%A9-la-m%C3%A1gica-pregunta-al-desarrollar-software/</loc>
+    <lastmod>2022-02-15T07:00:45-05:00</lastmod>
   </url>
   
   <url>
@@ -13,17 +43,7 @@
   </url>
   
   <url>
-    <loc>https://marceloandrader.github.io/tags/</loc>
-    <lastmod>2022-02-04T07:46:26-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://marceloandrader.github.io/tags/tip/</loc>
-    <lastmod>2022-02-04T07:46:26-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/</loc>
     <lastmod>2022-02-04T07:46:26-05:00</lastmod>
   </url>
   
@@ -39,11 +59,6 @@
   
   <url>
     <loc>https://marceloandrader.github.io/blog/2021/10/01/elixir-y-la-m%C3%A1quina-virtual-de-erlang/</loc>
-    <lastmod>2021-10-01T06:46:09-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/software/</loc>
     <lastmod>2021-10-01T06:46:09-05:00</lastmod>
   </url>
   
@@ -70,11 +85,6 @@
   <url>
     <loc>https://marceloandrader.github.io/tags/php/</loc>
     <lastmod>2021-06-17T06:44:22-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
-    <lastmod>2021-05-21T07:16:10-05:00</lastmod>
   </url>
   
   <url>

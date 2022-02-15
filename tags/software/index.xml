@@ -6,10 +6,19 @@
     <description>Recent content in software on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Fri, 01 Oct 2021 06:46:09 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 15 Feb 2022 07:00:45 -0500</lastBuildDate>
     
 	<atom:link href="https://marceloandrader.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>¿Por qué? la mágica pregunta al desarrollar software</title>
+      <link>https://marceloandrader.github.io/blog/2022/02/15/por-qu%C3%A9-la-m%C3%A1gica-pregunta-al-desarrollar-software/</link>
+      <pubDate>Tue, 15 Feb 2022 07:00:45 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2022/02/15/por-qu%C3%A9-la-m%C3%A1gica-pregunta-al-desarrollar-software/</guid>
+      <description>Cuando el negocio nos solicita un requerimiento, generalmente como técnicos tendemos a empezar la solución de este lo antes posible, tal vez preguntemos acerca de quienes lo van a usar, que información necesitamos guardar para luego usar en reportes, los permisos que deberá tener, y empezamos a validar en nuestra mente la mejor manera de desarrollarlo en el sistema, pero una pregunta importante que muchas veces no hacemos y que deberíamos hacer frecuentemente es:</description>
+    </item>
     
     <item>
       <title>Elixir y la máquina virtual de Erlang</title>
