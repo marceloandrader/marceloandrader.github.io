@@ -2,13 +2,12 @@
 
 <html lang="es-ec">
     <head>
-	<meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tips de Desarrollo</title>
+    <title>Pub/Sub con Redis | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://marceloandrader.github.io/index.xml" title="Tips de Desarrollo" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -155,176 +152,69 @@ if (!doNotTrack) {
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2019/04/11/my-migration-from-keepassxc-to-pass-password-store/">
-                    My migration from keepassxc to pass (password store)
-                </a>
-            </h2>
-            <div>
-                <p>Background My initial way to keep my long list of passwords/secrets safe in my computer was using the password manager keepassxc it served well, the way to share this with my mobile was putting the kdbx file in Dropbox and use KeePassDroid app to be able to use my passwords on the go.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>April 11, 2019</time>
+<style>
+    p > img {
+        max-width: 100%;
+    }
+</style>
+<h1 class="post-title">Pub/Sub con Redis</h1>
+    
+    <time>March 4, 2022</time>
+    
+    <div>
+        <p>
+        <p>Durante esta semana tuve que hacer refactoring de una parte del sistema en el que trabajo
+tenemos un portal de cliente en el que los usuarios pueden seleccionar reportes a descargar
+y se genera un pdf o un zip con toda la información requerida.</p>
+<p>El problema era que estos reportes pueden llegar a ser bastante grandes y estaban
+dando timeouts al generarlos online durante el request HTTP, dejando a los usuarios
+en espera con una pantalla en blanco sin saber cual fue el error cuando falla.</p>
+<p>Hicimos algunas optimizaciones para generar el reporte más rápido pero aún así
+podía demorar algunos minutos, queríamos hacer algo que no le deje al usuario
+sin feedback, ya teníamos la opción de poner la generación de este reporte
+en una cola para que sea consumida por unos procesos en background, pero el usuario no
+sabía que estaba haciendo el sistema durante su espera hasta recibir el email de que el reporte ha finalizado.</p>
+<p>Así que decidimos siempre generar los reportes en background, pero dándole al usuario
+un monitoreo del proceso mientras se genera. Para esto investigue las opciones
+existentes para mostrar mensajes generados durante el proceso de creación del reporte. La opción
+que mejor se acoplaba era enviar mensajes desde el servidor web usando
+<a href="https://jvns.ca/blog/2021/01/12/day-36--server-sent-events-are-cool--and-a-fun-bug/">SSE (Server Sent Events)</a>
+de tal forma que no se necesite hacer demasiados requests haciendo polling, pero
+hubo que hacer algunas configuraciones en nginx para no hacer buffering de la respuesta de
+la aplicación pero una vez hecho eso, desde el front end se crea un EventSource
+y en cada mensaje se muestra información en pantalla. Primera parte resuelta, pero
+ya que el proceso que está generando el reporte no tiene forma de comunicarse con el servidor
+para mostrar el porcentaje de avance se necesita un middleman para emparejar ambos, es
+aquí donde necesitaba un sistema PUB/SUB (Publisher/subscriber). Si hubiera estado usando
+postgres esto ya lo tiene resuelto, usando LISTEN and NOTIFY. Pero como usamos mariadb en este proyecto
+hubo que agregar un nuevo componente al sistema.</p>
+<p>El componente fue redis, sabía de este pero no lo había usado antes, es un almacenamiento
+en memoria de diferentes estructuras de datos, se puede usar como base de datos, cache o broker de mensajes.
+La característica que estamos usando en este momento se llama <a href="https://redis.io/topics/pubsub"> Pub/Sub </a>, y lo que permite
+es publicar mensajes a un canal específico y otros procesos pueden suscribirse a escuchar
+mensajes de un canal o canales que le interesa.</p>
+<p>Para implementarlo simplemente agregue redis como dependencia en mi docker-compose.yml e
+instale el paquete php-redis para poder tener las clases que me permitan conectarme al servidor de redis,
+una vez hecho eso el código es bastante simple, en la clase que maneja los procesos de background
+simplemente se hace un <code>$redis-&gt;publish('job_1', &quot;Iniciando reporte&quot;);</code> y en el controller
+que maneja los SSE se hace un <code>$redis-&gt;listen(['job_1'], fn ...);</code> donde fn es el callback que se llama
+cada vez que se envía un nuevo mensaje al canal denominado job_1, este nombre de canal es
+dinámico.</p>
+<p>Este sistema ha estado trabajando muy bien desde la puesta a producción, el consumo de memoria de redis
+tampoco es elevado, le puse 1GB de RAM pero solo consume 3 MB.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/tutorial">#tutorial</a>
-                
-                    <a class="tag" href="/tags/security">#security</a>
-                
-                    <a class="tag" href="/tags/git">#git</a>
-                
-                    <a class="tag" href="/tags/showdev">#showdev</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2013/11/15/docker/">
-                    Docker
-                </a>
-            </h2>
-            <div>
-                <p>Desplegar aplicaciones en linux es un proceso fácil si tu aplicación solo usa un servidor, normalmente se usa el sistema propio de manejo de paquetes para poner a punto el servidor con todos los componentes instalados para publicar una aplicación web, sitio web dinámico, etc.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>November 15, 2013</time>
+        </p>
+      <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
+    </div>
+    
 
-            
-            
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-                    <a class="tag" href="/tags/linux">#linux</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2013/02/19/aplicaciones-web-del-lado-del-cliente-con-mvvm/">
-                    Aplicaciones Web del lado del Cliente con MVVM
-                </a>
-            </h2>
-            <div>
-                <p>Aplicaciones web con alta carga de lógica del lado cliente han comenzado a popularizarse, la idea es que mucho de lo que antes se hacía en el servidor, ahora se lo puede hacer en el cliente (browser) y dejar al servidor solo como un API de acceso a la persistencia de los datos.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 19, 2013</time>
 
-            
-            
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-                    <a class="tag" href="/tags/javascript">#javascript</a>
-                
-                    <a class="tag" href="/tags/framework">#framework</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2012/05/28/caso-pr%C3%A1ctico-de-uso-de-vagrant/">
-                    Caso práctico de uso de vagrant
-                </a>
-            </h2>
-            <div>
-                <p>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.
-##Pre-Requisitos Instalar VirtualBox Descargar VirtualBox vagrant soporta las versiones 4.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>May 28, 2012</time>
+    
 
-            
-            
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://marceloandrader.github.io/blog/2012/02/06/aislar-ambientes-de-desarrollo-con-vagrant/">
-                    Aislar ambientes de desarrollo con Vagrant
-                </a>
-            </h2>
-            <div>
-                <p>Si desarrollas en un solo tipo de &lsquo;stack&rsquo; de desarrollo lo más común es instalar este stack en tu máquina principal y desarrollar directamente en el sistema operativo de tu preferencia.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>February 6, 2012</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/software">#software</a>
-                
-                    <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-                
-            
-            </div> 
-           
-        </article>
+    <div class="page-footer">
         
     </div>
-        
-        <div class="paginator">
-        
-        
-        <p>Page 8 of 9</p>
-        <div class="paginator-group">
-            
-            <a class="color-link" href="/page/7/">
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                            <polygon id="Path" points="1.75929935 4.50000282 5.3292523 7.62371165 4.6707477 8.37628835 0.240700645 4.49999718 4.67081049 0.623709205 5.32930951 1.37629079"></polygon>
-                            <polygon id="Path" points="13 4 13 5 1 5 1 4"></polygon>
-                        </g>
-                </svg>  
-                Newer          
-            </a>
-            
-            
-                <a class="color-link older" href="/page/9/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#63BDA2" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
-                        
-                </a>
-            
-        </div>
-        
-    </div>
+
 
         
         </div>

@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Tue, 15 Feb 2022 07:00:45 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 04 Mar 2022 10:45:39 -0500</lastBuildDate>
     
 	<atom:link href="https://marceloandrader.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pub/Sub con Redis</title>
+      <link>https://marceloandrader.github.io/blog/2022/03/04/pub/sub-con-redis/</link>
+      <pubDate>Fri, 04 Mar 2022 10:45:39 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2022/03/04/pub/sub-con-redis/</guid>
+      <description>Durante esta semana tuve que hacer refactoring de una parte del sistema en el que trabajo tenemos un portal de cliente en el que los usuarios pueden seleccionar reportes a descargar y se genera un pdf o un zip con toda la información requerida.</description>
+    </item>
     
     <item>
       <title>¿Por qué? la mágica pregunta al desarrollar software</title>
