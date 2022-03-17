@@ -3,7 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marceloandrader.github.io/blog/2022/03/17/generando-datos-de-prueba-rapidamente/</loc>
+    <lastmod>2022-03-17T07:44:09-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://marceloandrader.github.io/posts/</loc>
+    <lastmod>2022-03-17T07:44:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/pruebas/</loc>
+    <lastmod>2022-03-17T07:44:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/</loc>
+    <lastmod>2022-03-17T07:44:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/tip/</loc>
+    <lastmod>2022-03-17T07:44:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/</loc>
+    <lastmod>2022-03-17T07:44:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
     <lastmod>2022-03-04T10:45:39-05:00</lastmod>
   </url>
   
@@ -13,27 +43,12 @@
   </url>
   
   <url>
-    <loc>https://marceloandrader.github.io/</loc>
+    <loc>https://marceloandrader.github.io/tags/software/</loc>
     <lastmod>2022-03-04T10:45:39-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
-    <lastmod>2022-02-15T07:00:45-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://marceloandrader.github.io/tags/negocio/</loc>
-    <lastmod>2022-02-15T07:00:45-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/software/</loc>
-    <lastmod>2022-02-15T07:00:45-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/</loc>
     <lastmod>2022-02-15T07:00:45-05:00</lastmod>
   </url>
   
@@ -44,11 +59,6 @@
   
   <url>
     <loc>https://marceloandrader.github.io/blog/2022/02/04/programando-en-pareja-con-inteligencia-artificial/</loc>
-    <lastmod>2022-02-04T07:46:26-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/tip/</loc>
     <lastmod>2022-02-04T07:46:26-05:00</lastmod>
   </url>
   
@@ -124,11 +134,6 @@
   
   <url>
     <loc>https://marceloandrader.github.io/blog/2021/04/13/parte-4-ejemplo-pr%C3%A1ctico-de-pruebas-de-software/</loc>
-    <lastmod>2021-04-13T06:44:33-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marceloandrader.github.io/tags/pruebas/</loc>
     <lastmod>2021-04-13T06:44:33-05:00</lastmod>
   </url>
   

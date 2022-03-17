@@ -6,10 +6,19 @@
     <description>Recent content in pruebas on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Tue, 13 Apr 2021 06:44:33 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 17 Mar 2022 07:44:09 -0500</lastBuildDate>
     
 	<atom:link href="https://marceloandrader.github.io/tags/pruebas/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Generando datos de prueba rapidamente</title>
+      <link>https://marceloandrader.github.io/blog/2022/03/17/generando-datos-de-prueba-rapidamente/</link>
+      <pubDate>Thu, 17 Mar 2022 07:44:09 -0500</pubDate>
+      
+      <guid>https://marceloandrader.github.io/blog/2022/03/17/generando-datos-de-prueba-rapidamente/</guid>
+      <description>Durante las pruebas manuales, muchas veces se necesita ingresar datos de prueba en los formularios de los sistemas en los que trabajo.</description>
+    </item>
     
     <item>
       <title>Parte 4: Ejemplo práctico de Pruebas De Software</title>

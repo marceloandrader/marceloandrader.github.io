@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Pub/Sub con Redis | Tips de Desarrollo</title>
+    <title>Generando datos de prueba rapidamente | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -157,51 +157,36 @@ if (!doNotTrack) {
         max-width: 100%;
     }
 </style>
-<h1 class="post-title">Pub/Sub con Redis</h1>
+<h1 class="post-title">Generando datos de prueba rapidamente</h1>
     
-    <time>March 4, 2022</time>
+    <time>March 17, 2022</time>
     
     <div>
         <p>
-        <p>Durante esta semana tuve que hacer refactoring de una parte del sistema en el que trabajo
-tenemos un portal de cliente en el que los usuarios pueden seleccionar reportes a descargar
-y se genera un pdf o un zip con toda la información requerida.</p>
-<p>El problema era que estos reportes pueden llegar a ser bastante grandes y estaban
-dando timeouts al generarlos online durante el request HTTP, dejando a los usuarios
-en espera con una pantalla en blanco sin saber cual fue el error cuando falla.</p>
-<p>Hicimos algunas optimizaciones para generar el reporte más rápido pero aún así
-podía demorar algunos minutos, queríamos hacer algo que no le deje al usuario
-sin feedback, ya teníamos la opción de poner la generación de este reporte
-en una cola para que sea consumida por unos procesos en background, pero el usuario no
-sabía que estaba haciendo el sistema durante su espera hasta recibir el email de que el reporte ha finalizado.</p>
-<p>Así que decidimos siempre generar los reportes en background, pero dándole al usuario
-un monitoreo del proceso mientras se genera. Para esto investigue las opciones
-existentes para mostrar mensajes generados durante el proceso de creación del reporte. La opción
-que mejor se acoplaba era enviar mensajes desde el servidor web usando
-<a href="https://jvns.ca/blog/2021/01/12/day-36--server-sent-events-are-cool--and-a-fun-bug/">SSE (Server Sent Events)</a>
-de tal forma que no se necesite hacer demasiados requests haciendo polling, pero
-hubo que hacer algunas configuraciones en nginx para no hacer buffering de la respuesta de
-la aplicación pero una vez hecho eso, desde el front end se crea un EventSource
-y en cada mensaje se muestra información en pantalla. Primera parte resuelta, pero
-ya que el proceso que está generando el reporte no tiene forma de comunicarse con el servidor
-para mostrar el porcentaje de avance se necesita un middleman para emparejar ambos, es
-aquí donde necesitaba un sistema PUB/SUB (Publisher/subscriber). Si hubiera estado usando
-postgres esto ya lo tiene resuelto, usando LISTEN and NOTIFY. Pero como usamos mariadb en este proyecto
-hubo que agregar un nuevo componente al sistema.</p>
-<p>El componente fue redis, sabía de este pero no lo había usado antes, es un almacenamiento
-en memoria de diferentes estructuras de datos, se puede usar como base de datos, cache o broker de mensajes.
-La característica que estamos usando en este momento se llama <a href="https://redis.io/topics/pubsub"> Pub/Sub </a>, y lo que permite
-es publicar mensajes a un canal específico y otros procesos pueden suscribirse a escuchar
-mensajes de un canal o canales que le interesa.</p>
-<p>Para implementarlo simplemente agregue redis como dependencia en mi docker-compose.yml e
-instale el paquete php-redis para poder tener las clases que me permitan conectarme al servidor de redis,
-una vez hecho eso el código es bastante simple, en la clase que maneja los procesos de background
-simplemente se hace un <code>$redis-&gt;publish('job_1', &quot;Iniciando reporte&quot;);</code> y en el controller
-que maneja los SSE se hace un <code>$redis-&gt;listen(['job_1'], fn ...);</code> donde fn es el callback que se llama
-cada vez que se envía un nuevo mensaje al canal denominado job_1, este nombre de canal es
-dinámico.</p>
-<p>Este sistema ha estado trabajando muy bien desde la puesta a producción, el consumo de memoria de redis
-tampoco es elevado, le puse 1GB de RAM pero solo consume 3 MB.</p>
+        <p>Durante las pruebas manuales, muchas veces se necesita ingresar datos de prueba
+en los formularios de los sistemas en los que trabajo. La carga mental
+de estar programando y probando generalmente afecta el pensar nuevos datos randómicos para datos
+de pruebas, y lo más fácil es usar datos ya predefinidos como &ldquo;asdf&rdquo;, &ldquo;qwerty&rdquo;, &ldquo;test1&rdquo;, &ldquo;test2&rdquo;,
+pero encontré una manera más fácil de generar estos datos.</p>
+<p>La práctica que me ha ayudado a agilizar esta parte del proceso de prueba manual es usar
+2 herramientas, la una es un <strong>expansor de texto</strong>, la idea de este
+tipo de herramientas es minimizar el tipeado de información al usar shortcuts cuando se escribe
+algo, por ejemplo, si en tus emails siempre saludas o te despides con el mismo texto, puedes
+configurar al expansor para que al ingresar <code>:saludo</code> se auto expanda a <code>Hola, Te saluda Marcelo</code>
+ahorrandote tiempo y energía. Para esta parte uso <a href="https://espanso.org/">espanso</a> es multiplataforma
+y muy fácil de instalar y configurar.</p>
+<p>Para la segunda parte uso un <strong>generador de datos falsos</strong> <a href="https://fakerphp.github.io/">faker</a> es una librería de PHP que permite
+generar datos de prueba, hay librerías simlares para otros lenguajes, pero esta me queda
+bien porque puedo instalarla como librería global con composer usando <code>composer global require fakerphp/faker</code>
+luego puedo usar directamente en la línea de comandos con:
+<code>php -r &quot;require_once '/home/marcelo/.config/composer/vendor/autoload.php'; echo Faker\\Factory::create()-&gt;firstName();&quot;</code>
+cada vez que ejecuto este comando me da un nuevo primer nombre.</p>
+<p>Ahora al unir ambas tengo este tipo de definición en la configuración de espanso:</p>
+<p><img src="/images/espanso.png" alt="espanso"></p>
+<p>Cada vez que digito <code>:fn</code> en cualquier aplicación, se autoexpande a un nombre aleatorio,
+lo mismo con <code>:ln</code> en cualquier aplicación, se autoexpande a un apellido aleatorio, y de igual manera para
+<code>:city</code>, <code>:state</code>, <code>:address</code>, <code>:zip</code>.</p>
+<p>Revisando la documentación de faker puedes agregar aún más shortcuts a espanso.</p>
 
         </p>
       <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
@@ -215,9 +200,9 @@ tampoco es elevado, le puse 1GB de RAM pero solo consume 3 MB.</p>
         
         <hr class="footer-divider">
         
-            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
+            <a class="tag" href="/tags/tip">#tip</a>
         
-            <a class="tag" href="/tags/software">#software</a>
+            <a class="tag" href="/tags/pruebas">#pruebas</a>
         
       
     </div>
