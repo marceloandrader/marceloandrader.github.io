@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.113b8750726301d2272b2fabf9695ed6bfe79dff4f4cd582cb3010010ebceea4.css"/>
 
     
     
@@ -40,8 +40,7 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script>
-</head>
+</script></head>
 
     <body>
         
@@ -146,7 +145,7 @@ if (!doNotTrack) {
 	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 </nav>
 
@@ -183,13 +182,13 @@ en un contenedor que se puede ejecutar en cualquier linux que soporte <a href="h
 fácilmente linux containers, crearlos, provisionarlos, publicarlos y desplegarlos.</p>
 <p>Para empezar a usarlo la forma más fácil en mi laptop con sistema mac
 es usando <a href="/blog/2012/02/06/aislar-ambientes-de-desarrollo-con-vagrant/">vagrant</a>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/dotcloud/docker.git
-cd docker
-vagrant up</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/dotcloud/docker.git
+</span></span><span style="display:flex;"><span>cd docker
+</span></span><span style="display:flex;"><span>vagrant up</span></span></code></pre></div>
 <p>Una vez que vagrant descargue la máquina base, e instale docker y sus dependencias
 el sistema está listo para usarse. Se puede ingresar a la máquina con ubuntu y docker
 instalados con:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vagrant ssh</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vagrant ssh</span></span></code></pre></div>
 <p>Docker tiene un registro de contenedores público en <a href="https://index.docker.io/">index.docker.io</a>
 pero también se puede instalar la aplicación de registro para usarlo internamente <a href="https://github.com/dotcloud/docker-registry">docker registry</a>
 la idea es que este registro es donde se envía (push) y se toma (pull) imágenes ya generadas
@@ -204,19 +203,19 @@ que usa docker para referirse a sus conceptos:</p>
 de sistemas de archivo, más adelante un ejemplo de como funciona.</li>
 </ul>
 <p>Para empezar a usar la forma más sencilla es invocar en modo interactivo un bash dentro de un contenedor:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run -t -i ubuntu /bin/bash</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker run -t -i ubuntu /bin/bash</span></span></code></pre></div>
 <p>Si el registro local de docker aun no tiene la imagen ubuntu descargada, primero la descargará
 y una vez hecho esto ejecutará el comando <code>run</code> que inicia el contenedor basado en la imagen <code>ubuntu</code>
 como pueden observar el nuevo prompt es algo como:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@acbdd2d5ea49:/#</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@acbdd2d5ea49:/#</span></span></code></pre></div>
 <p>este prompt es del sistema del contenedor ejecutándose, como se observó el tiempo de arranque es
 casi instantaneo, comparado con un boot a una instancia virtualizada de aproximadamente 2-5 minutos
 dependiendo de la máquina host.</p>
 <p>Si inician otra sesión <code>vagrant ssh</code> y ejecutan <code>sudo docker ps</code> les indicará que contenedores están
 ejecutándose en este momento.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vagrant@precise64:~$ sudo docker ps
-ID                  IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-acbdd2d5ea49        ubuntu:12.04        /bin/bash           <span style="color:#ae81ff">3</span> minutes ago       Up <span style="color:#ae81ff">3</span> minutes                            gray_tiger</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vagrant@precise64:~$ sudo docker ps
+</span></span><span style="display:flex;"><span>ID                  IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+</span></span><span style="display:flex;"><span>acbdd2d5ea49        ubuntu:12.04        /bin/bash           <span style="color:#ae81ff">3</span> minutes ago       Up <span style="color:#ae81ff">3</span> minutes                            gray_tiger</span></span></code></pre></div>
 <p>Para terminar la ejecución del contenedor se puede simplemente hacer exit en la sesión de bash dentro del contenedor
 y esto hara que el contenedor ya no se esté ejecutando.</p>
 <p>Si hacen <code>docker ps</code> nuevamente el contenedor ya no está. Para ver contenedores que ya no están en uso se usa <code>sudo docker ps -a</code>.</p>
@@ -224,56 +223,56 @@ y esto hara que el contenedor ya no se esté ejecutando.</p>
 cuando dentro de este bash se puede comenzar a instalar software adicional por ejemplo instalar
 apache para servir páginas web estáticas, lo interesante de esto es que el sistema principal
 se mantiene libre de dependencias de la misma aplicación, todo esto está dentro del contenedor.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run -t -i ubuntu /bin/bash
-root@acbdd2d5ea49:/# apt-get update
-root@acbdd2d5ea49:/# apt-get install -y apache2
-root@acbdd2d5ea49:/# exit
-sudo docker ps -a
-<span style="color:#75715e"># verificar el nombre del contenedor en la última columna en mi caso es gray_tiger</span>
-sudo docker commit gray_tiger marceloandrader/apache2</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker run -t -i ubuntu /bin/bash
+</span></span><span style="display:flex;"><span>root@acbdd2d5ea49:/# apt-get update
+</span></span><span style="display:flex;"><span>root@acbdd2d5ea49:/# apt-get install -y apache2
+</span></span><span style="display:flex;"><span>root@acbdd2d5ea49:/# exit
+</span></span><span style="display:flex;"><span>sudo docker ps -a
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># verificar el nombre del contenedor en la última columna en mi caso es gray_tiger</span>
+</span></span><span style="display:flex;"><span>sudo docker commit gray_tiger marceloandrader/apache2</span></span></code></pre></div>
 <p>Justo antes de <code>docker commit</code> el sistema de archivos está en capas (layers) hay algunos
 archivos que se encuentran en la imagen y otros archivos que están en el contenedor,
 el momento que se hace commit estos archivos se guardan como otra imagen llamada
 <code>marceloandrader/apache2</code> que es
 apache2 dentro de un contenedor para ejecutarla y publicar algun sitio web:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run -t -i -p <span style="color:#ae81ff">80</span> -v /home/vagrant:/var/www marceloandrader/apache2 /bin/bash
-root@acbdd2d5ea49:/# service apache2 start</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker run -t -i -p <span style="color:#ae81ff">80</span> -v /home/vagrant:/var/www marceloandrader/apache2 /bin/bash
+</span></span><span style="display:flex;"><span>root@acbdd2d5ea49:/# service apache2 start</span></span></code></pre></div>
 <p>Ahora desde otra sesión ssh se puede verificar que apache esté sirviendo los archivos que se encuentran
 en /home/vagrant en el sistema host a través de apache2 ejecutándose en el contenedor</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vagrant@precise64:~$ curl http://0.0.0.0:8080/
-About to connect<span style="color:#f92672">()</span> to 0.0.0.0 port <span style="color:#ae81ff">8080</span> <span style="color:#f92672">(</span><span style="color:#75715e">#0)</span>
-*   Trying 0.0.0.0... connected
-&gt; GET / HTTP/1.1
-&gt; User-Agent: curl/7.22.0 <span style="color:#f92672">(</span>x86_64-pc-linux-gnu<span style="color:#f92672">)</span> libcurl/7.22.0 OpenSSL/1.0.1 zlib/1.2.3.4 libidn/1.23 librtmp/2.3
-&gt; Host: 0.0.0.0:8080
-&gt; Accept: */*
-&gt;
-&lt; HTTP/1.1 <span style="color:#ae81ff">200</span> OK
-&lt; Date: Fri, <span style="color:#ae81ff">15</span> Nov <span style="color:#ae81ff">2013</span> 23:14:14 GMT
-&lt; Server: Apache/2.2.22 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)</span>
-&lt; Vary: Accept-Encoding
-&lt; Content-Length: <span style="color:#ae81ff">1579</span>
-&lt; Content-Type: text/html;charset<span style="color:#f92672">=</span>UTF-8
-&lt;
-&lt;!DOCTYPE HTML PUBLIC <span style="color:#e6db74">&#34;-//W3C//DTD HTML 3.2 Final//EN&#34;</span>&gt;
-&lt;html&gt;
- &lt;head&gt;
-  &lt;title&gt;Index of /&lt;/title&gt;
- &lt;/head&gt;
- &lt;body&gt;
-&lt;h1&gt;Index of /&lt;/h1&gt;
-&lt;table&gt;&lt;tr&gt;&lt;th&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/blank.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[ICO]&#34;</span>&gt;&lt;/th&gt;&lt;th&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;?C=N;O=D&#34;</span>&gt;Name&lt;/a&gt;&lt;/th&gt;&lt;th&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;?C=M;O=A&#34;</span>&gt;Last modified&lt;/a&gt;&lt;/th&gt;&lt;th&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;?C=S;O=A&#34;</span>&gt;Size&lt;/a&gt;&lt;/th&gt;&lt;th&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;?C=D;O=A&#34;</span>&gt;Description&lt;/a&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th colspan<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;5&#34;</span>&gt;&lt;hr&gt;&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td valign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/folder.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[DIR]&#34;</span>&gt;&lt;/td&gt;&lt;td&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GateOne/&#34;</span>&gt;GateOne/&lt;/a&gt;&lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;07-Nov-2013 22:41  &lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;  - &lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td valign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/unknown.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[   ]&#34;</span>&gt;&lt;/td&gt;&lt;td&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;VBoxGuestAdditions_4.2.12.iso&#34;</span>&gt;VBoxGuestAdditions_4.2.12.iso&lt;/a&gt;&lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;12-Apr-2013 10:17  &lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt; 57M&lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td valign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/folder.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[DIR]&#34;</span>&gt;&lt;/td&gt;&lt;td&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-mysql/&#34;</span>&gt;docker-mysql/&lt;/a&gt;&lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;06-Nov-2013 15:35  &lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;  - &lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td valign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/text.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[TXT]&#34;</span>&gt;&lt;/td&gt;&lt;td&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;postinstall.sh&#34;</span>&gt;postinstall.sh&lt;/a&gt;&lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;14-Sep-2012 06:02  &lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;6.3K&lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td valign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/text.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[TXT]&#34;</span>&gt;&lt;/td&gt;&lt;td&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;start-pph.sh&#34;</span>&gt;start-pph.sh&lt;/a&gt;&lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;06-Nov-2013 22:56  &lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;641 &lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;th colspan<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;5&#34;</span>&gt;&lt;hr&gt;&lt;/th&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;address&gt;Apache/2.2.22 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)</span> Server at 0.0.0.0 Port 8080&lt;/address&gt;
-&lt;/body&gt;&lt;/html&gt;
-* Connection <span style="color:#75715e">#0 to host 0.0.0.0 left intact</span>
-* Closing connection <span style="color:#75715e">#0</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vagrant@precise64:~$ curl http://0.0.0.0:8080/
+</span></span><span style="display:flex;"><span>About to connect<span style="color:#f92672">()</span> to 0.0.0.0 port <span style="color:#ae81ff">8080</span> <span style="color:#f92672">(</span><span style="color:#75715e">#0)</span>
+</span></span><span style="display:flex;"><span>*   Trying 0.0.0.0... connected
+</span></span><span style="display:flex;"><span>&gt; GET / HTTP/1.1
+</span></span><span style="display:flex;"><span>&gt; User-Agent: curl/7.22.0 <span style="color:#f92672">(</span>x86_64-pc-linux-gnu<span style="color:#f92672">)</span> libcurl/7.22.0 OpenSSL/1.0.1 zlib/1.2.3.4 libidn/1.23 librtmp/2.3
+</span></span><span style="display:flex;"><span>&gt; Host: 0.0.0.0:8080
+</span></span><span style="display:flex;"><span>&gt; Accept: */*
+</span></span><span style="display:flex;"><span>&gt;
+</span></span><span style="display:flex;"><span>&lt; HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>&lt; Date: Fri, <span style="color:#ae81ff">15</span> Nov <span style="color:#ae81ff">2013</span> 23:14:14 GMT
+</span></span><span style="display:flex;"><span>&lt; Server: Apache/2.2.22 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>&lt; Vary: Accept-Encoding
+</span></span><span style="display:flex;"><span>&lt; Content-Length: <span style="color:#ae81ff">1579</span>
+</span></span><span style="display:flex;"><span>&lt; Content-Type: text/html;charset<span style="color:#f92672">=</span>UTF-8
+</span></span><span style="display:flex;"><span>&lt;
+</span></span><span style="display:flex;"><span>&lt;!DOCTYPE HTML PUBLIC <span style="color:#e6db74">&#34;-//W3C//DTD HTML 3.2 Final//EN&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;html&gt;
+</span></span><span style="display:flex;"><span> &lt;head&gt;
+</span></span><span style="display:flex;"><span>  &lt;title&gt;Index of /&lt;/title&gt;
+</span></span><span style="display:flex;"><span> &lt;/head&gt;
+</span></span><span style="display:flex;"><span> &lt;body&gt;
+</span></span><span style="display:flex;"><span>&lt;h1&gt;Index of /&lt;/h1&gt;
+</span></span><span style="display:flex;"><span>&lt;table&gt;&lt;tr&gt;&lt;th&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/blank.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[ICO]&#34;</span>&gt;&lt;/th&gt;&lt;th&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;?C=N;O=D&#34;</span>&gt;Name&lt;/a&gt;&lt;/th&gt;&lt;th&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;?C=M;O=A&#34;</span>&gt;Last modified&lt;/a&gt;&lt;/th&gt;&lt;th&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;?C=S;O=A&#34;</span>&gt;Size&lt;/a&gt;&lt;/th&gt;&lt;th&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;?C=D;O=A&#34;</span>&gt;Description&lt;/a&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th colspan<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;5&#34;</span>&gt;&lt;hr&gt;&lt;/th&gt;&lt;/tr&gt;
+</span></span><span style="display:flex;"><span>&lt;tr&gt;&lt;td valign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/folder.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[DIR]&#34;</span>&gt;&lt;/td&gt;&lt;td&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GateOne/&#34;</span>&gt;GateOne/&lt;/a&gt;&lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;07-Nov-2013 22:41  &lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;  - &lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+</span></span><span style="display:flex;"><span>&lt;tr&gt;&lt;td valign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/unknown.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[   ]&#34;</span>&gt;&lt;/td&gt;&lt;td&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;VBoxGuestAdditions_4.2.12.iso&#34;</span>&gt;VBoxGuestAdditions_4.2.12.iso&lt;/a&gt;&lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;12-Apr-2013 10:17  &lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt; 57M&lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+</span></span><span style="display:flex;"><span>&lt;tr&gt;&lt;td valign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/folder.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[DIR]&#34;</span>&gt;&lt;/td&gt;&lt;td&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-mysql/&#34;</span>&gt;docker-mysql/&lt;/a&gt;&lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;06-Nov-2013 15:35  &lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;  - &lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+</span></span><span style="display:flex;"><span>&lt;tr&gt;&lt;td valign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/text.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[TXT]&#34;</span>&gt;&lt;/td&gt;&lt;td&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;postinstall.sh&#34;</span>&gt;postinstall.sh&lt;/a&gt;&lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;14-Sep-2012 06:02  &lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;6.3K&lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+</span></span><span style="display:flex;"><span>&lt;tr&gt;&lt;td valign<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icons/text.gif&#34;</span> alt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[TXT]&#34;</span>&gt;&lt;/td&gt;&lt;td&gt;&lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;start-pph.sh&#34;</span>&gt;start-pph.sh&lt;/a&gt;&lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;06-Nov-2013 22:56  &lt;/td&gt;&lt;td align<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;641 &lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+</span></span><span style="display:flex;"><span>&lt;tr&gt;&lt;th colspan<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;5&#34;</span>&gt;&lt;hr&gt;&lt;/th&gt;&lt;/tr&gt;
+</span></span><span style="display:flex;"><span>&lt;/table&gt;
+</span></span><span style="display:flex;"><span>&lt;address&gt;Apache/2.2.22 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)</span> Server at 0.0.0.0 Port 8080&lt;/address&gt;
+</span></span><span style="display:flex;"><span>&lt;/body&gt;&lt;/html&gt;
+</span></span><span style="display:flex;"><span>* Connection <span style="color:#75715e">#0 to host 0.0.0.0 left intact</span>
+</span></span><span style="display:flex;"><span>* Closing connection <span style="color:#75715e">#0</span></span></span></code></pre></div>
 <p>La idea de esto es que esta imagen llamada <code>marceloandrader/apache2</code> se la puede enviar a un sistema de producción
 y ejecutarla sin ningún cambio.</p>
 
@@ -384,7 +383,7 @@ y ejecutarla sin ningún cambio.</p>
 		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
     </body>
 </html>

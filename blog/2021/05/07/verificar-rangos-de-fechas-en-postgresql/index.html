@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.113b8750726301d2272b2fabf9695ed6bfe79dff4f4cd582cb3010010ebceea4.css"/>
 
     
     
@@ -40,8 +40,7 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script>
-</head>
+</script></head>
 
     <body>
         
@@ -146,7 +145,7 @@ if (!doNotTrack) {
 	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 </nav>
 
@@ -165,13 +164,13 @@ if (!doNotTrack) {
         <p>
         <p>Mi motor de base de datos favorito para proyectos nuevos es PostgreSQL o postgres. Es una base muy solida, open source, con más de 30 años de desarrollo, se ha ganado una gran reputación por su confiabilidad, robustez y desempeño.</p>
 <p>Hoy les quiero compartir un pequeño tip que me ha servido mucho en un  par de proyectos, en los cuales se requiere mantener un registro de datos históricos y que no debe haber superposición de un valor en un mismo rango de fechas. Por ejemplo, el valor del IVA generalmente es fijo, pero hubo un tiempo en que cambió. Una tabla para manejar estos cambios en el tiempo sería de la forma:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> historico_iva(
-    id serial,
-    empresa_id integer <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
-    desde date <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
-    hasta date <span style="color:#66d9ef">null</span>,
-    porcentaje_iva numeric(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">2</span>)
-)</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> historico_iva(
+</span></span><span style="display:flex;"><span>    id serial,
+</span></span><span style="display:flex;"><span>    empresa_id integer <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    desde date <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    hasta date <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    porcentaje_iva numeric(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
 <p>Esta validación de datos se podría realizar a nivel de aplicación al verificar que no haya 2 valores de IVA para la misma fecha, por ejemplo digamos que el 1 de junio cambia el valor al 10% en la tabla habría los siguientes registros:</p>
 <table>
 <thead>
@@ -201,27 +200,27 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <p>Para buscar que valor de iva debo aplicar en una fecha específica puedo usar la consulta:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> porcentaje_iva 
-<span style="color:#66d9ef">from</span> historico_iva 
-<span style="color:#66d9ef">where</span> empresa_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> 
-<span style="color:#66d9ef">and</span> <span style="color:#66d9ef">current_date</span> <span style="color:#66d9ef">between</span> desde <span style="color:#66d9ef">and</span> coalesce(hasta, <span style="color:#e6db74">&#39;Infinity&#39;</span>)</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> porcentaje_iva 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span> historico_iva 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> empresa_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">and</span> <span style="color:#66d9ef">current_date</span> <span style="color:#66d9ef">between</span> desde <span style="color:#66d9ef">and</span> coalesce(hasta, <span style="color:#e6db74">&#39;Infinity&#39;</span>)</span></span></code></pre></div>
 <p>Esta debe devolver siempre un solo valor, pero por cualquier error de programación o al editar datos en la base directamente en el registro 2 le pongo 2021-05-31 en la fecha desde, el día 31 de mayo no se sabría si fue 10 o 12 el IVA ya que la consulta devuelve 2 valores. O también que la fecha desde sea mayor a la fecha hasta en cuyo caso nunca retornaría un valor.</p>
 <p>Para evitar este inconveniente se puede agregar un par de checks a nivel de base de datos, y para esto postgres ayuda mucho con una extensión para manejo de este tipo de validaciones denominada <code>btree_gist</code>.</p>
 <p>Para nuestro ejemplo se debe agregar los siguientes CHECKs en la tabla:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">--- activa la extension btree_gist
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> EXTENSION btree_gist;
-
-<span style="color:#75715e">--- verifica que la fecha desde sea menor a la fecha hasta
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> porcentaje_iva 
-    <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">CHECK</span> ( <span style="color:#e6db74">&#34;desde&#34;</span> <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">&#34;hasta&#34;</span>);
-
-<span style="color:#75715e">--- evita superposición de rango de fechas en una misma empresa
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> porcentaje_iva 
-    <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">CONSTRAINT</span> no_sobreponer_fechas_iva 
-        EXCLUDE <span style="color:#66d9ef">USING</span> GIST (
-            empresa_id <span style="color:#66d9ef">WITH</span> <span style="color:#f92672">=</span>,
-            daterange(<span style="color:#e6db74">&#34;desde&#34;</span>, coalesce(<span style="color:#e6db74">&#34;hasta&#34;</span>, <span style="color:#e6db74">&#39;Infinity&#39;</span>), <span style="color:#e6db74">&#39;[]&#39;</span>) <span style="color:#66d9ef">WITH</span> <span style="color:#f92672">&amp;&amp;</span>
-        );</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">--- activa la extension btree_gist
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> EXTENSION btree_gist;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--- verifica que la fecha desde sea menor a la fecha hasta
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> porcentaje_iva 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">CHECK</span> ( <span style="color:#e6db74">&#34;desde&#34;</span> <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">&#34;hasta&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--- evita superposición de rango de fechas en una misma empresa
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> porcentaje_iva 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">CONSTRAINT</span> no_sobreponer_fechas_iva 
+</span></span><span style="display:flex;"><span>        EXCLUDE <span style="color:#66d9ef">USING</span> GIST (
+</span></span><span style="display:flex;"><span>            empresa_id <span style="color:#66d9ef">WITH</span> <span style="color:#f92672">=</span>,
+</span></span><span style="display:flex;"><span>            daterange(<span style="color:#e6db74">&#34;desde&#34;</span>, coalesce(<span style="color:#e6db74">&#34;hasta&#34;</span>, <span style="color:#e6db74">&#39;Infinity&#39;</span>), <span style="color:#e6db74">&#39;[]&#39;</span>) <span style="color:#66d9ef">WITH</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>        );</span></span></code></pre></div>
 <p>Esto implica que al tratar de crear un registro de la misma empresa, que tenga fechas sobrepuestas
 la base de datos no lo va a permitir y generará un error.</p>
 
@@ -334,7 +333,7 @@ la base de datos no lo va a permitir y generará un error.</p>
 		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
     </body>
 </html>

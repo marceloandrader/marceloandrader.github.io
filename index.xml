@@ -6,11 +6,7 @@
     <description>Recent content on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Thu, 17 Mar 2022 07:44:09 -0500</lastBuildDate>
-    
-	<atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 17 Mar 2022 07:44:09 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Generando datos de prueba rapidamente</title>
       <link>https://marceloandrader.github.io/blog/2022/03/17/generando-datos-de-prueba-rapidamente/</link>
@@ -442,6 +438,15 @@ O escanea este código QR</description>
       <guid>https://marceloandrader.github.io/gracias/</guid>
       <description>Por suscribirte, espero que el contenido sea de provecho y te ayude en tu carrera de desarrollo de software.
 Ahora solo falta aceptar la suscripción en tu email para que no te pierdas de ningún artículo nuevo.</description>
+    </item>
+    
+    <item>
+      <title>Gracias por la respuesta</title>
+      <link>https://marceloandrader.github.io/gracias-por-la-respuesta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://marceloandrader.github.io/gracias-por-la-respuesta/</guid>
+      <description>Gracias por ayudarme a conocerte mejor y poder servir contenido que se ajuste a tus necesidades.</description>
     </item>
     
     <item>

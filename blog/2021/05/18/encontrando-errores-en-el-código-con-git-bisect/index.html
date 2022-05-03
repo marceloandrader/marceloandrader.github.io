@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.113b8750726301d2272b2fabf9695ed6bfe79dff4f4cd582cb3010010ebceea4.css"/>
 
     
     
@@ -40,8 +40,7 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script>
-</head>
+</script></head>
 
     <body>
         
@@ -146,7 +145,7 @@ if (!doNotTrack) {
 	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 </nav>
 
@@ -166,9 +165,9 @@ if (!doNotTrack) {
         <p>Cuando se usa <code>git</code> en un equipo de trabajo a veces alguien del grupo puede introducir un error en el código que no fue descubierto por los tests ni en la revisión de usuario, y se publica el error al sistema de producción. El momento que se recibe el reporte del error en producción generalmente desde el último despliegue hay varios commits hechos por varios desarrolladores, para encontrar dónde se introdujo el error podemos usar <code>git bisect</code>.</p>
 <p><a href="https://git-scm.com/docs/git-bisect"><code>git bisect</code></a> de acuerdo a su documentación nos indica que realiza una búsqueda binaria para encontrar el commit que introdujo un bug. Una búsqueda binaria es un algoritmo en el que se va reduciendo la búsqueda de un commit eliminando posibles commits &ldquo;buenos&rdquo; o &ldquo;malos&rdquo;.</p>
 <p>La búsqueda de nuestro bug de ejemplo puede comenzar de la siguiente manera:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git bisect start <span style="color:#75715e"># Permite iniciar la búsqueda</span>
-git bisect bad   <span style="color:#75715e"># Indica que la versión actual es la incorrecta</span>
-git bisect good 4f0dfa72bcdc2ba489629949883392aaa3a4e43b   <span style="color:#75715e"># Es la referencia al último commit correcto puede ser un tag on un branch</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git bisect start <span style="color:#75715e"># Permite iniciar la búsqueda</span>
+</span></span><span style="display:flex;"><span>git bisect bad   <span style="color:#75715e"># Indica que la versión actual es la incorrecta</span>
+</span></span><span style="display:flex;"><span>git bisect good 4f0dfa72bcdc2ba489629949883392aaa3a4e43b   <span style="color:#75715e"># Es la referencia al último commit correcto puede ser un tag on un branch</span></span></span></code></pre></div>
 <p>Una vez que tenemos al menos un commit bueno y uno malo, git bisect seleccionara un commit en el medio del rango para verificación. Nos mostrará un mensaje que indica el commit que está en el área de trabajo cuantas revisiones quedan por hacer y un estimado de pasos hasta encontrar el error.</p>
 <p>Cuando estemos en este paso tenemos que verificar el error existe en ese commit, si no existe, ejecutamos <code>git bisect good</code> y git bisect nos dará un nuevo commit para probar. En este paso podemos ejecutar tests, probar manualmente, ejecutar algún proceso que verifique si hay no error o simplemente ver el código. Si es un commit malo se ejecuta <code>git bisect bad</code> hasta que git bisect indique el mensaje que un commit es el primer bad commit (<code>first bad commit</code>).</p>
 <p>Al final de la sesión de trabajo se ejecuta <code>git bisect reset</code> para volver al branch que estuvimos inicialmente.</p>
@@ -282,7 +281,7 @@ git bisect good 4f0dfa72bcdc2ba489629949883392aaa3a4e43b   <span style="color:#7
 		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
     </body>
 </html>

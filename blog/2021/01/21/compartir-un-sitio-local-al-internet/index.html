@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.113b8750726301d2272b2fabf9695ed6bfe79dff4f4cd582cb3010010ebceea4.css"/>
 
     
     
@@ -40,8 +40,7 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script>
-</head>
+</script></head>
 
     <body>
         
@@ -146,7 +145,7 @@ if (!doNotTrack) {
 	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 </nav>
 
@@ -167,20 +166,20 @@ if (!doNotTrack) {
 <p>Una posible solución puede ser hacer una video conferencia para mostrar lo que se tiene compartiendo la pantalla, pero el cliente solo va a ver el avance sin interactuar.</p>
 <p>Una mejor opción que suelo usar es <a href="https://ngrok.com/">ngrok</a> para que el cliente pueda revisar e interactuar con los avances del sitio o aplicación, ejecutando la aplicación desde mi máquina local.</p>
 <p>Para esto se debe tener ejecutando un servidor web, como por ejemplo usando el <a href="https://marceloandrader.github.io/blog/2021/01/20/php-web-server/">servidor web interno de php</a> y se ejecuta el siguiente comando:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ngrok http http://localhost:8000</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ngrok http http://localhost:8000</span></span></code></pre></div>
 <p>En la consola se mostrará que está ejecutandose y mostrará dos urls una con http y otra con https se comparte esa URL con el cliente (en el siguiente ejemplo es <a href="https://4315885d6a96.ngrok.io">https://4315885d6a96.ngrok.io</a>) y podrá revisar lo que tengas desarrollado desde cualquier lugar en el Internet.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ngrok by @inconshreveable <span style="color:#f92672">(</span>Ctrl+C to quit<span style="color:#f92672">)</span>
-
-Session Status online
-Account Marcelo Andrade <span style="color:#f92672">(</span>Plan: Free<span style="color:#f92672">)</span>
-Version 2.3.35
-Region United States <span style="color:#f92672">(</span>us<span style="color:#f92672">)</span>
-Web Interface http://127.0.0.1:4040
-Forwarding http://4315885d6a96.ngrok.io -&gt; http://127.0.0.1:8000
-Forwarding https://4315885d6a96.ngrok.io -&gt; http://127.0.0.1:8000
-
-Connections ttl opn rt1 rt5 p50 p90
-<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> 0.00 0.00 0.00 0.00</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ngrok by @inconshreveable <span style="color:#f92672">(</span>Ctrl+C to quit<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Session Status online
+</span></span><span style="display:flex;"><span>Account Marcelo Andrade <span style="color:#f92672">(</span>Plan: Free<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Version 2.3.35
+</span></span><span style="display:flex;"><span>Region United States <span style="color:#f92672">(</span>us<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Web Interface http://127.0.0.1:4040
+</span></span><span style="display:flex;"><span>Forwarding http://4315885d6a96.ngrok.io -&gt; http://127.0.0.1:8000
+</span></span><span style="display:flex;"><span>Forwarding https://4315885d6a96.ngrok.io -&gt; http://127.0.0.1:8000
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Connections ttl opn rt1 rt5 p50 p90
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> 0.00 0.00 0.00 0.00</span></span></code></pre></div>
 <p>Hay ciertas limitaciones para evitar abusos en el plan gratuito, como 1 solo proceso ngrok y solo 40 conexiones por minuto. Pero para que una persona pruebe es más que suficiente. Hay una versión de pago que quita estás restricciones en diferentes planes.</p>
 
         </p>
@@ -292,7 +291,7 @@ Connections ttl opn rt1 rt5 p50 p90
 		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
     </body>
 </html>

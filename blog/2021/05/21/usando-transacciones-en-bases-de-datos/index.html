@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.113b8750726301d2272b2fabf9695ed6bfe79dff4f4cd582cb3010010ebceea4.css"/>
 
     
     
@@ -40,8 +40,7 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script>
-</head>
+</script></head>
 
     <body>
         
@@ -146,7 +145,7 @@ if (!doNotTrack) {
 	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 </nav>
 
@@ -176,22 +175,22 @@ y leerla para que cada parte se guarde en una tabla específica de la base de da
 que tendremos un registro para <code>factura</code> con los datos de la cabecera, varios registros de <code>detalle_factura</code>
 y adicionalmente se debe modificar las cantidades de los productos en el detalle del <code>inventario</code> de cada <code>producto</code>.</p>
 <p>Si tomamos la vía rápida de hacerlo todo esperando que nada falle, tendremos código cómo:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-
-<span style="color:#75715e">// ... solo el código que interesa para el ejemplo
-</span><span style="color:#75715e"></span>$factura <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Factura</span>($datosDeFactura);
-$factura<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
-<span style="color:#66d9ef">foreach</span> ($detalleDeFactura <span style="color:#66d9ef">as</span> $detalle) {
-    $detalle <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DetalleFactura</span>($detalle);
-    $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">factura</span> <span style="color:#f92672">=</span> $factura;
-    $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
-    $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
-
-    $inventario <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Inventario</span>($detalle);
-    $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
-    $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
-}
-</code></pre></div><p>Como podemos ver estamos usando algún tipo de ORM en el que creamos los objetos con datos y guardamos cada uno,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ... solo el código que interesa para el ejemplo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$factura <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Factura</span>($datosDeFactura);
+</span></span><span style="display:flex;"><span>$factura<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> ($detalleDeFactura <span style="color:#66d9ef">as</span> $detalle) {
+</span></span><span style="display:flex;"><span>    $detalle <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DetalleFactura</span>($detalle);
+</span></span><span style="display:flex;"><span>    $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">factura</span> <span style="color:#f92672">=</span> $factura;
+</span></span><span style="display:flex;"><span>    $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
+</span></span><span style="display:flex;"><span>    $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $inventario <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Inventario</span>($detalle);
+</span></span><span style="display:flex;"><span>    $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
+</span></span><span style="display:flex;"><span>    $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Como podemos ver estamos usando algún tipo de ORM en el que creamos los objetos con datos y guardamos cada uno,
 el problema sucede si digamos en la estructura de datos enviada, uno de los <code>producto_id</code> no está en la tabla de productos.
 De tal forma que si enviamos una lista con 3 productos y el último id no está definido, en este código se creará
 una factura con 2 detalles y 2 afectaciones a inventario, en el último producto el sistema dará un fallo y no podrá
@@ -199,49 +198,49 @@ seguir, pero en la base de datos ya se escribió parte de la información.</p>
 <p>Para solucionar este gran inconveniente debemos usar una herramienta que todas las bases de datos relacionales
 tienen, <strong>TRANSACCIONES</strong>.</p>
 <p>A nivel de base de datos desde un cliente por ejemplo, es fácil comenzar una transacción con el comando:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">BEGIN</span>;
-</code></pre></div><p>Luego se puede hacer varias operaciones de lectura y/o escritura:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>factura<span style="color:#f92672">`</span> (numero, fecha, estado) 
-<span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;001-001-1000&#39;</span>, <span style="color:#e6db74">&#39;2021-05-27&#39;</span>, <span style="color:#e6db74">&#39;Facturada&#39;</span>);
-
-<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>detalle_factura<span style="color:#f92672">`</span> (item, producto_id, cantidad, precio) 
-<span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#ae81ff">2000</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">500</span>);
-</code></pre></div><p>Al final se puede decidir si guardo todos los cambios o regreso al estado original antes de enviar el comando BEGIN. Si deseo escribir
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>;
+</span></span></code></pre></div><p>Luego se puede hacer varias operaciones de lectura y/o escritura:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>factura<span style="color:#f92672">`</span> (numero, fecha, estado) 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;001-001-1000&#39;</span>, <span style="color:#e6db74">&#39;2021-05-27&#39;</span>, <span style="color:#e6db74">&#39;Facturada&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>detalle_factura<span style="color:#f92672">`</span> (item, producto_id, cantidad, precio) 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#ae81ff">2000</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">500</span>);
+</span></span></code></pre></div><p>Al final se puede decidir si guardo todos los cambios o regreso al estado original antes de enviar el comando BEGIN. Si deseo escribir
 uso el comando <strong>COMMIT</strong>, si quiero descartar todos los cambios uso el comando <strong>ROLLBACK</strong>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">COMMIT</span>;
-<span style="color:#75715e">--- o 
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">ROLLBACK</span>;
-</code></pre></div><p>Esto nos asegura que en el COMMIT todas las operaciones realizadas se ejecutan como una sola operación o no se ejecuta nada,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">COMMIT</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--- o 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">ROLLBACK</span>;
+</span></span></code></pre></div><p>Esto nos asegura que en el COMMIT todas las operaciones realizadas se ejecutan como una sola operación o no se ejecuta nada,
 a esto se le llama <strong>ATOMICIDAD</strong>.</p>
 <p>En nuestro ejemplo de php, se puede implementar de varias formas, pero la que normalmente uso es hacer un try catch.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-
-<span style="color:#75715e">// ... solo el código que interesa para el ejemplo
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">try</span> {
-    $conexionBd<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">begin</span>();
-
-    $factura <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Factura</span>($datosDeFactura);
-    $factura<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
-    <span style="color:#66d9ef">foreach</span> ($detalleDeFactura <span style="color:#66d9ef">as</span> $detalle) {
-        $detalle <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DetalleFactura</span>($detalle);
-        $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">factura</span> <span style="color:#f92672">=</span> $factura;
-        $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
-        $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
-
-        $inventario <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Inventario</span>($detalle);
-        $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
-        $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
-    }
-
-    $conexionBd<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">commit</span>();
-} 
-<span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">\Exception</span> $e)
-{
-    $conexionBd<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">rollback</span>();
-    <span style="color:#66d9ef">throw</span> $e;
-}
-</code></pre></div><p>Agregando estas líneas de código estamos asegurando que la factura se crea con los 3 productos enviados, o no se crea la factura, y
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ... solo el código que interesa para el ejemplo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    $conexionBd<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">begin</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $factura <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Factura</span>($datosDeFactura);
+</span></span><span style="display:flex;"><span>    $factura<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($detalleDeFactura <span style="color:#66d9ef">as</span> $detalle) {
+</span></span><span style="display:flex;"><span>        $detalle <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DetalleFactura</span>($detalle);
+</span></span><span style="display:flex;"><span>        $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">factura</span> <span style="color:#f92672">=</span> $factura;
+</span></span><span style="display:flex;"><span>        $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
+</span></span><span style="display:flex;"><span>        $detalle<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        $inventario <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Inventario</span>($detalle);
+</span></span><span style="display:flex;"><span>        $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">producto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Producto</span><span style="color:#f92672">::</span><span style="color:#a6e22e">findOrFail</span>($detalle[<span style="color:#e6db74">&#39;producto_id&#39;</span>]);
+</span></span><span style="display:flex;"><span>        $inventario<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $conexionBd<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">commit</span>();
+</span></span><span style="display:flex;"><span>} 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">\Exception</span> $e)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    $conexionBd<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">rollback</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> $e;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Agregando estas líneas de código estamos asegurando que la factura se crea con los 3 productos enviados, o no se crea la factura, y
 la integridad de los datos está asegurada sin datos basura en la base.</p>
 
         </p>
@@ -353,7 +352,7 @@ la integridad de los datos está asegurada sin datos basura en la base.</p>
 		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
     </body>
 </html>

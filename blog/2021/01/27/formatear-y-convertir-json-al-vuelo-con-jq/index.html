@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.113b8750726301d2272b2fabf9695ed6bfe79dff4f4cd582cb3010010ebceea4.css"/>
 
     
     
@@ -40,8 +40,7 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script>
-</head>
+</script></head>
 
     <body>
         
@@ -146,7 +145,7 @@ if (!doNotTrack) {
 	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 </nav>
 
@@ -166,19 +165,19 @@ if (!doNotTrack) {
         <p><a href="https://stedolan.github.io/jq/">jq</a> es una herramienta que permite formatear y/o convertir la respuesta de un JSON API a cualquier cosa que se les ocurra.</p>
 <h2 id="formatear">Formatear:</h2>
 <p>Cuando se tiene que verificar el resultado de una petición a un API, y el API responde con el JSON más  eficiente, sin espacios o retornos de línea obtienes algo como:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl localhost:8000
-<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;ok&#34;</span>:true,<span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Creado correctamente&#34;</span><span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ curl localhost:8000
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;ok&#34;</span>:true,<span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Creado correctamente&#34;</span><span style="color:#f92672">}</span></span></span></code></pre></div>
 <p>Pero si usas JQ:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl localhost:8000 | jq 
-<span style="color:#f92672">{</span>
-  <span style="color:#e6db74">&#34;ok&#34;</span>: true,
-  <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Creado correctamente&#34;</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ curl localhost:8000 | jq 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;ok&#34;</span>: true,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Creado correctamente&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div>
 <p>Y además de formatear para que sea más legible, también añade colores en la respuesta.</p>
 <h2 id="convertir">Convertir:</h2>
 <p>A veces se necesita obtener solo cierto campo de una respuesta del API, por ejemplo si quisiera solo tener el campo <code>message</code> de la respuesta, haría:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -s localhost:8000 | jq <span style="color:#e6db74">&#39;.message&#39;</span>
-<span style="color:#e6db74">&#34;Creado correctamente&#34;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ curl -s localhost:8000 | jq <span style="color:#e6db74">&#39;.message&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;Creado correctamente&#34;</span></span></span></code></pre></div>
 <p>Esto solo es una mínima parte de lo que puede hacer, también es posible hacer cálculos y muchas otras cosas.</p>
 <p>Esto es de gran utilidad por ejemplo cuando interactúas con API de terceros para escribir un script, lo he usado cuando llamo a las API de Amazon Web Services como parte de un script de despliegue por ejemplo.</p>
 
@@ -289,7 +288,7 @@ if (!doNotTrack) {
 		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
     </body>
 </html>

@@ -6,11 +6,7 @@
     <description>Recent content in javascript on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Tue, 19 Feb 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://marceloandrader.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 19 Feb 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aplicaciones Web del lado del Cliente con MVVM</title>
       <link>https://marceloandrader.github.io/blog/2013/02/19/aplicaciones-web-del-lado-del-cliente-con-mvvm/</link>

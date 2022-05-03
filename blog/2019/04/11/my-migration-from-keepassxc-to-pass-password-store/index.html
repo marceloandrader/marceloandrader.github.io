@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.113b8750726301d2272b2fabf9695ed6bfe79dff4f4cd582cb3010010ebceea4.css"/>
 
     
     
@@ -40,8 +40,7 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script>
-</head>
+</script></head>
 
     <body>
         
@@ -146,7 +145,7 @@ if (!doNotTrack) {
 	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 </nav>
 
@@ -184,132 +183,132 @@ if (!doNotTrack) {
 <p>All the setup was done in a linux machine with Pop!OS 18.10.</p>
 <h2 id="configure-gpg">Configure GPG</h2>
 <p>First we need to create a gpg key that pass will use to encrypt/decrypt the password files.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % gpg --gen-key</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % gpg --gen-key</span></span></code></pre></div>
 <p>It will ask for a real name of the key and an email, and also a passphrase that should be at least 8 characters and have a digit.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    ⏚ <span style="color:#f92672">[</span>marcelo:~<span style="color:#f92672">]</span> % gpg --gen-key
-
-    gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.2.8; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2018</span> Free Software Foundation, Inc.
-    This is free software: you are free to change and redistribute it.
-    There is NO WARRANTY, to the extent permitted by law.
-
-    Note: Use <span style="color:#e6db74">&#34;gpg --full-generate-key&#34;</span> <span style="color:#66d9ef">for</span> a full featured key generation dialog.
-
-    GnuPG needs to construct a user ID to identify your key.
-
-    Real name: Pass Migration
-    Email address: pass.migration@gmail.com
-    You selected this USER-ID:
-        <span style="color:#e6db74">&#34;Pass Migration &lt;pass.migration@gmail.com&gt;&#34;</span>
-
-    Change <span style="color:#f92672">(</span>N<span style="color:#f92672">)</span>ame, <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span>mail, or <span style="color:#f92672">(</span>O<span style="color:#f92672">)</span>kay/<span style="color:#f92672">(</span>Q<span style="color:#f92672">)</span>uit? O
-    We need to generate a lot of random bytes. It is a good idea to perform
-    some other action <span style="color:#f92672">(</span>type on the keyboard, move the mouse, utilize the
-    disks<span style="color:#f92672">)</span> during the prime generation; this gives the random number
-    generator a better chance to gain enough entropy.
-    We need to generate a lot of random bytes. It is a good idea to perform
-    some other action <span style="color:#f92672">(</span>type on the keyboard, move the mouse, utilize the
-    disks<span style="color:#f92672">)</span> during the prime generation; this gives the random number
-    generator a better chance to gain enough entropy.
-    gpg: key B9E32CDD4190FC22 marked as ultimately trusted
-    gpg: revocation certificate stored as <span style="color:#e6db74">&#39;/home/marcelo/.gnupg/openpgp-revocs.d/23434EEF535B0E7C702E36A9B9E32CDD4190FC22.rev&#39;</span>
-    public and secret key created and signed.
-
-    pub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span>
-          23434EEF535B0E7C702E36A9B9E32CDD4190FC22
-    uid                      Pass Migration &lt;pass.migration@gmail.com&gt;
-    sub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    ⏚ <span style="color:#f92672">[</span>marcelo:~<span style="color:#f92672">]</span> % gpg --gen-key
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.2.8; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2018</span> Free Software Foundation, Inc.
+</span></span><span style="display:flex;"><span>    This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>    There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Note: Use <span style="color:#e6db74">&#34;gpg --full-generate-key&#34;</span> <span style="color:#66d9ef">for</span> a full featured key generation dialog.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    GnuPG needs to construct a user ID to identify your key.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Real name: Pass Migration
+</span></span><span style="display:flex;"><span>    Email address: pass.migration@gmail.com
+</span></span><span style="display:flex;"><span>    You selected this USER-ID:
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Pass Migration &lt;pass.migration@gmail.com&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Change <span style="color:#f92672">(</span>N<span style="color:#f92672">)</span>ame, <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span>mail, or <span style="color:#f92672">(</span>O<span style="color:#f92672">)</span>kay/<span style="color:#f92672">(</span>Q<span style="color:#f92672">)</span>uit? O
+</span></span><span style="display:flex;"><span>    We need to generate a lot of random bytes. It is a good idea to perform
+</span></span><span style="display:flex;"><span>    some other action <span style="color:#f92672">(</span>type on the keyboard, move the mouse, utilize the
+</span></span><span style="display:flex;"><span>    disks<span style="color:#f92672">)</span> during the prime generation; this gives the random number
+</span></span><span style="display:flex;"><span>    generator a better chance to gain enough entropy.
+</span></span><span style="display:flex;"><span>    We need to generate a lot of random bytes. It is a good idea to perform
+</span></span><span style="display:flex;"><span>    some other action <span style="color:#f92672">(</span>type on the keyboard, move the mouse, utilize the
+</span></span><span style="display:flex;"><span>    disks<span style="color:#f92672">)</span> during the prime generation; this gives the random number
+</span></span><span style="display:flex;"><span>    generator a better chance to gain enough entropy.
+</span></span><span style="display:flex;"><span>    gpg: key B9E32CDD4190FC22 marked as ultimately trusted
+</span></span><span style="display:flex;"><span>    gpg: revocation certificate stored as <span style="color:#e6db74">&#39;/home/marcelo/.gnupg/openpgp-revocs.d/23434EEF535B0E7C702E36A9B9E32CDD4190FC22.rev&#39;</span>
+</span></span><span style="display:flex;"><span>    public and secret key created and signed.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    pub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>          23434EEF535B0E7C702E36A9B9E32CDD4190FC22
+</span></span><span style="display:flex;"><span>    uid                      Pass Migration &lt;pass.migration@gmail.com&gt;
+</span></span><span style="display:flex;"><span>    sub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span></span></span></code></pre></div>
 <p>Check that the gpg key exists:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % gpg -k
-
-    /home/marcelo/.gnupg/pubring.kbx
-    --------------------------------
-    pub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span>
-          23434EEF535B0E7C702E36A9B9E32CDD4190FC22
-    uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> Pass Migration &lt;pass.migration@gmail.com&gt;
-    sub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % gpg -k
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    /home/marcelo/.gnupg/pubring.kbx
+</span></span><span style="display:flex;"><span>    --------------------------------
+</span></span><span style="display:flex;"><span>    pub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>          23434EEF535B0E7C702E36A9B9E32CDD4190FC22
+</span></span><span style="display:flex;"><span>    uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> Pass Migration &lt;pass.migration@gmail.com&gt;
+</span></span><span style="display:flex;"><span>    sub   rsa3072 2019-04-11 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2021-04-10<span style="color:#f92672">]</span></span></span></code></pre></div>
 <h2 id="init-the-store">Init the store</h2>
 <p>The command to init the store in pass is the following, you need the key id created in the previous step as the parameter:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass init <span style="color:#e6db74">&#34;Pass Migration&#34;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % pass init <span style="color:#e6db74">&#34;Pass Migration&#34;</span></span></span></code></pre></div>
 <p>This will create a directory in your ~/.password-store/ and will write a .gpg-id so pass know what key to use to encrypt/decrypt from now on.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    mkdir: created directory <span style="color:#e6db74">&#39;/home/marcelo/.password-store&#39;</span>
-    Password store initialized <span style="color:#66d9ef">for</span> Pass Migration <span style="color:#f92672">(</span>migration<span style="color:#f92672">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    mkdir: created directory <span style="color:#e6db74">&#39;/home/marcelo/.password-store&#39;</span>
+</span></span><span style="display:flex;"><span>    Password store initialized <span style="color:#66d9ef">for</span> Pass Migration <span style="color:#f92672">(</span>migration<span style="color:#f92672">)</span></span></span></code></pre></div>
 <h2 id="init-git-in-the-store">Init git in the store</h2>
 <p>To track all your password changes with git, you just need to init the repo on the directory:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass git init
-
-    Initialized empty Git repository in /home/marcelo/.password-store/.git/</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % pass git init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Initialized empty Git repository in /home/marcelo/.password-store/.git/</span></span></code></pre></div>
 <p>This allows you to keep the history of your passwords, and it helps with the distribution of the store to other devices and to keep them in sync.</p>
 <h2 id="add-a-git-remote">Add a git remote</h2>
 <p>In order to backup/distribute your passwords you can set a remote for the .password-store repository, you need to change the data between &lt;&gt;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass git remote add origin git@github.com:&lt;your-user&gt;/&lt;your-repo&gt;.git
-    % pass git push -u master</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % pass git remote add origin git@github.com:&lt;your-user&gt;/&lt;your-repo&gt;.git
+</span></span><span style="display:flex;"><span>    % pass git push -u master</span></span></code></pre></div>
 <p>After that when anything happens in pass, it will create a commit for each change automatically, you just need to do a push/pull to sync it</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass git push
-    % pass git pull</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % pass git push
+</span></span><span style="display:flex;"><span>    % pass git pull</span></span></code></pre></div>
 <h1 id="day-to-day-use-of-the-password-store">Day to day use of the password store</h1>
 <h2 id="add-new-passwords">Add new passwords</h2>
 <p>The insert command allows you to manually enter the password to be saved.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass insert Personal/testing
-    Enter password <span style="color:#66d9ef">for</span> Personal/testing:******
-    Retype password <span style="color:#66d9ef">for</span> Personal/testing:******
-    <span style="color:#f92672">[</span>master bf1bc88<span style="color:#f92672">]</span> Add given password <span style="color:#66d9ef">for</span> Personal/testing to store.
-     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
-     create mode <span style="color:#ae81ff">100644</span> Personal/testing.gpg</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % pass insert Personal/testing
+</span></span><span style="display:flex;"><span>    Enter password <span style="color:#66d9ef">for</span> Personal/testing:******
+</span></span><span style="display:flex;"><span>    Retype password <span style="color:#66d9ef">for</span> Personal/testing:******
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span>master bf1bc88<span style="color:#f92672">]</span> Add given password <span style="color:#66d9ef">for</span> Personal/testing to store.
+</span></span><span style="display:flex;"><span>     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>     create mode <span style="color:#ae81ff">100644</span> Personal/testing.gpg</span></span></code></pre></div>
 <p>As you can see pass created the testing.gpg file and committed to the repo.</p>
 <p>If you want that pass generate a password for you, use the generate command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass generate Personal/testing2
-    <span style="color:#f92672">[</span>master 8b0da79<span style="color:#f92672">]</span> Add generated password <span style="color:#66d9ef">for</span> Personal/testing2.
-     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
-     create mode <span style="color:#ae81ff">100644</span> Personal/testing2.gpg
-    The generated password <span style="color:#66d9ef">for</span> Personal/testing2 is:
-    kqc9b7v<span style="color:#f92672">=</span>c7~e<span style="color:#f92672">)</span>D/vIBScEz;%u</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % pass generate Personal/testing2
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span>master 8b0da79<span style="color:#f92672">]</span> Add generated password <span style="color:#66d9ef">for</span> Personal/testing2.
+</span></span><span style="display:flex;"><span>     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>     create mode <span style="color:#ae81ff">100644</span> Personal/testing2.gpg
+</span></span><span style="display:flex;"><span>    The generated password <span style="color:#66d9ef">for</span> Personal/testing2 is:
+</span></span><span style="display:flex;"><span>    kqc9b7v<span style="color:#f92672">=</span>c7~e<span style="color:#f92672">)</span>D/vIBScEz;%u</span></span></code></pre></div>
 <p>Given that pass encrypt all the file, you can add some other metadata to the file like usernames, urls, secret question answers, etc. For that you should use insert in multiple lines, the only thing you need to remember is that the first line is always the password.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass insert -m Personal/testing-multiline
-    Enter contents of Personal/testing-multiline and press Ctrl+D when finished:
-
-    thisismypassword
-    url: http://example.com
-    login: marceloandrade
-
-    question1: xhdjahdfasdjfkasjdfaks
-    question2: fjasdkfj9dfas0dfa9d8f7
-    <span style="color:#f92672">[</span>master 3a133ec<span style="color:#f92672">]</span> Add given password <span style="color:#66d9ef">for</span> Personal/testing-multiline to store.
-     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
-     create mode <span style="color:#ae81ff">100644</span> Personal/testing-multiline.gpg</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % pass insert -m Personal/testing-multiline
+</span></span><span style="display:flex;"><span>    Enter contents of Personal/testing-multiline and press Ctrl+D when finished:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    thisismypassword
+</span></span><span style="display:flex;"><span>    url: http://example.com
+</span></span><span style="display:flex;"><span>    login: marceloandrade
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    question1: xhdjahdfasdjfkasjdfaks
+</span></span><span style="display:flex;"><span>    question2: fjasdkfj9dfas0dfa9d8f7
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span>master 3a133ec<span style="color:#f92672">]</span> Add given password <span style="color:#66d9ef">for</span> Personal/testing-multiline to store.
+</span></span><span style="display:flex;"><span>     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>     create mode <span style="color:#ae81ff">100644</span> Personal/testing-multiline.gpg</span></span></code></pre></div>
 <h2 id="consume-passwords">Consume passwords</h2>
 <p>To use a password just do <code>pass Personal/testing</code> that will echo your password, if you don&rsquo;t want to show the password in your terminal, pass the -c parameter to copy to clipboard <code>pass -c Personal/testing</code> that will keep your password in the clipboard for 45 seconds, enough to paste it where you need it.</p>
 <h2 id="update-a-password">Update a password</h2>
 <p>You can use <code>pass edit Personal/testing-multiline</code> that will open the decrypted content in a temporary file with your default editor, you can do changes and save &amp; exit.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    <span style="color:#f92672">[</span>master fa72ec0<span style="color:#f92672">]</span> Edit password <span style="color:#66d9ef">for</span> Personal/testing-multiline using nvim.
-     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
-     rewrite Personal/testing-multiline.gpg <span style="color:#f92672">(</span>100%<span style="color:#f92672">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    <span style="color:#f92672">[</span>master fa72ec0<span style="color:#f92672">]</span> Edit password <span style="color:#66d9ef">for</span> Personal/testing-multiline using nvim.
+</span></span><span style="display:flex;"><span>     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>     rewrite Personal/testing-multiline.gpg <span style="color:#f92672">(</span>100%<span style="color:#f92672">)</span></span></span></code></pre></div>
 <h2 id="having-a-diff-in-password-changes-directly-in-git">Having a diff in password changes directly in git</h2>
 <p>After you have edited a password you can check directly with git what the change was:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass git log</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % pass git log</span></span></code></pre></div>
 <p>To copy the sha1 of the commit where you did the change</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass git show fa72ec0a9e51459e8223a6872647f3388ff8a96f
-    commit fa72ec0a9e51459e8223a6872647f3388ff8a96f <span style="color:#f92672">(</span>HEAD -&gt; master<span style="color:#f92672">)</span>
-    Author: Marcelo Andrade R
-    Date:   Thu Apr <span style="color:#ae81ff">11</span> 12:11:11 <span style="color:#ae81ff">2019</span> -0500
-
-        Edit password <span style="color:#66d9ef">for</span> Personal/testing-multiline using nvim.
-
-        diff --git a/Personal/testing-multiline.gpg b/Personal/testing-multiline.gpg
-        index 1c957b8..7dfa9a4 <span style="color:#ae81ff">100644</span>
-        --- a/Personal/testing-multiline.gpg
-        +++ b/Personal/testing-multiline.gpg
-        @@ -1,4 +1,4 @@
-        -thisismypassword
-        +thisismypassword2
-         url: http://example.com
-         login: marceloandrade</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % pass git show fa72ec0a9e51459e8223a6872647f3388ff8a96f
+</span></span><span style="display:flex;"><span>    commit fa72ec0a9e51459e8223a6872647f3388ff8a96f <span style="color:#f92672">(</span>HEAD -&gt; master<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    Author: Marcelo Andrade R
+</span></span><span style="display:flex;"><span>    Date:   Thu Apr <span style="color:#ae81ff">11</span> 12:11:11 <span style="color:#ae81ff">2019</span> -0500
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Edit password <span style="color:#66d9ef">for</span> Personal/testing-multiline using nvim.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        diff --git a/Personal/testing-multiline.gpg b/Personal/testing-multiline.gpg
+</span></span><span style="display:flex;"><span>        index 1c957b8..7dfa9a4 <span style="color:#ae81ff">100644</span>
+</span></span><span style="display:flex;"><span>        --- a/Personal/testing-multiline.gpg
+</span></span><span style="display:flex;"><span>        +++ b/Personal/testing-multiline.gpg
+</span></span><span style="display:flex;"><span>        @@ -1,4 +1,4 @@
+</span></span><span style="display:flex;"><span>        -thisismypassword
+</span></span><span style="display:flex;"><span>        +thisismypassword2
+</span></span><span style="display:flex;"><span>         url: http://example.com
+</span></span><span style="display:flex;"><span>         login: marceloandrade</span></span></code></pre></div>
 <h2 id="removing-a-password">Removing a password</h2>
 <p>To delete use <code>pass rm Personal/testing</code> and will be removed from the store.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    Are you sure you would like to delete Personal/testing? <span style="color:#f92672">[</span>y/N<span style="color:#f92672">]</span> y
-    removed <span style="color:#e6db74">&#39;/home/marcelo/.password-store/Personal/testing.gpg&#39;</span>
-    <span style="color:#f92672">[</span>master 151f502<span style="color:#f92672">]</span> Remove Personal/testing from store.
-     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
-     delete mode <span style="color:#ae81ff">100644</span> Personal/testing.gpg</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    Are you sure you would like to delete Personal/testing? <span style="color:#f92672">[</span>y/N<span style="color:#f92672">]</span> y
+</span></span><span style="display:flex;"><span>    removed <span style="color:#e6db74">&#39;/home/marcelo/.password-store/Personal/testing.gpg&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span>master 151f502<span style="color:#f92672">]</span> Remove Personal/testing from store.
+</span></span><span style="display:flex;"><span>     <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>     delete mode <span style="color:#ae81ff">100644</span> Personal/testing.gpg</span></span></code></pre></div>
 <h1 id="specific-migration-from-keepassxc">Specific migration from keepassxc</h1>
 <h2 id="install-pass-import">Install pass-import</h2>
 <p>Go to the <a href="https://github.com/roddhjav/pass-import/">pass-import github repo</a> and install it the way best suit your needs and environment, I cloned it, make and then sudo make install</p>
@@ -317,11 +316,11 @@ if (!doNotTrack) {
 <p>From KeePassXC application, open your database with your master password, and then go to menu Database/Export to CSV file&hellip; that will write the file to disk, make sure it&rsquo;s secured because all your passwords are written in plain text in that file.</p>
 <h2 id="run-the-pass-import-keepassxc-filecsv">Run the pass import keepassxc file.csv</h2>
 <p>The tool to import is really easy to use:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % pass import keepassxc /path/to/file.csv</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % pass import keepassxc /path/to/file.csv</span></span></code></pre></div>
 <p>That command will insert each entry to the store, and do a commit on each one.</p>
 <p>##Shred the file</p>
 <p>Because the file.csv is really unsecure way to save your passwords make sure to delete it securely:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    % shred -u file.csv</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    % shred -u file.csv</span></span></code></pre></div>
 <h1 id="conclusion">Conclusion</h1>
 <p>It became a bit of a long post, let me know if something is not clear, I&rsquo;ll be happy to answer. Also maybe I&rsquo;ll do another post about the android app configuration to use the git repo.</p>
 <h1 id="resources">Resources</h1>
@@ -441,7 +440,7 @@ if (!doNotTrack) {
 		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
     </body>
 </html>

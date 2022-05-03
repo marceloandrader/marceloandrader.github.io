@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.113b8750726301d2272b2fabf9695ed6bfe79dff4f4cd582cb3010010ebceea4.css"/>
 
     
     
@@ -40,8 +40,7 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script>
-</head>
+</script></head>
 
     <body>
         
@@ -146,7 +145,7 @@ if (!doNotTrack) {
 	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 </nav>
 
@@ -179,9 +178,9 @@ los datos completos.</p>
 <h1 id="crear-la-aplicación">Crear la aplicación</h1>
 <p>Este no es un tutorial para aprender laravel, pero voy a poner los comandos que use
 para generar una <a href="https://github.com/marceloandrader/laravel-example-software-testing">aplicación inicial</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ composer create-project laravel/laravel laravel-example-software-testing
-$ cd laravel-example-software-testing
-$ php artisan serve</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ composer create-project laravel/laravel laravel-example-software-testing
+</span></span><span style="display:flex;"><span>$ cd laravel-example-software-testing
+</span></span><span style="display:flex;"><span>$ php artisan serve</span></span></code></pre></div>
 <p>Editar el archivo .env para usar sqlite <code>DB_CONNECTION=sqlite</code> y <code>DB_DATABASE=/full-path-a-la-base/software-testing-dev.sqlite</code> y crear la base de datos usando <code>sqlite3 /full-path-a-la-base/software-testing-dev.sqlite</code>.</p>
 <p><a href="https://github.com/marceloandrader/laravel-example-software-testing/commit/42b506bcec7141c978d88ae387f7fe25c82ae90f">Github commit con cambio de configuración de la base</a></p>
 <p>Por defecto al crear una nueva aplicación, también se crean 2 tests de ejemplo<br>
@@ -189,8 +188,8 @@ una prueba unitaria y otra funcional:</p>
 <p><img src="/images/software-testing-01.png" alt="laravel tests"></p>
 <p>También voy a crear un modelo denominado Estudiante con los campos solicitados,
 para poder almacenar en una base de datos.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ php artisan make:model -m Estudiante
-$ php artisan migrate</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ php artisan make:model -m Estudiante
+</span></span><span style="display:flex;"><span>$ php artisan migrate</span></span></code></pre></div>
 <p><a href="https://github.com/marceloandrader/laravel-example-software-testing/commit/ee937a15951e2e050eef9e55ef557d6c364c9fd3">Github commit con modelo y migración</a></p>
 <h1 id="casos-de-prueba">Casos de prueba</h1>
 <h2 id="prueba-unitaria">Prueba unitaria</h2>
@@ -358,7 +357,7 @@ que tienen una buena batería de tests que puede identificar errores fácil y r�
 		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
     </body>
 </html>

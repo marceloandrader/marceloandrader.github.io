@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.113b8750726301d2272b2fabf9695ed6bfe79dff4f4cd582cb3010010ebceea4.css"/>
 
     
     
@@ -40,8 +40,7 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script>
-</head>
+</script></head>
 
     <body>
         
@@ -146,7 +145,7 @@ if (!doNotTrack) {
 	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 </nav>
 
@@ -171,15 +170,16 @@ if (!doNotTrack) {
 <p><strong>Transiciones</strong> (transitions) son las posibles acciones que pueden hacer que un objeto cambie de un estado a otro. En nuestro ejemplo las transiciones pueden ser <code>activar</code> que va de inactivo a activo, <code>desactivar</code> que va de activo a inactivo y <code>resetear</code> que va de inactivo o activo a reseteando y <code>reestablecer</code> que va de reseteando a activo.</p>
 <p><strong>Llamadas</strong> (callbacks) son funciones del objeto que se llaman cuando una transición se ejecuta, esto me ha sido útil por ejemplo para llevar un control de cambios en el objeto, cuándo se hizo la transición y quién la ejecutó.</p>
 <p>Una vez realizada la configuración, el API para verificar que transiciones puede realizar el objeto son:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$user-&gt;getCurrentState(); // por ejemplo ‘activo’
-
-$user-&gt;can(‘activar’); // false porque está en estado activo solo puede ir a reseteando
-$user-&gt;can(‘desactivar’); // true si se puede realizar esta transición de acuerdo a la configuración
-
-$user-&gt;apply(‘desactivar’); // se realiza el cambio
-$user-&gt;getCurrentState(); // ahora es ‘inactivo’
-
-$user&gt;getCurrentState()-&gt;getTransitions(); // muestra que posibles transiciones tiene disponible, en el caso de inactivo puede ir solo a ‘activar’</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getCurrentState</span>(); <span style="color:#75715e">// por ejemplo ‘activo’
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">can</span>(<span style="color:#a6e22e">‘activar’</span>); <span style="color:#75715e">// false porque está en estado activo solo puede ir a reseteando
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">can</span>(<span style="color:#a6e22e">‘desactivar’</span>); <span style="color:#75715e">// true si se puede realizar esta transición de acuerdo a la configuración
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">‘desactivar’</span>); <span style="color:#75715e">// se realiza el cambio
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getCurrentState</span>(); <span style="color:#75715e">// ahora es ‘inactivo’
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>$user<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">getCurrentState</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getTransitions</span>(); <span style="color:#75715e">// muestra que posibles transiciones tiene disponible, en el caso de inactivo puede ir solo a ‘activar’
+</span></span></span></code></pre></div>
 <p>Para mayor información la <a href="https://finite.readthedocs.io/en/master/index.html">documentación de yohang/finite</a> es muy completa.</p>
 
         </p>
@@ -291,7 +291,7 @@ $user&gt;getCurrentState()-&gt;getTransitions(); // muestra que posibles transic
 		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
     </body>
 </html>

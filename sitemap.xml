@@ -1,391 +1,237 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://marceloandrader.github.io/blog/2022/03/17/generando-datos-de-prueba-rapidamente/</loc>
     <lastmod>2022-03-17T07:44:09-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/posts/</loc>
     <lastmod>2022-03-17T07:44:09-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/pruebas/</loc>
     <lastmod>2022-03-17T07:44:09-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/</loc>
     <lastmod>2022-03-17T07:44:09-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/tip/</loc>
     <lastmod>2022-03-17T07:44:09-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/</loc>
     <lastmod>2022-03-17T07:44:09-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
     <lastmod>2022-03-04T10:45:39-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2022/03/04/pub/sub-con-redis/</loc>
     <lastmod>2022-03-04T10:45:39-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/software/</loc>
     <lastmod>2022-03-04T10:45:39-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/negocio/</loc>
     <lastmod>2022-02-15T07:00:45-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2022/02/15/por-qu%C3%A9-la-m%C3%A1gica-pregunta-al-desarrollar-software/</loc>
     <lastmod>2022-02-15T07:00:45-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2022/02/04/programando-en-pareja-con-inteligencia-artificial/</loc>
     <lastmod>2022-02-04T07:46:26-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/tools/</loc>
     <lastmod>2022-02-04T07:46:26-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/alternativos/</loc>
     <lastmod>2021-10-01T06:46:09-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/10/01/elixir-y-la-m%C3%A1quina-virtual-de-erlang/</loc>
     <lastmod>2021-10-01T06:46:09-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/06/24/aplicaciones-web-ambiciosas-con-ember.js/</loc>
     <lastmod>2021-06-24T07:22:44-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/spa/</loc>
     <lastmod>2021-06-24T07:22:44-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/carrera/</loc>
     <lastmod>2021-06-17T06:44:22-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/06/17/deber%C3%ADa-aprender-php-o-est%C3%A1-de-bajada/</loc>
     <lastmod>2021-06-17T06:44:22-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/php/</loc>
     <lastmod>2021-06-17T06:44:22-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/05/21/usando-transacciones-en-bases-de-datos/</loc>
     <lastmod>2021-05-21T07:16:10-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/05/18/encontrando-errores-en-el-c%C3%B3digo-con-git-bisect/</loc>
     <lastmod>2021-05-18T06:46:23-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/git/</loc>
     <lastmod>2021-05-18T06:46:23-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/postgres/</loc>
     <lastmod>2021-05-07T10:22:47-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/05/07/verificar-rangos-de-fechas-en-postgresql/</loc>
     <lastmod>2021-05-07T10:22:47-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/04/30/c%C3%B3mo-utilizar-symplify/vendor-patches-en-proyectos-php/</loc>
     <lastmod>2021-04-30T07:03:53-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/04/13/parte-4-ejemplo-pr%C3%A1ctico-de-pruebas-de-software/</loc>
     <lastmod>2021-04-13T06:44:33-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/04/09/parte-3-proceso-de-creaci%C3%B3n-de-pruebas-y-mejores-pr%C3%A1cticas/</loc>
     <lastmod>2021-04-09T06:51:22-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/04/01/parte-2-tipos-de-pruebas-de-software/</loc>
     <lastmod>2021-04-01T07:00:15-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/</loc>
     <lastmod>2021-03-23T07:44:02-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/posts/software-testing/</loc>
     <lastmod>2021-03-23T07:43:43-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/ecuador/</loc>
     <lastmod>2021-03-16T09:16:51-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/03/16/escoger-la-arquitectura-correcta/</loc>
     <lastmod>2021-03-16T09:16:51-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/ssh/</loc>
     <lastmod>2021-03-09T07:21:29-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/03/09/t%C3%BAneles-ssh/</loc>
     <lastmod>2021-03-09T07:21:29-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/03/05/c%C3%B3mo-se-debe-trabajar-con-campos-de-fecha-y-hora-en-varias-zonas-horarias/</loc>
     <lastmod>2021-03-05T11:24:07-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/03/03/zeal-documentaci%C3%B3n-de-programacion-offline/</loc>
     <lastmod>2021-03-03T07:20:20-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/02/26/asdf-para-manejar-varias-versiones-de-tus-herramientas/</loc>
     <lastmod>2021-02-26T11:24:33-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/02/23/enviando-e-mails-en-ambientes-de-desarrollo/</loc>
     <lastmod>2021-02-23T13:03:39-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/02/19/m%C3%A1quinas-de-estado-finito-fsm/</loc>
     <lastmod>2021-02-19T07:14:40-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/02/16/probando-c%C3%B3digo-en-diferentes-versiones-de-php/</loc>
     <lastmod>2021-02-16T07:08:58-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/02/09/migraciones-de-base-de-datos-con-phinx/</loc>
     <lastmod>2021-02-09T06:43:23-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/02/05/qu%C3%A9-sistema-operativo-es-mejor-para-programar/</loc>
     <lastmod>2021-02-05T06:53:50-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/02/04/monorepo/</loc>
     <lastmod>2021-02-04T18:07:18-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/cli/</loc>
     <lastmod>2021-02-03T12:19:28-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/02/03/curl-la-navaja-suiza-de-los-protocolos-de-internet/</loc>
     <lastmod>2021-02-03T12:19:28-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/02/02/siempre-tener-una-base-de-datos-de-asuntos-pendientes/</loc>
     <lastmod>2021-02-02T10:47:23-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/02/01/github-actions/</loc>
     <lastmod>2021-02-01T07:44:10-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/01/28/el-c%C3%B3digo-es-una-carga/</loc>
     <lastmod>2021-01-28T07:36:53-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/api/</loc>
     <lastmod>2021-01-27T09:49:03-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/01/27/formatear-y-convertir-json-al-vuelo-con-jq/</loc>
     <lastmod>2021-01-27T09:49:03-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/bash/</loc>
     <lastmod>2021-01-26T07:08:44-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/</loc>
     <lastmod>2021-01-26T07:08:44-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/01/25/formatea-t%C3%BA-c%C3%B3digo-con-prettier/</loc>
     <lastmod>2021-01-25T07:07:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/01/22/autocompletado-de-alta-velocidad-starship/</loc>
     <lastmod>2021-01-22T06:48:15-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/</loc>
     <lastmod>2021-01-21T06:44:11-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/networking/</loc>
     <lastmod>2021-01-21T06:44:11-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/01/20/php-web-server/</loc>
     <lastmod>2021-01-20T07:00:25-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2019/04/11/my-migration-from-keepassxc-to-pass-password-store/</loc>
     <lastmod>2019-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/security/</loc>
     <lastmod>2019-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/showdev/</loc>
     <lastmod>2019-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/tutorial/</loc>
     <lastmod>2019-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2013/11/15/docker/</loc>
     <lastmod>2013-11-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/linux/</loc>
     <lastmod>2013-11-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2013/02/19/aplicaciones-web-del-lado-del-cliente-con-mvvm/</loc>
     <lastmod>2013-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/framework/</loc>
     <lastmod>2013-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/javascript/</loc>
     <lastmod>2013-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2012/05/28/caso-pr%C3%A1ctico-de-uso-de-vagrant/</loc>
     <lastmod>2012-05-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2012/02/06/aislar-ambientes-de-desarrollo-con-vagrant/</loc>
     <lastmod>2012-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2011/12/16/dependencias-de-aplicaciones-web/</loc>
     <lastmod>2011-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/web/</loc>
     <lastmod>2011-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-aplicaciones-cli/</loc>
     <lastmod>2011-12-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-software-de-escritorio/</loc>
     <lastmod>2011-12-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/tags/desktop/</loc>
     <lastmod>2011-12-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/about/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/contact/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://marceloandrader.github.io/gracias/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://marceloandrader.github.io/gracias-por-la-respuesta/</loc>
+  </url><url>
     <loc>https://marceloandrader.github.io/services/</loc>
   </url>
-  
 </urlset>

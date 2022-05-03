@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.113b8750726301d2272b2fabf9695ed6bfe79dff4f4cd582cb3010010ebceea4.css"/>
 
     
     
@@ -40,8 +40,7 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script>
-</head>
+</script></head>
 
     <body>
         
@@ -146,7 +145,7 @@ if (!doNotTrack) {
 	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 </nav>
 
@@ -169,33 +168,33 @@ if (!doNotTrack) {
 <p>O la mejor opción se puede usar &ldquo;composer patches&rdquo;.</p>
 <p>Hace un tiempo estaba trabajando en un proyecto laravel con el paquete de administración nova, y un addon para manejo de archivos <code>infinety-es/nova-filemanager</code> el paquete funcionaba muy bien con archivos públicos, pero para mi proyecto necesitaba guardar los archivos en un bucket privado de S3 y para descargarlos debía generar una url temporal con un tiempo de expiración máximo.</p>
 <p>Analizando el código del paquete encontré 2 lugares donde se generaba la url del archivo para descarga en el archivo fuente <code>src/Http/Services/NormalizeFile.php</code> en la función <a href="https://github.com/InfinetyEs/Nova-Filemanager/blob/master/src/Http/Services/NormalizeFile.php#L53">toArray</a> y en la función <a href="https://github.com/InfinetyEs/Nova-Filemanager/blob/master/src/Http/Services/NormalizeFile.php#L148">getImage</a> lo único que había que hacer es realizar el siguiente cambio:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">--- /dev/null
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ ../src/Http/Services/NormalizeFile.php
-</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -50,7 +50,7 @@
-</span><span style="color:#75715e"></span>             &#39;mime&#39; =&gt; $this-&gt;getCorrectMimeFileType(),
-             &#39;path&#39; =&gt; $this-&gt;storagePath,
-             &#39;size&#39; =&gt; $this-&gt;getFileSize(),
-<span style="color:#f92672">-            &#39;url&#39;  =&gt; $this-&gt;cleanSlashes($this-&gt;storage-&gt;url($this-&gt;storagePath)),
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+            &#39;url&#39;  =&gt; $this-&gt;cleanSlashes($this-&gt;storage-&gt;temporaryUrl($this-&gt;storagePath, &#39;+5 minutes&#39;)),
-</span><span style="color:#a6e22e"></span>             &#39;date&#39; =&gt; $this-&gt;modificationDate(),
-             &#39;ext&#39;  =&gt; $this-&gt;file-&gt;getExtension(),
-         ]);
-<span style="color:#75715e">@@ -145,7 +145,7 @@
-</span><span style="color:#75715e"></span>     private function getImage($mime, $extension = false)
-     {
-         if (Str::contains($mime, &#39;image&#39;) || $extension == &#39;svg&#39;) {
-<span style="color:#f92672">-            return $this-&gt;storage-&gt;url($this-&gt;storagePath);
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+            return $this-&gt;storage-&gt;temporaryUrl($this-&gt;storagePath, &#39;+5 minutes&#39;);
-</span><span style="color:#a6e22e"></span>         }
-
-         $fileType = new FileTypesImages();
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">--- /dev/null
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ ../src/Http/Services/NormalizeFile.php
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -50,7 +50,7 @@
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>             &#39;mime&#39; =&gt; $this-&gt;getCorrectMimeFileType(),
+</span></span><span style="display:flex;"><span>             &#39;path&#39; =&gt; $this-&gt;storagePath,
+</span></span><span style="display:flex;"><span>             &#39;size&#39; =&gt; $this-&gt;getFileSize(),
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-            &#39;url&#39;  =&gt; $this-&gt;cleanSlashes($this-&gt;storage-&gt;url($this-&gt;storagePath)),
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+            &#39;url&#39;  =&gt; $this-&gt;cleanSlashes($this-&gt;storage-&gt;temporaryUrl($this-&gt;storagePath, &#39;+5 minutes&#39;)),
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>             &#39;date&#39; =&gt; $this-&gt;modificationDate(),
+</span></span><span style="display:flex;"><span>             &#39;ext&#39;  =&gt; $this-&gt;file-&gt;getExtension(),
+</span></span><span style="display:flex;"><span>         ]);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">@@ -145,7 +145,7 @@
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>     private function getImage($mime, $extension = false)
+</span></span><span style="display:flex;"><span>     {
+</span></span><span style="display:flex;"><span>         if (Str::contains($mime, &#39;image&#39;) || $extension == &#39;svg&#39;) {
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-            return $this-&gt;storage-&gt;url($this-&gt;storagePath);
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+            return $this-&gt;storage-&gt;temporaryUrl($this-&gt;storagePath, &#39;+5 minutes&#39;);
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>         }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>         $fileType = new FileTypesImages();
+</span></span></code></pre></div>
 <h2 id="cómo-se-cambia-esas-2-líneas-en-vendor">Cómo se cambia esas 2 líneas en /vendor?</h2>
 <p>Se hace en 4 simples pasos:</p>
 <ol>
 <li>Instalar el paquete que controla los parches</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require cweagans/composer-patches symplify/vendor-patches --dev</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require cweagans/composer-patches symplify/vendor-patches --dev</span></span></code></pre></div>
 <ol start="2">
 <li>Se crea una copia del archivo a cambiar en /vendor por la extensión <code>.old</code></li>
 </ol>
@@ -209,21 +208,21 @@ if (!doNotTrack) {
 <p>Generar el parche usando el comando:</p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vendor/bin/vendor-patches generate</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vendor/bin/vendor-patches generate</span></span></code></pre></div>
 <p>La herramienta de symplify genera todos los parches en el directorio <code>/patches/</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -l patches
-.rw-r--r-- <span style="color:#ae81ff">883</span> marcelo <span style="color:#ae81ff">30</span> Apr  7:16 infinety-es-nova-filemanager-src-http-services-normalizefile-php.patch</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -l patches
+</span></span><span style="display:flex;"><span>.rw-r--r-- <span style="color:#ae81ff">883</span> marcelo <span style="color:#ae81ff">30</span> Apr  7:16 infinety-es-nova-filemanager-src-http-services-normalizefile-php.patch</span></span></code></pre></div>
 <p>Y también genera la configuración de parches al composer.json:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    <span style="color:#960050;background-color:#1e0010">...</span>
-    <span style="color:#e6db74">&#34;extra&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
-        <span style="color:#f92672">&#34;laravel&#34;</span>: [],
-        <span style="color:#f92672">&#34;patches&#34;</span>: {
-            <span style="color:#f92672">&#34;infinety-es/nova-filemanager&#34;</span>: [
-                <span style="color:#e6db74">&#34;patches/infinety-es-nova-filemanager-src-http-services-normalizefile-php.patch&#34;</span>
-            ]
-        }
-    }<span style="color:#960050;background-color:#1e0010">,</span>
-    <span style="color:#960050;background-color:#1e0010">...</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;extra&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;laravel&#34;</span>: [],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;patches&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;infinety-es/nova-filemanager&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;patches/infinety-es-nova-filemanager-src-http-services-normalizefile-php.patch&#34;</span>
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">...</span></span></span></code></pre></div>
 <p>Y eso es todo, la siguiente vez que realicen <code>composer install</code>, el parche se aplica automáticamente.</p>
 <p>Referencias:</p>
 <ul>
@@ -339,7 +338,7 @@ if (!doNotTrack) {
 		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
     </body>
 </html>

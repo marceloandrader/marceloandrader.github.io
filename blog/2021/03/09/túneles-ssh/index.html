@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.15431d6c334f65809fe2bc329da3f2c81c6e3027ab1e25b56afb2bb85fa7fd64.css"/>
+    <link rel="stylesheet" href="https://marceloandrader.github.io/css/main.min.113b8750726301d2272b2fabf9695ed6bfe79dff4f4cd582cb3010010ebceea4.css"/>
 
     
     
@@ -40,8 +40,7 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script>
-</head>
+</script></head>
 
     <body>
         
@@ -146,7 +145,7 @@ if (!doNotTrack) {
 	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 </nav>
 
@@ -178,8 +177,8 @@ no se puede, a menos que creemos el túnel primero.</p>
 pero la base no escucha en una interfaz externa solo en la local (127.0.0.1),
 por lo que podemos usar la conexión ssh a este servidor para conectarnos
 a la base de datos desde nuestro ambiente local.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -L 3306:localhost:3306 servidor-remoto
-</code></pre></div><p>Donde:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -L 3306:localhost:3306 servidor-remoto
+</span></span></code></pre></div><p>Donde:</p>
 <p><code>ssh -L &lt;puerto-local&gt;:localhost:&lt;puerto-remoto&gt; &lt;gateway&gt;</code></p>
 <p>Una vez este se esté ejecutando, podemos usar cualquier herramienta para conectarnos a la
 base de datos en el host localhost puerto 3306 pero realmente nos estamos conectando a la base
@@ -190,8 +189,8 @@ está restringida geográficamente a usuarios de USA. Por lo que desde mi local 
 Pero los servidores en AWS están en USA por lo que puedo hacer una conexión a estos servidores
 creando un proxy SOCKS y usando ese proxy en la configuración del navegador para acceder a esta
 aplicación a través del servidor.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -N -D <span style="color:#ae81ff">1080</span> servidor-remoto
-</code></pre></div><p>Este comando crea un proxy SOCKS en el puerto 1080 local. En la configuración de proxy del
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -N -D <span style="color:#ae81ff">1080</span> servidor-remoto
+</span></span></code></pre></div><p>Este comando crea un proxy SOCKS en el puerto 1080 local. En la configuración de proxy del
 navegador escojen usar configuración de proxy manual, y en la casilla de SOCKS proxy
 colocan localhost y puerto 1080. Al aplicarlo están navegando y accediendo recursos como si
 estuvieran en USA.</p>
@@ -210,7 +209,7 @@ al servidor más vulnerable.</p>
 <code>port forwarding</code>. Esto se logra editando directamente el archivo ~/.ssh/config local
 se crea un host y se coloca los puertos que se enlazaran automáticamente cuando se conecte via ssh.</p>
 <p>Ejemplo:</p>
-<pre><code>cat ~/.ssh/config
+<pre tabindex="0"><code>cat ~/.ssh/config
 Host dev-marcelo
 HostName 4.4.4.4 #IP del servidor
 IdentityFile ~/.ssh/aws-marcelo.pem
@@ -345,7 +344,7 @@ localhost:8080</p>
 		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://marceloandrader.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+	<script src="https://marceloandrader.github.io/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
     </body>
 </html>
