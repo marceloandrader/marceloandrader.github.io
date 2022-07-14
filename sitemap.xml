@@ -2,25 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://marceloandrader.github.io/tags/bash/</loc>
+    <lastmod>2022-07-14T07:24:48-05:00</lastmod>
+  </url><url>
+    <loc>https://marceloandrader.github.io/tags/ecuador/</loc>
+    <lastmod>2022-07-14T07:24:48-05:00</lastmod>
+  </url><url>
+    <loc>https://marceloandrader.github.io/posts/</loc>
+    <lastmod>2022-07-14T07:24:48-05:00</lastmod>
+  </url><url>
+    <loc>https://marceloandrader.github.io/tags/queja/</loc>
+    <lastmod>2022-07-14T07:24:48-05:00</lastmod>
+  </url><url>
+    <loc>https://marceloandrader.github.io/blog/2022/07/14/script-para-chequear-nuevos-turnos-en-el-registro-civil/</loc>
+    <lastmod>2022-07-14T07:24:48-05:00</lastmod>
+  </url><url>
+    <loc>https://marceloandrader.github.io/tags/</loc>
+    <lastmod>2022-07-14T07:24:48-05:00</lastmod>
+  </url><url>
+    <loc>https://marceloandrader.github.io/</loc>
+    <lastmod>2022-07-14T07:24:48-05:00</lastmod>
+  </url><url>
     <loc>https://marceloandrader.github.io/como-trabajo/</loc>
     <lastmod>2022-06-14T06:54:25-05:00</lastmod>
   </url><url>
     <loc>https://marceloandrader.github.io/blog/2022/03/17/generando-datos-de-prueba-rapidamente/</loc>
     <lastmod>2022-03-17T07:44:09-05:00</lastmod>
   </url><url>
-    <loc>https://marceloandrader.github.io/posts/</loc>
-    <lastmod>2022-03-17T07:44:09-05:00</lastmod>
-  </url><url>
     <loc>https://marceloandrader.github.io/tags/pruebas/</loc>
     <lastmod>2022-03-17T07:44:09-05:00</lastmod>
   </url><url>
-    <loc>https://marceloandrader.github.io/tags/</loc>
-    <lastmod>2022-03-17T07:44:09-05:00</lastmod>
-  </url><url>
     <loc>https://marceloandrader.github.io/tags/tip/</loc>
-    <lastmod>2022-03-17T07:44:09-05:00</lastmod>
-  </url><url>
-    <loc>https://marceloandrader.github.io/</loc>
     <lastmod>2022-03-17T07:44:09-05:00</lastmod>
   </url><url>
     <loc>https://marceloandrader.github.io/tags/desarrollo/</loc>
@@ -32,10 +44,10 @@
     <loc>https://marceloandrader.github.io/tags/software/</loc>
     <lastmod>2022-03-04T10:45:39-05:00</lastmod>
   </url><url>
-    <loc>https://marceloandrader.github.io/tags/negocio/</loc>
+    <loc>https://marceloandrader.github.io/blog/2022/02/15/por-qu%C3%A9-la-m%C3%A1gica-pregunta-al-desarrollar-software/</loc>
     <lastmod>2022-02-15T07:00:45-05:00</lastmod>
   </url><url>
-    <loc>https://marceloandrader.github.io/blog/2022/02/15/por-qu%C3%A9-la-m%C3%A1gica-pregunta-al-desarrollar-software/</loc>
+    <loc>https://marceloandrader.github.io/tags/negocio/</loc>
     <lastmod>2022-02-15T07:00:45-05:00</lastmod>
   </url><url>
     <loc>https://marceloandrader.github.io/blog/2022/02/04/programando-en-pareja-con-inteligencia-artificial/</loc>
@@ -98,9 +110,6 @@
     <loc>https://marceloandrader.github.io/posts/software-testing/</loc>
     <lastmod>2021-03-23T07:43:43-05:00</lastmod>
   </url><url>
-    <loc>https://marceloandrader.github.io/tags/ecuador/</loc>
-    <lastmod>2021-03-16T09:16:51-05:00</lastmod>
-  </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/03/16/escoger-la-arquitectura-correcta/</loc>
     <lastmod>2021-03-16T09:16:51-05:00</lastmod>
   </url><url>
@@ -157,9 +166,6 @@
   </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/01/27/formatear-y-convertir-json-al-vuelo-con-jq/</loc>
     <lastmod>2021-01-27T09:49:03-05:00</lastmod>
-  </url><url>
-    <loc>https://marceloandrader.github.io/tags/bash/</loc>
-    <lastmod>2021-01-26T07:08:44-05:00</lastmod>
   </url><url>
     <loc>https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/</loc>
     <lastmod>2021-01-26T07:08:44-05:00</lastmod>
