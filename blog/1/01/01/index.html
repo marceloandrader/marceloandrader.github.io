@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Formatea tú código con prettier | Tips de Desarrollo</title>
+    <title> | Tips de Desarrollo</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -160,20 +160,14 @@ if (!doNotTrack) {
         max-width: 100%;
     }
 </style>
-<h1 class="post-title">Formatea tú código con prettier</h1>
-    
-    <time>January 25, 2021</time>
+<h1 class="post-title"></h1>
     
     <div>
         <p>
-        <p>Trabajas en equipo y pasas tiempo insistiendo en que coloquen los paréntesis donde te gusta, que el indentado del código sea como dicta cierto estándar, o tu mismo pasas tiempo en tu editor dándole formato al código para que sea agradable a la vista.</p>
-<p>Bueno existe una herramienta que no puede pasarse por alto a la hora de desarrollar software, <a href="https://prettier.io/">prettier</a> te permite formatear el código con una línea de comandos o lo puedes configurar para que funcione dentro de tu editor, luego de guardar el archivo se formatee, también tiene opción de verificado automático del formato del código por si a alguien de tu equipo se le olvido ejecutar prettier antes de enviar sus commit al repositorio usando un pre-commit hook o ya en el repositorio con github actions.</p>
-<p>Funciona en varios lenguajes de programación y tipos de archivos como: html, js, css,  jsx, ts, json, less, sass, markdown, yaml y soporta adicionales a través de plugins.</p>
-<p>Verificar formato en cierta carpeta:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>prettier --check carpeta/con/codigo</span></span></code></pre></div>
-<p>Formatear código desde la línea de comandos:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>prettier --write carpeta/con/codigo</span></span></code></pre></div>
-<p>Aquí puedes revisar la <a href="https://prettier.io/docs/en/index.html">documentacion</a> para obtener información adicional o activarlo en tu editor favorito.</p>
+        <p>alias grt=cd $(git rev-parse &ndash;show-toplevel || echo &ldquo;.)</p>
+<p>El comando cd se usa para cambiar el directorio de trabajo actual en un terminal. La sintaxis $(&hellip;) se usa para ejecutar el comando entre paréntesis y sustituir la salida en el comando que lo contiene. En este caso, el comando entre paréntesis es git rev-parse &ndash;show-toplevel || echo &ldquo;.&rdquo;.</p>
+<p>git rev-parse &ndash;show-toplevel es un comando de git que muestra la ruta al directorio de nivel superior de un repositorio git. Si el directorio actual no está dentro de un repositorio git, este comando fallará y el operador || hará que se ejecute el comando después de él (echo &ldquo;.&rdquo;) en su lugar. El comando echo simplemente muestra su argumento, por lo que en este caso muestra un solo punto (.) carácter.</p>
+<p>En resumen, este comando cd cambia el directorio de trabajo actual al directorio de nivel superior del repositorio git actual, o al directorio actual si el directorio actual no es parte de un repositorio git.</p>
 
         </p>
       <script async data-uid="26ab1be1ec" src="https://unique-artisan-9966.ck.page/26ab1be1ec/index.js"></script>
@@ -185,13 +179,6 @@ if (!doNotTrack) {
 
     <div class="page-footer">
         
-        <hr class="footer-divider">
-        
-            <a class="tag" href="/tags/tip">#tip</a>
-        
-            <a class="tag" href="/tags/desarrollo">#desarrollo</a>
-        
-      
     </div>
 
 
