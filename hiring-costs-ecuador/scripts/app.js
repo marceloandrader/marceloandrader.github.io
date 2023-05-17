@@ -73,7 +73,6 @@ const calculate = function (salary) {
   anualE.name = 'Total para el Empleador';
   anualE.frequency = 'anual';
   anualE.value = (salary * 12) +
-                (iess.value * -12) +
                 (iessE.value * 12) +
                 (d3ro.value) +
                 (d4to.value);
