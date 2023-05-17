@@ -1,9 +1,8 @@
-const minimumSalary = 400;
+const minimumSalary = 450;
 
 const RssFeed = "https://marceloandrader.github.io/index.xml";
 
 const calculate = function (salary) {
-  salary = Number(salary);
   var CostConcept = function() {
     this.name = '';
     this.frequency = 'mensual';
@@ -73,7 +72,6 @@ const calculate = function (salary) {
   anualE.name = 'Total para el Empleador';
   anualE.frequency = 'anual';
   anualE.value = (salary * 12) +
-                (iess.value * -12) +
                 (iessE.value * 12) +
                 (d3ro.value) +
                 (d4to.value);
@@ -85,7 +83,6 @@ const calculate = function (salary) {
   anualEFR.name = 'Total para el Empleador (Incluye fondos de reserva)';
   anualEFR.frequency = 'anual';
   anualEFR.value = (salary * 12) +
-                (iess.value * -12) +
                 (iessE.value * 12) +
                 (d3ro.value) +
                 (d4to.value) +
@@ -148,7 +145,7 @@ window.onload = function () {
   syncUI(result, minimumSalary);
 
   document.getElementById('salary').addEventListener('keyup', function () {
-    let val = this.value
+    let val = Number(this.value);
     let result = calculate(val);
     syncUI(result, val);
   })
