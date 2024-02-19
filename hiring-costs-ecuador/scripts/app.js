@@ -1,4 +1,4 @@
-const minimumSalary = 450;
+const minimumSalary = 460;
 
 const RssFeed = "https://marceloandrader.github.io/index.xml";
 
