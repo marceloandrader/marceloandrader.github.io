@@ -1,169 +1,138 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>software on Tips de Desarrollo</title>
+    <title>Software on Tips de Desarrollo</title>
     <link>https://marceloandrader.github.io/tags/software/</link>
-    <description>Recent content in software on Tips de Desarrollo</description>
+    <description>Recent content in Software on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Fri, 04 Mar 2022 10:45:39 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Aug 2025 10:12:50 -0500</lastBuildDate>
+    <atom:link href="https://marceloandrader.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo mejoraría los servicios en línea de los bancos</title>
+      <link>https://marceloandrader.github.io/blog/2025/08/05/c%C3%B3mo-mejorar%C3%ADa-los-servicios-en-l%C3%ADnea-de-los-bancos/</link>
+      <pubDate>Tue, 05 Aug 2025 10:12:50 -0500</pubDate>
+      <guid>https://marceloandrader.github.io/blog/2025/08/05/c%C3%B3mo-mejorar%C3%ADa-los-servicios-en-l%C3%ADnea-de-los-bancos/</guid>
+      <description>En estos días hubo problemas con acceso a servicios en línea realizadas desde las aplicaciones del Banco Pichincha, del cuál también soy cliente por más de 20 años.</description>
+    </item>
     <item>
       <title>Pub/Sub con Redis</title>
       <link>https://marceloandrader.github.io/blog/2022/03/04/pub/sub-con-redis/</link>
       <pubDate>Fri, 04 Mar 2022 10:45:39 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2022/03/04/pub/sub-con-redis/</guid>
       <description>Durante esta semana tuve que hacer refactoring de una parte del sistema en el que trabajo tenemos un portal de cliente en el que los usuarios pueden seleccionar reportes a descargar y se genera un pdf o un zip con toda la información requerida.</description>
     </item>
-    
     <item>
       <title>¿Por qué? la mágica pregunta al desarrollar software</title>
       <link>https://marceloandrader.github.io/blog/2022/02/15/por-qu%C3%A9-la-m%C3%A1gica-pregunta-al-desarrollar-software/</link>
       <pubDate>Tue, 15 Feb 2022 07:00:45 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2022/02/15/por-qu%C3%A9-la-m%C3%A1gica-pregunta-al-desarrollar-software/</guid>
       <description>Cuando el negocio nos solicita un requerimiento, generalmente como técnicos tendemos a empezar la solución de este lo antes posible, tal vez preguntemos acerca de quienes lo van a usar, que información necesitamos guardar para luego usar en reportes, los permisos que deberá tener, y empezamos a validar en nuestra mente la mejor manera de desarrollarlo en el sistema, pero una pregunta importante que muchas veces no hacemos y que deberíamos hacer frecuentemente es:</description>
     </item>
-    
     <item>
       <title>Elixir y la máquina virtual de Erlang</title>
       <link>https://marceloandrader.github.io/blog/2021/10/01/elixir-y-la-m%C3%A1quina-virtual-de-erlang/</link>
       <pubDate>Fri, 01 Oct 2021 06:46:09 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/10/01/elixir-y-la-m%C3%A1quina-virtual-de-erlang/</guid>
       <description>En el trabajo soy desarrollador de software y uso PHP y JavaScript el 99% del tiempo. Pero siempre estoy buscando alternativas en el área de programación, herramientas que me permitan ser más eficiente o lenguajes de los que pueda aprender algo diferente a lo acostumbrado, esto me permite tener diferentes puntos de vista.</description>
     </item>
-    
     <item>
       <title>Aplicaciones web ambiciosas con Ember.js</title>
       <link>https://marceloandrader.github.io/blog/2021/06/24/aplicaciones-web-ambiciosas-con-ember.js/</link>
       <pubDate>Thu, 24 Jun 2021 07:22:44 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/06/24/aplicaciones-web-ambiciosas-con-ember.js/</guid>
       <description>Cuando se trata de crear aplicaciones de página única o SPA en inglés, como desarrolladores tenemos muchas opciones de dónde escoger hay frameworks y librerías muy conocidas como angular en el área de framework y vue | react en el área de librería.</description>
     </item>
-    
     <item>
       <title>Usando transacciones en bases de datos</title>
       <link>https://marceloandrader.github.io/blog/2021/05/21/usando-transacciones-en-bases-de-datos/</link>
       <pubDate>Fri, 21 May 2021 07:16:10 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/05/21/usando-transacciones-en-bases-de-datos/</guid>
       <description>Al escribir la lógica de una aplicación que interactúa con una base de datos relacional para almacenar la información, generalmente se puede tener varios pasos para guardar cada pedazo en un lugar específico de la base, las bases de datos denominadas ACID tienen una herramienta poderoza para evitar inconsistencias de datos hoy nos concentraremos en la A de ACID Atomicidad.</description>
     </item>
-    
     <item>
       <title>Parte 4: Ejemplo práctico de Pruebas De Software</title>
       <link>https://marceloandrader.github.io/blog/2021/04/13/parte-4-ejemplo-pr%C3%A1ctico-de-pruebas-de-software/</link>
       <pubDate>Tue, 13 Apr 2021 06:44:33 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/04/13/parte-4-ejemplo-pr%C3%A1ctico-de-pruebas-de-software/</guid>
-      <description>En esta artículo vamos a aplicar los conceptos anteriors al crear una aplicación pequeña en laravel.
-Si no han leído las partes anteriores:</description>
+      <description>En esta artículo vamos a aplicar los conceptos anteriors al crear una aplicación pequeña en laravel.&#xA;Si no han leído las partes anteriores:</description>
     </item>
-    
     <item>
       <title>Parte 3: Proceso de creación de pruebas y mejores prácticas</title>
       <link>https://marceloandrader.github.io/blog/2021/04/09/parte-3-proceso-de-creaci%C3%B3n-de-pruebas-y-mejores-pr%C3%A1cticas/</link>
       <pubDate>Fri, 09 Apr 2021 06:51:22 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/04/09/parte-3-proceso-de-creaci%C3%B3n-de-pruebas-y-mejores-pr%C3%A1cticas/</guid>
-      <description>En esta parte vamos a revisar el proceso para la creación de pruebas y algunas mejores prácticas.
-Si no han leído las partes anteriores:</description>
+      <description>En esta parte vamos a revisar el proceso para la creación de pruebas y algunas mejores prácticas.&#xA;Si no han leído las partes anteriores:</description>
     </item>
-    
     <item>
       <title>Parte 2: Tipos De Pruebas de Software</title>
       <link>https://marceloandrader.github.io/blog/2021/04/01/parte-2-tipos-de-pruebas-de-software/</link>
       <pubDate>Thu, 01 Apr 2021 07:00:15 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/04/01/parte-2-tipos-de-pruebas-de-software/</guid>
       <description>Esta es la seguna parte de la serie de Pruebas de Software, si aún no has leído la primera parte puedes hacerlo ahora.</description>
     </item>
-    
     <item>
       <title>Parte 1: Introducción a Pruebas de Software</title>
       <link>https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/</link>
       <pubDate>Tue, 23 Mar 2021 07:44:02 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/</guid>
       <description>Cuando iniciamos en el mundo del desarrollo de software, generalmente estamos muy enfocados en hacer que una característica funcione, o arreglar un bug y dedicamos tiempo en un ciclo de: pruebo manualmente lo que los usuarios me piden, funciona?</description>
     </item>
-    
     <item>
       <title>Zeal documentación de programacion offline</title>
       <link>https://marceloandrader.github.io/blog/2021/03/03/zeal-documentaci%C3%B3n-de-programacion-offline/</link>
       <pubDate>Wed, 03 Mar 2021 07:20:20 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/03/03/zeal-documentaci%C3%B3n-de-programacion-offline/</guid>
       <description>Como desarrolladores de software es imposible saber de memoria todas las API de un lenguaje de programación, la opción más fácil cuando dudas de algo o quieres encontrar más información acerca de una función o clase es buscarla en google y la mayoría de veces te va a llevar a la documentación oficial de la herramienta.</description>
     </item>
-    
     <item>
       <title>curl: la navaja suiza de los protocolos de Internet</title>
       <link>https://marceloandrader.github.io/blog/2021/02/03/curl-la-navaja-suiza-de-los-protocolos-de-internet/</link>
       <pubDate>Wed, 03 Feb 2021 12:19:28 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/02/03/curl-la-navaja-suiza-de-los-protocolos-de-internet/</guid>
       <description>Una de las herramientas que más uso en el día a día es curl, es muy versátil y soporta una gran cantidad de protocolos, los que más uso son solo http y https, pero tiene soporte para los siguientes protocolos de acuerdo a su página web DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP.</description>
     </item>
-    
     <item>
       <title>Docker</title>
       <link>https://marceloandrader.github.io/blog/2013/11/15/docker/</link>
       <pubDate>Fri, 15 Nov 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2013/11/15/docker/</guid>
       <description>Desplegar aplicaciones en linux es un proceso fácil si tu aplicación solo usa un servidor, normalmente se usa el sistema propio de manejo de paquetes para poner a punto el servidor con todos los componentes instalados para publicar una aplicación web, sitio web dinámico, etc.</description>
     </item>
-    
     <item>
       <title>Caso práctico de uso de vagrant</title>
       <link>https://marceloandrader.github.io/blog/2012/05/28/caso-pr%C3%A1ctico-de-uso-de-vagrant/</link>
       <pubDate>Mon, 28 May 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2012/05/28/caso-pr%C3%A1ctico-de-uso-de-vagrant/</guid>
-      <description>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.
-##Pre-Requisitos Instalar VirtualBox Descargar VirtualBox vagrant soporta las versiones 4.</description>
+      <description>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.&#xA;##Pre-Requisitos Instalar VirtualBox Descargar VirtualBox vagrant soporta las versiones 4.</description>
     </item>
-    
     <item>
       <title>Aislar ambientes de desarrollo con Vagrant</title>
       <link>https://marceloandrader.github.io/blog/2012/02/06/aislar-ambientes-de-desarrollo-con-vagrant/</link>
       <pubDate>Mon, 06 Feb 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2012/02/06/aislar-ambientes-de-desarrollo-con-vagrant/</guid>
       <description>Si desarrollas en un solo tipo de &amp;lsquo;stack&amp;rsquo; de desarrollo lo más común es instalar este stack en tu máquina principal y desarrollar directamente en el sistema operativo de tu preferencia.</description>
     </item>
-    
     <item>
       <title>Dependencias de Aplicaciones Web</title>
       <link>https://marceloandrader.github.io/blog/2011/12/16/dependencias-de-aplicaciones-web/</link>
       <pubDate>Fri, 16 Dec 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2011/12/16/dependencias-de-aplicaciones-web/</guid>
-      <description>En esta sección sí hay mucho por contar, cada día dependo más y más en servicios web.
-Entre los que más uso por frecuencia están:</description>
+      <description>En esta sección sí hay mucho por contar, cada día dependo más y más en servicios web.&#xA;Entre los que más uso por frecuencia están:</description>
     </item>
-    
     <item>
       <title>Dependencias de Aplicaciones CLI</title>
       <link>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-aplicaciones-cli/</link>
       <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-aplicaciones-cli/</guid>
-      <description>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos
-history | awk &amp;#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &amp;#34; &amp;#34; CMD[a]/count*100 &amp;#34;% &amp;#34; a;}&amp;#39; | grep -v &amp;#34;.</description>
+      <description>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos&#xA;history | awk &amp;#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &amp;#34; &amp;#34; CMD[a]/count*100 &amp;#34;% &amp;#34; a;}&amp;#39; | grep -v &amp;#34;.</description>
     </item>
-    
     <item>
       <title>Dependencias de Software de Escritorio</title>
       <link>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-software-de-escritorio/</link>
       <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-software-de-escritorio/</guid>
       <description>Como sistema operativo uso Mac OS X (Snow Leopard), las aplicaciones que más uso en orden de frecuencia de uso serían:</description>
     </item>
-    
   </channel>
 </rss>

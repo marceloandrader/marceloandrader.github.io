@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>desktop on Tips de Desarrollo</title>
+    <title>Desktop on Tips de Desarrollo</title>
     <link>https://marceloandrader.github.io/tags/desktop/</link>
-    <description>Recent content in desktop on Tips de Desarrollo</description>
+    <description>Recent content in Desktop on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Thu, 15 Dec 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/desktop/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Dec 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://marceloandrader.github.io/tags/desktop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dependencias de Software de Escritorio</title>
       <link>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-software-de-escritorio/</link>
       <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-software-de-escritorio/</guid>
       <description>Como sistema operativo uso Mac OS X (Snow Leopard), las aplicaciones que más uso en orden de frecuencia de uso serían:</description>
     </item>
-    
   </channel>
 </rss>

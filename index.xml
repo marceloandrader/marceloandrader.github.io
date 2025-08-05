@@ -6,485 +6,392 @@
     <description>Recent content on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Thu, 14 Jul 2022 07:24:48 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Aug 2025 10:12:50 -0500</lastBuildDate>
+    <atom:link href="https://marceloandrader.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo mejoraría los servicios en línea de los bancos</title>
+      <link>https://marceloandrader.github.io/blog/2025/08/05/c%C3%B3mo-mejorar%C3%ADa-los-servicios-en-l%C3%ADnea-de-los-bancos/</link>
+      <pubDate>Tue, 05 Aug 2025 10:12:50 -0500</pubDate>
+      <guid>https://marceloandrader.github.io/blog/2025/08/05/c%C3%B3mo-mejorar%C3%ADa-los-servicios-en-l%C3%ADnea-de-los-bancos/</guid>
+      <description>En estos días hubo problemas con acceso a servicios en línea realizadas desde las aplicaciones del Banco Pichincha, del cuál también soy cliente por más de 20 años.</description>
+    </item>
     <item>
       <title>Script para chequear nuevos turnos en el Registro Civil</title>
       <link>https://marceloandrader.github.io/blog/2022/07/14/script-para-chequear-nuevos-turnos-en-el-registro-civil/</link>
       <pubDate>Thu, 14 Jul 2022 07:24:48 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2022/07/14/script-para-chequear-nuevos-turnos-en-el-registro-civil/</guid>
       <description>Hace poco tiempo en casa nos dimos cuenta que todos nuestros pasaportes habían caducado. Hubo algunas situaciones que nos llevaron a obviar este tema, nos habíamos cambiado de casa recientemente, la pandemia, etc.</description>
     </item>
-    
     <item>
       <title>Como trabajo</title>
       <link>https://marceloandrader.github.io/como-trabajo/</link>
       <pubDate>Tue, 14 Jun 2022 06:54:25 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/como-trabajo/</guid>
       <description>He trabajado de forma remota por casi 9 años y al principio como en todo cambio traté de hacer las cosas de la misma manera que se hace en presencial, tener un horario de 9 a 18, asistir a reuniones, pedir permiso para salir del trabajo, etc.</description>
     </item>
-    
     <item>
       <title>Generando datos de prueba rapidamente</title>
       <link>https://marceloandrader.github.io/blog/2022/03/17/generando-datos-de-prueba-rapidamente/</link>
       <pubDate>Thu, 17 Mar 2022 07:44:09 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2022/03/17/generando-datos-de-prueba-rapidamente/</guid>
       <description>Durante las pruebas manuales, muchas veces se necesita ingresar datos de prueba en los formularios de los sistemas en los que trabajo.</description>
     </item>
-    
     <item>
       <title>Pub/Sub con Redis</title>
       <link>https://marceloandrader.github.io/blog/2022/03/04/pub/sub-con-redis/</link>
       <pubDate>Fri, 04 Mar 2022 10:45:39 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2022/03/04/pub/sub-con-redis/</guid>
       <description>Durante esta semana tuve que hacer refactoring de una parte del sistema en el que trabajo tenemos un portal de cliente en el que los usuarios pueden seleccionar reportes a descargar y se genera un pdf o un zip con toda la información requerida.</description>
     </item>
-    
     <item>
       <title>¿Por qué? la mágica pregunta al desarrollar software</title>
       <link>https://marceloandrader.github.io/blog/2022/02/15/por-qu%C3%A9-la-m%C3%A1gica-pregunta-al-desarrollar-software/</link>
       <pubDate>Tue, 15 Feb 2022 07:00:45 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2022/02/15/por-qu%C3%A9-la-m%C3%A1gica-pregunta-al-desarrollar-software/</guid>
       <description>Cuando el negocio nos solicita un requerimiento, generalmente como técnicos tendemos a empezar la solución de este lo antes posible, tal vez preguntemos acerca de quienes lo van a usar, que información necesitamos guardar para luego usar en reportes, los permisos que deberá tener, y empezamos a validar en nuestra mente la mejor manera de desarrollarlo en el sistema, pero una pregunta importante que muchas veces no hacemos y que deberíamos hacer frecuentemente es:</description>
     </item>
-    
     <item>
       <title>Programando en pareja con Inteligencia Artificial</title>
       <link>https://marceloandrader.github.io/blog/2022/02/04/programando-en-pareja-con-inteligencia-artificial/</link>
       <pubDate>Fri, 04 Feb 2022 07:46:26 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2022/02/04/programando-en-pareja-con-inteligencia-artificial/</guid>
       <description>Hoy quería contarte acerca de una herramienta que la he estado usando por un par de meses y que seguro va a cambiar la forma en la que se escribe código en el futuro.</description>
     </item>
-    
     <item>
       <title>Elixir y la máquina virtual de Erlang</title>
       <link>https://marceloandrader.github.io/blog/2021/10/01/elixir-y-la-m%C3%A1quina-virtual-de-erlang/</link>
       <pubDate>Fri, 01 Oct 2021 06:46:09 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/10/01/elixir-y-la-m%C3%A1quina-virtual-de-erlang/</guid>
       <description>En el trabajo soy desarrollador de software y uso PHP y JavaScript el 99% del tiempo. Pero siempre estoy buscando alternativas en el área de programación, herramientas que me permitan ser más eficiente o lenguajes de los que pueda aprender algo diferente a lo acostumbrado, esto me permite tener diferentes puntos de vista.</description>
     </item>
-    
     <item>
       <title>Aplicaciones web ambiciosas con Ember.js</title>
       <link>https://marceloandrader.github.io/blog/2021/06/24/aplicaciones-web-ambiciosas-con-ember.js/</link>
       <pubDate>Thu, 24 Jun 2021 07:22:44 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/06/24/aplicaciones-web-ambiciosas-con-ember.js/</guid>
       <description>Cuando se trata de crear aplicaciones de página única o SPA en inglés, como desarrolladores tenemos muchas opciones de dónde escoger hay frameworks y librerías muy conocidas como angular en el área de framework y vue | react en el área de librería.</description>
     </item>
-    
     <item>
       <title>Debería aprender PHP o está de bajada?</title>
       <link>https://marceloandrader.github.io/blog/2021/06/17/deber%C3%ADa-aprender-php-o-est%C3%A1-de-bajada/</link>
       <pubDate>Thu, 17 Jun 2021 06:44:22 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/06/17/deber%C3%ADa-aprender-php-o-est%C3%A1-de-bajada/</guid>
       <description>He escuchado muchas veces la pregunta si debería o no un nuevo programador o ingeniero salido de la universidad aprender PHP.</description>
     </item>
-    
     <item>
       <title>Usando transacciones en bases de datos</title>
       <link>https://marceloandrader.github.io/blog/2021/05/21/usando-transacciones-en-bases-de-datos/</link>
       <pubDate>Fri, 21 May 2021 07:16:10 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/05/21/usando-transacciones-en-bases-de-datos/</guid>
       <description>Al escribir la lógica de una aplicación que interactúa con una base de datos relacional para almacenar la información, generalmente se puede tener varios pasos para guardar cada pedazo en un lugar específico de la base, las bases de datos denominadas ACID tienen una herramienta poderoza para evitar inconsistencias de datos hoy nos concentraremos en la A de ACID Atomicidad.</description>
     </item>
-    
     <item>
       <title>Encontrando errores en el código con git bisect</title>
       <link>https://marceloandrader.github.io/blog/2021/05/18/encontrando-errores-en-el-c%C3%B3digo-con-git-bisect/</link>
       <pubDate>Tue, 18 May 2021 06:46:23 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/05/18/encontrando-errores-en-el-c%C3%B3digo-con-git-bisect/</guid>
       <description>Cuando se usa git en un equipo de trabajo a veces alguien del grupo puede introducir un error en el código que no fue descubierto por los tests ni en la revisión de usuario, y se publica el error al sistema de producción.</description>
     </item>
-    
     <item>
       <title>Verificar rangos de fechas en PostgreSQL</title>
       <link>https://marceloandrader.github.io/blog/2021/05/07/verificar-rangos-de-fechas-en-postgresql/</link>
       <pubDate>Fri, 07 May 2021 10:22:47 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/05/07/verificar-rangos-de-fechas-en-postgresql/</guid>
       <description>Mi motor de base de datos favorito para proyectos nuevos es PostgreSQL o postgres. Es una base muy solida, open source, con más de 30 años de desarrollo, se ha ganado una gran reputación por su confiabilidad, robustez y desempeño.</description>
     </item>
-    
     <item>
       <title>Cómo utilizar symplify/vendor-patches en proyectos php</title>
       <link>https://marceloandrader.github.io/blog/2021/04/30/c%C3%B3mo-utilizar-symplify/vendor-patches-en-proyectos-php/</link>
       <pubDate>Fri, 30 Apr 2021 07:03:53 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/04/30/c%C3%B3mo-utilizar-symplify/vendor-patches-en-proyectos-php/</guid>
       <description>Es posible que alguna vez hayan encontrado un bug en una dependencia de un proyecto de php que utiliza composer, y el arreglo es simple y lo único que se requiere es cambiar 1 o 2 líneas de código en el paquete referenciado es decir en /vendor/usuario/paquete-con-error.</description>
     </item>
-    
     <item>
       <title>Parte 4: Ejemplo práctico de Pruebas De Software</title>
       <link>https://marceloandrader.github.io/blog/2021/04/13/parte-4-ejemplo-pr%C3%A1ctico-de-pruebas-de-software/</link>
       <pubDate>Tue, 13 Apr 2021 06:44:33 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/04/13/parte-4-ejemplo-pr%C3%A1ctico-de-pruebas-de-software/</guid>
-      <description>En esta artículo vamos a aplicar los conceptos anteriors al crear una aplicación pequeña en laravel.
-Si no han leído las partes anteriores:</description>
+      <description>En esta artículo vamos a aplicar los conceptos anteriors al crear una aplicación pequeña en laravel.&#xA;Si no han leído las partes anteriores:</description>
     </item>
-    
     <item>
       <title>Parte 3: Proceso de creación de pruebas y mejores prácticas</title>
       <link>https://marceloandrader.github.io/blog/2021/04/09/parte-3-proceso-de-creaci%C3%B3n-de-pruebas-y-mejores-pr%C3%A1cticas/</link>
       <pubDate>Fri, 09 Apr 2021 06:51:22 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/04/09/parte-3-proceso-de-creaci%C3%B3n-de-pruebas-y-mejores-pr%C3%A1cticas/</guid>
-      <description>En esta parte vamos a revisar el proceso para la creación de pruebas y algunas mejores prácticas.
-Si no han leído las partes anteriores:</description>
+      <description>En esta parte vamos a revisar el proceso para la creación de pruebas y algunas mejores prácticas.&#xA;Si no han leído las partes anteriores:</description>
     </item>
-    
     <item>
       <title>Parte 2: Tipos De Pruebas de Software</title>
       <link>https://marceloandrader.github.io/blog/2021/04/01/parte-2-tipos-de-pruebas-de-software/</link>
       <pubDate>Thu, 01 Apr 2021 07:00:15 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/04/01/parte-2-tipos-de-pruebas-de-software/</guid>
       <description>Esta es la seguna parte de la serie de Pruebas de Software, si aún no has leído la primera parte puedes hacerlo ahora.</description>
     </item>
-    
     <item>
       <title>Parte 1: Introducción a Pruebas de Software</title>
       <link>https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/</link>
       <pubDate>Tue, 23 Mar 2021 07:44:02 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/</guid>
       <description>Cuando iniciamos en el mundo del desarrollo de software, generalmente estamos muy enfocados en hacer que una característica funcione, o arreglar un bug y dedicamos tiempo en un ciclo de: pruebo manualmente lo que los usuarios me piden, funciona?</description>
     </item>
-    
     <item>
       <title>Escoger la arquitectura correcta</title>
       <link>https://marceloandrader.github.io/blog/2021/03/16/escoger-la-arquitectura-correcta/</link>
       <pubDate>Tue, 16 Mar 2021 09:16:51 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/03/16/escoger-la-arquitectura-correcta/</guid>
       <description>Ayer en Ecuador se iba a dar acceso a una página web para registrarse para recibir la vacuna en contra de COVID-19 planvacunarse.</description>
     </item>
-    
     <item>
       <title>Túneles ssh</title>
       <link>https://marceloandrader.github.io/blog/2021/03/09/t%C3%BAneles-ssh/</link>
       <pubDate>Tue, 09 Mar 2021 07:21:29 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/03/09/t%C3%BAneles-ssh/</guid>
       <description>Una de las principales herramientas a la hora de conectarse con servidores linux es SSH esta permite usar claves privadas para conectarse evitando digitar el password y la conexión es encriptada lo que la hace segura.</description>
     </item>
-    
     <item>
       <title>Cómo se debe trabajar con campos de fecha y hora en varias zonas horarias?</title>
       <link>https://marceloandrader.github.io/blog/2021/03/05/c%C3%B3mo-se-debe-trabajar-con-campos-de-fecha-y-hora-en-varias-zonas-horarias/</link>
       <pubDate>Fri, 05 Mar 2021 11:24:07 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/03/05/c%C3%B3mo-se-debe-trabajar-con-campos-de-fecha-y-hora-en-varias-zonas-horarias/</guid>
       <description>Cuando trabajamos en un proyecto geográficamente local, es posible que no nos hayamos topado con este inconveniente todavía, se maneja una sola zona horaria, el servidor está configurado en sincronía con la hora local, todos los datos se guardan con hora local, no hay ningún problema.</description>
     </item>
-    
     <item>
       <title>Zeal documentación de programacion offline</title>
       <link>https://marceloandrader.github.io/blog/2021/03/03/zeal-documentaci%C3%B3n-de-programacion-offline/</link>
       <pubDate>Wed, 03 Mar 2021 07:20:20 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/03/03/zeal-documentaci%C3%B3n-de-programacion-offline/</guid>
       <description>Como desarrolladores de software es imposible saber de memoria todas las API de un lenguaje de programación, la opción más fácil cuando dudas de algo o quieres encontrar más información acerca de una función o clase es buscarla en google y la mayoría de veces te va a llevar a la documentación oficial de la herramienta.</description>
     </item>
-    
     <item>
       <title>asdf para manejar varias versiones de tus herramientas</title>
       <link>https://marceloandrader.github.io/blog/2021/02/26/asdf-para-manejar-varias-versiones-de-tus-herramientas/</link>
       <pubDate>Fri, 26 Feb 2021 11:24:33 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/02/26/asdf-para-manejar-varias-versiones-de-tus-herramientas/</guid>
       <description>Cuando realizamos desarrollo en nuestra máquina local, es normal que trabajemos en varios proyectos, algunos proyectos más antiguos otros más nuevos, hay veces que tenemos que volver a proyectos antiguos a realizar alguna modificación, pero como ya actualizamos ciertas herramientas a las nuevas versiones, estos proyectos dejan de funcionar.</description>
     </item>
-    
     <item>
       <title>Enviando e-mails en ambientes de desarrollo</title>
       <link>https://marceloandrader.github.io/blog/2021/02/23/enviando-e-mails-en-ambientes-de-desarrollo/</link>
       <pubDate>Tue, 23 Feb 2021 13:03:39 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/02/23/enviando-e-mails-en-ambientes-de-desarrollo/</guid>
       <description>Cuando se ejecuta un proyecto localmente, muchas veces se requiere poder enviar e-mails a los usuarios de prueba, en un ambiente de desarrollo NO es recomendable enviar e-mails reales ya que si no se es cuidadoso podemos llegar a usar datos de producción y enviar e-mails de prueba a usuarios reales causando confusión.</description>
     </item>
-    
     <item>
       <title>Máquinas de Estado Finito (FSM)</title>
       <link>https://marceloandrader.github.io/blog/2021/02/19/m%C3%A1quinas-de-estado-finito-fsm/</link>
       <pubDate>Fri, 19 Feb 2021 07:14:40 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/02/19/m%C3%A1quinas-de-estado-finito-fsm/</guid>
       <description>Una cosa que aprendí luego de cometer el mismo error varias veces en proyectos pasados es dejar de usar booleans en los diseños de las tablas de la base de datos.</description>
     </item>
-    
     <item>
       <title>Probando código en diferentes versiones de PHP</title>
       <link>https://marceloandrader.github.io/blog/2021/02/16/probando-c%C3%B3digo-en-diferentes-versiones-de-php/</link>
       <pubDate>Tue, 16 Feb 2021 07:08:58 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/02/16/probando-c%C3%B3digo-en-diferentes-versiones-de-php/</guid>
       <description>Cuando estoy dando mantenimiento a una aplicación escrita en PHP y actualizando la versión de PHP para mantenerla segura, a veces es necesario probar por qué cierto código en una versión funciona y en otra no.</description>
     </item>
-    
     <item>
       <title>Migraciones de base de datos con Phinx</title>
       <link>https://marceloandrader.github.io/blog/2021/02/09/migraciones-de-base-de-datos-con-phinx/</link>
       <pubDate>Tue, 09 Feb 2021 06:43:23 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/02/09/migraciones-de-base-de-datos-con-phinx/</guid>
       <description>Cuando uno piensa que una aplicación va a ser muy pequeña como para usar un framework completo o un framework que no tiene migraciones para base de datos, y los cambios a la base de datos generalmente se hacen a mano.</description>
     </item>
-    
     <item>
       <title>¿Qué sistema operativo es mejor para programar?</title>
       <link>https://marceloandrader.github.io/blog/2021/02/05/qu%C3%A9-sistema-operativo-es-mejor-para-programar/</link>
       <pubDate>Fri, 05 Feb 2021 06:53:50 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/02/05/qu%C3%A9-sistema-operativo-es-mejor-para-programar/</guid>
-      <description>Linux. Fin.
-Solo bromeaba, ojalá este tipo de preguntas fueran tan fáciles de responder, como todo en la vida no es una respuesta de blanco o negro, hay muchos matices y en este caso hay que escudriñar un poco más para poder tener una respuesta que se ajuste a tu contexto.</description>
+      <description>Linux. Fin.&#xA;Solo bromeaba, ojalá este tipo de preguntas fueran tan fáciles de responder, como todo en la vida no es una respuesta de blanco o negro, hay muchos matices y en este caso hay que escudriñar un poco más para poder tener una respuesta que se ajuste a tu contexto.</description>
     </item>
-    
     <item>
       <title>Monorepo</title>
       <link>https://marceloandrader.github.io/blog/2021/02/04/monorepo/</link>
       <pubDate>Thu, 04 Feb 2021 18:07:18 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/02/04/monorepo/</guid>
       <description>En muchos sistemas modernos se opta por tener una aplicación web de página única o Single Page Application, en donde obligatoriamente tenemos al menos 2 partes, un backend y un frontend, los dos con diferentes estilos de programación y que deben ejecutarse en la misma versión para que todo funcione correctamente.</description>
     </item>
-    
     <item>
       <title>curl: la navaja suiza de los protocolos de Internet</title>
       <link>https://marceloandrader.github.io/blog/2021/02/03/curl-la-navaja-suiza-de-los-protocolos-de-internet/</link>
       <pubDate>Wed, 03 Feb 2021 12:19:28 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/02/03/curl-la-navaja-suiza-de-los-protocolos-de-internet/</guid>
       <description>Una de las herramientas que más uso en el día a día es curl, es muy versátil y soporta una gran cantidad de protocolos, los que más uso son solo http y https, pero tiene soporte para los siguientes protocolos de acuerdo a su página web DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP.</description>
     </item>
-    
     <item>
       <title>Siempre tener una base de datos de asuntos pendientes</title>
       <link>https://marceloandrader.github.io/blog/2021/02/02/siempre-tener-una-base-de-datos-de-asuntos-pendientes/</link>
       <pubDate>Tue, 02 Feb 2021 10:47:23 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/02/02/siempre-tener-una-base-de-datos-de-asuntos-pendientes/</guid>
       <description>Hace muchos años ya, entré a trabajar en un banco, éramos un grupo pequeño de tecnología, 3 desarrolladores, 2 de soporte, 1 de operaciones y 1 jefe.</description>
     </item>
-    
     <item>
       <title>Github Actions</title>
       <link>https://marceloandrader.github.io/blog/2021/02/01/github-actions/</link>
       <pubDate>Mon, 01 Feb 2021 07:44:10 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/02/01/github-actions/</guid>
       <description>Verificar que tu código esté bien en tu máquina local es algo que se debe hacer como parte del proceso de desarrollo, pero muchas veces cuando el cambio es muy pequeño y lo probaste en el browser y funciona, la opción más rápida es solo hacer commit y listo, no se ejecuta los tests, estilos de código, linters etc.</description>
     </item>
-    
     <item>
       <title>El código es una carga</title>
       <link>https://marceloandrader.github.io/blog/2021/01/28/el-c%C3%B3digo-es-una-carga/</link>
       <pubDate>Thu, 28 Jan 2021 07:36:53 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/01/28/el-c%C3%B3digo-es-una-carga/</guid>
       <description>Como profesionales en el área de tecnología generalmente tratamos el desarrollo de un sistema o aplicación, como la solución a muchos problemas en el negocio o en lo personal.</description>
     </item>
-    
     <item>
       <title>Formatear y convertir JSON al vuelo con jq</title>
       <link>https://marceloandrader.github.io/blog/2021/01/27/formatear-y-convertir-json-al-vuelo-con-jq/</link>
       <pubDate>Wed, 27 Jan 2021 09:49:03 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/01/27/formatear-y-convertir-json-al-vuelo-con-jq/</guid>
       <description>jq es una herramienta que permite formatear y/o convertir la respuesta de un JSON API a cualquier cosa que se les ocurra.</description>
     </item>
-    
     <item>
       <title>Bash sin sorpresas</title>
       <link>https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/</link>
       <pubDate>Tue, 26 Jan 2021 07:08:44 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/01/26/bash-sin-sorpresas/</guid>
       <description>Existe una línea de código que agrego siempre a los script bash que me ayuda mucho a evitar errores comunes cuando se escribe un script.</description>
     </item>
-    
     <item>
       <title>Formatea tú código con prettier</title>
       <link>https://marceloandrader.github.io/blog/2021/01/25/formatea-t%C3%BA-c%C3%B3digo-con-prettier/</link>
       <pubDate>Mon, 25 Jan 2021 07:07:48 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/01/25/formatea-t%C3%BA-c%C3%B3digo-con-prettier/</guid>
       <description>Trabajas en equipo y pasas tiempo insistiendo en que coloquen los paréntesis donde te gusta, que el indentado del código sea como dicta cierto estándar, o tu mismo pasas tiempo en tu editor dándole formato al código para que sea agradable a la vista.</description>
     </item>
-    
     <item>
       <title>Autocompletado de alta velocidad Starship</title>
       <link>https://marceloandrader.github.io/blog/2021/01/22/autocompletado-de-alta-velocidad-starship/</link>
       <pubDate>Fri, 22 Jan 2021 06:48:15 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/01/22/autocompletado-de-alta-velocidad-starship/</guid>
       <description>Como desarrolladores pasamos mucho tiempo en la línea de comandos, la mayoría del tiempo escribimos los mismos comandos una y otra vez, tan solo cambiando un poco la orden.</description>
     </item>
-    
     <item>
       <title>Compartir un sitio local al Internet</title>
       <link>https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/</link>
       <pubDate>Thu, 21 Jan 2021 06:44:11 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/01/21/compartir-un-sitio-local-al-internet/</guid>
       <description>Alguna vez les ha pasado que un cliente desea ver avances del desarrollo pero no tienen desplegado aún el ambiente de pruebas?</description>
     </item>
-    
     <item>
       <title>Php Web Server</title>
       <link>https://marceloandrader.github.io/blog/2021/01/20/php-web-server/</link>
       <pubDate>Wed, 20 Jan 2021 07:00:25 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/01/20/php-web-server/</guid>
-      <description>Sabían que la línea de comandos de php tiene un servidor web interno.
-Me ha servido mucho para realizar desarrollos de prueba o verificar un sitio estático o incluso para compartir archivos en una red interna.</description>
+      <description>Sabían que la línea de comandos de php tiene un servidor web interno.&#xA;Me ha servido mucho para realizar desarrollos de prueba o verificar un sitio estático o incluso para compartir archivos en una red interna.</description>
     </item>
-    
     <item>
       <title>My migration from keepassxc to pass (password store)</title>
       <link>https://marceloandrader.github.io/blog/2019/04/11/my-migration-from-keepassxc-to-pass-password-store/</link>
       <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2019/04/11/my-migration-from-keepassxc-to-pass-password-store/</guid>
       <description>Background My initial way to keep my long list of passwords/secrets safe in my computer was using the password manager keepassxc it served well, the way to share this with my mobile was putting the kdbx file in Dropbox and use KeePassDroid app to be able to use my passwords on the go.</description>
     </item>
-    
     <item>
       <title>Docker</title>
       <link>https://marceloandrader.github.io/blog/2013/11/15/docker/</link>
       <pubDate>Fri, 15 Nov 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2013/11/15/docker/</guid>
       <description>Desplegar aplicaciones en linux es un proceso fácil si tu aplicación solo usa un servidor, normalmente se usa el sistema propio de manejo de paquetes para poner a punto el servidor con todos los componentes instalados para publicar una aplicación web, sitio web dinámico, etc.</description>
     </item>
-    
     <item>
       <title>Aplicaciones Web del lado del Cliente con MVVM</title>
       <link>https://marceloandrader.github.io/blog/2013/02/19/aplicaciones-web-del-lado-del-cliente-con-mvvm/</link>
       <pubDate>Tue, 19 Feb 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2013/02/19/aplicaciones-web-del-lado-del-cliente-con-mvvm/</guid>
       <description>Aplicaciones web con alta carga de lógica del lado cliente han comenzado a popularizarse, la idea es que mucho de lo que antes se hacía en el servidor, ahora se lo puede hacer en el cliente (browser) y dejar al servidor solo como un API de acceso a la persistencia de los datos.</description>
     </item>
-    
     <item>
       <title>Caso práctico de uso de vagrant</title>
       <link>https://marceloandrader.github.io/blog/2012/05/28/caso-pr%C3%A1ctico-de-uso-de-vagrant/</link>
       <pubDate>Mon, 28 May 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2012/05/28/caso-pr%C3%A1ctico-de-uso-de-vagrant/</guid>
-      <description>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.
-##Pre-Requisitos Instalar VirtualBox Descargar VirtualBox vagrant soporta las versiones 4.</description>
+      <description>Para este ejemplo levantaremos un sistema linux (ubuntu) con apache como ejemplo del uso de vagrant.&#xA;##Pre-Requisitos Instalar VirtualBox Descargar VirtualBox vagrant soporta las versiones 4.</description>
     </item>
-    
     <item>
       <title>Aislar ambientes de desarrollo con Vagrant</title>
       <link>https://marceloandrader.github.io/blog/2012/02/06/aislar-ambientes-de-desarrollo-con-vagrant/</link>
       <pubDate>Mon, 06 Feb 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2012/02/06/aislar-ambientes-de-desarrollo-con-vagrant/</guid>
       <description>Si desarrollas en un solo tipo de &amp;lsquo;stack&amp;rsquo; de desarrollo lo más común es instalar este stack en tu máquina principal y desarrollar directamente en el sistema operativo de tu preferencia.</description>
     </item>
-    
     <item>
       <title>Dependencias de Aplicaciones Web</title>
       <link>https://marceloandrader.github.io/blog/2011/12/16/dependencias-de-aplicaciones-web/</link>
       <pubDate>Fri, 16 Dec 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2011/12/16/dependencias-de-aplicaciones-web/</guid>
-      <description>En esta sección sí hay mucho por contar, cada día dependo más y más en servicios web.
-Entre los que más uso por frecuencia están:</description>
+      <description>En esta sección sí hay mucho por contar, cada día dependo más y más en servicios web.&#xA;Entre los que más uso por frecuencia están:</description>
     </item>
-    
     <item>
       <title>Dependencias de Aplicaciones CLI</title>
       <link>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-aplicaciones-cli/</link>
       <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-aplicaciones-cli/</guid>
-      <description>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos
-history | awk &amp;#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &amp;#34; &amp;#34; CMD[a]/count*100 &amp;#34;% &amp;#34; a;}&amp;#39; | grep -v &amp;#34;.</description>
+      <description>Estas son mis aplicaciones preferidas, para obtener los comandos que más uso en la línea de comandos&#xA;history | awk &amp;#39;{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] &amp;#34; &amp;#34; CMD[a]/count*100 &amp;#34;% &amp;#34; a;}&amp;#39; | grep -v &amp;#34;.</description>
     </item>
-    
     <item>
       <title>Dependencias de Software de Escritorio</title>
       <link>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-software-de-escritorio/</link>
       <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2011/12/15/dependencias-de-software-de-escritorio/</guid>
       <description>Como sistema operativo uso Mac OS X (Snow Leopard), las aplicaciones que más uso en orden de frecuencia de uso serían:</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://marceloandrader.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/about/</guid>
       <description>Hola mi nombre es Marcelo Andrade R. soy de Quito Ecuador, he trabajado en el área de desarrollo de software por más de 17 años.</description>
     </item>
-    
+    <item>
+      <title></title>
+      <link>https://marceloandrader.github.io/hiring-costs-ecuador/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://marceloandrader.github.io/hiring-costs-ecuador/</guid>
+      <description>&lt;!DOCTYPE html&gt; Calculadora | Salarios | Ecuador Regresar a Tips de Desarrollo Calculadora de salarios para Ecuador Ingrese el salario del empleado Sueldo menor a mínimo de 400 USD</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://marceloandrader.github.io/pasaportes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://marceloandrader.github.io/pasaportes/</guid>
+      <description>&lt;!DOCTYPE html&gt; Notificar Turnos * Pasaportes de Ecuador Necesita JavaScript para ver este sitio. </description>
+    </item>
     <item>
       <title></title>
       <link>https://marceloandrader.github.io/blog/1/01/01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/1/01/01/</guid>
-      <description>alias grt=cd $(git rev-parse &amp;ndash;show-toplevel || echo &amp;ldquo;.)
-El comando cd se usa para cambiar el directorio de trabajo actual en un terminal.</description>
+      <description>alias grt=cd $(git rev-parse &amp;ndash;show-toplevel || echo &amp;ldquo;.)&#xA;El comando cd se usa para cambiar el directorio de trabajo actual en un terminal.</description>
     </item>
-    
     <item>
       <title>Contacto</title>
       <link>https://marceloandrader.github.io/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/contact/</guid>
-      <description>Por favor descarga la información de contacto en tu celular:
-vCard
-O escanea este código QR</description>
+      <description>Por favor descarga la información de contacto en tu celular:&#xA;vCard&#xA;O escanea este código QR</description>
     </item>
-    
     <item>
       <title>Gracias</title>
       <link>https://marceloandrader.github.io/gracias/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/gracias/</guid>
-      <description>Por suscribirte, espero que el contenido sea de provecho y te ayude en tu carrera de desarrollo de software.
-Ahora solo falta aceptar la suscripción en tu email para que no te pierdas de ningún artículo nuevo.</description>
+      <description>Por suscribirte, espero que el contenido sea de provecho y te ayude en tu carrera de desarrollo de software.&#xA;Ahora solo falta aceptar la suscripción en tu email para que no te pierdas de ningún artículo nuevo.</description>
     </item>
-    
     <item>
       <title>Gracias por la respuesta</title>
       <link>https://marceloandrader.github.io/gracias-por-la-respuesta/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/gracias-por-la-respuesta/</guid>
       <description>Gracias por ayudarme a conocerte mejor y poder servir contenido que se ajuste a tus necesidades.</description>
     </item>
-    
     <item>
       <title>Servicios</title>
       <link>https://marceloandrader.github.io/services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://marceloandrader.github.io/services/</guid>
       <description>Servicios para Negocios Tienes una empresa y necesitas un desarrollo a la medida o una integración que te permita mejorar tus procesos del negocio y a su vez incrementar los ingresos o reducir los costos operativos?</description>
     </item>
-    
   </channel>
 </rss>

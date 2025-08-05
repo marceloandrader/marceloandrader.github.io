@@ -6,44 +6,35 @@
     <description>Recent content in Software Testing on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Tue, 23 Mar 2021 07:43:43 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/posts/software-testing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 06:44:33 -0500</lastBuildDate>
+    <atom:link href="https://marceloandrader.github.io/posts/software-testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Parte 4: Ejemplo práctico de Pruebas De Software</title>
       <link>https://marceloandrader.github.io/blog/2021/04/13/parte-4-ejemplo-pr%C3%A1ctico-de-pruebas-de-software/</link>
       <pubDate>Tue, 13 Apr 2021 06:44:33 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/04/13/parte-4-ejemplo-pr%C3%A1ctico-de-pruebas-de-software/</guid>
-      <description>En esta artículo vamos a aplicar los conceptos anteriors al crear una aplicación pequeña en laravel.
-Si no han leído las partes anteriores:</description>
+      <description>En esta artículo vamos a aplicar los conceptos anteriors al crear una aplicación pequeña en laravel.&#xA;Si no han leído las partes anteriores:</description>
     </item>
-    
     <item>
       <title>Parte 3: Proceso de creación de pruebas y mejores prácticas</title>
       <link>https://marceloandrader.github.io/blog/2021/04/09/parte-3-proceso-de-creaci%C3%B3n-de-pruebas-y-mejores-pr%C3%A1cticas/</link>
       <pubDate>Fri, 09 Apr 2021 06:51:22 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/04/09/parte-3-proceso-de-creaci%C3%B3n-de-pruebas-y-mejores-pr%C3%A1cticas/</guid>
-      <description>En esta parte vamos a revisar el proceso para la creación de pruebas y algunas mejores prácticas.
-Si no han leído las partes anteriores:</description>
+      <description>En esta parte vamos a revisar el proceso para la creación de pruebas y algunas mejores prácticas.&#xA;Si no han leído las partes anteriores:</description>
     </item>
-    
     <item>
       <title>Parte 2: Tipos De Pruebas de Software</title>
       <link>https://marceloandrader.github.io/blog/2021/04/01/parte-2-tipos-de-pruebas-de-software/</link>
       <pubDate>Thu, 01 Apr 2021 07:00:15 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/04/01/parte-2-tipos-de-pruebas-de-software/</guid>
       <description>Esta es la seguna parte de la serie de Pruebas de Software, si aún no has leído la primera parte puedes hacerlo ahora.</description>
     </item>
-    
     <item>
       <title>Parte 1: Introducción a Pruebas de Software</title>
       <link>https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/</link>
       <pubDate>Tue, 23 Mar 2021 07:44:02 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/03/23/parte-1-introducci%C3%B3n-a-pruebas-de-software/</guid>
       <description>Cuando iniciamos en el mundo del desarrollo de software, generalmente estamos muy enfocados en hacer que una característica funcione, o arreglar un bug y dedicamos tiempo en un ciclo de: pruebo manualmente lo que los usuarios me piden, funciona?</description>
     </item>
-    
   </channel>
 </rss>

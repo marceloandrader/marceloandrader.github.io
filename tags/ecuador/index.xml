@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ecuador on Tips de Desarrollo</title>
+    <title>Ecuador on Tips de Desarrollo</title>
     <link>https://marceloandrader.github.io/tags/ecuador/</link>
-    <description>Recent content in ecuador on Tips de Desarrollo</description>
+    <description>Recent content in Ecuador on Tips de Desarrollo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ec</language>
-    <lastBuildDate>Thu, 14 Jul 2022 07:24:48 -0500</lastBuildDate><atom:link href="https://marceloandrader.github.io/tags/ecuador/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Aug 2025 10:12:50 -0500</lastBuildDate>
+    <atom:link href="https://marceloandrader.github.io/tags/ecuador/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo mejoraría los servicios en línea de los bancos</title>
+      <link>https://marceloandrader.github.io/blog/2025/08/05/c%C3%B3mo-mejorar%C3%ADa-los-servicios-en-l%C3%ADnea-de-los-bancos/</link>
+      <pubDate>Tue, 05 Aug 2025 10:12:50 -0500</pubDate>
+      <guid>https://marceloandrader.github.io/blog/2025/08/05/c%C3%B3mo-mejorar%C3%ADa-los-servicios-en-l%C3%ADnea-de-los-bancos/</guid>
+      <description>En estos días hubo problemas con acceso a servicios en línea realizadas desde las aplicaciones del Banco Pichincha, del cuál también soy cliente por más de 20 años.</description>
+    </item>
     <item>
       <title>Script para chequear nuevos turnos en el Registro Civil</title>
       <link>https://marceloandrader.github.io/blog/2022/07/14/script-para-chequear-nuevos-turnos-en-el-registro-civil/</link>
       <pubDate>Thu, 14 Jul 2022 07:24:48 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2022/07/14/script-para-chequear-nuevos-turnos-en-el-registro-civil/</guid>
       <description>Hace poco tiempo en casa nos dimos cuenta que todos nuestros pasaportes habían caducado. Hubo algunas situaciones que nos llevaron a obviar este tema, nos habíamos cambiado de casa recientemente, la pandemia, etc.</description>
     </item>
-    
     <item>
       <title>Escoger la arquitectura correcta</title>
       <link>https://marceloandrader.github.io/blog/2021/03/16/escoger-la-arquitectura-correcta/</link>
       <pubDate>Tue, 16 Mar 2021 09:16:51 -0500</pubDate>
-      
       <guid>https://marceloandrader.github.io/blog/2021/03/16/escoger-la-arquitectura-correcta/</guid>
       <description>Ayer en Ecuador se iba a dar acceso a una página web para registrarse para recibir la vacuna en contra de COVID-19 planvacunarse.</description>
     </item>
-    
   </channel>
 </rss>
