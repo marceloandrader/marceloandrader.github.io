@@ -1,4 +1,4 @@
-const minimumSalary = 400;
+const minimumSalary = 460;
 
 const RssFeed = "https://marceloandrader.github.io/index.xml";
 
@@ -141,7 +141,7 @@ const readRSS = function () {
 }
 
 
-window.onload = function () {
+window.addEventListener('load', function () {
   document.getElementById('salary').value = minimumSalary;
 
   let result = calculate(minimumSalary);
@@ -154,4 +154,4 @@ window.onload = function () {
   })
 
   readRSS();
-};
+});
